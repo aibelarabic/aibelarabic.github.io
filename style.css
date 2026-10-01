@@ -180,9 +180,10 @@ footer {
     }
 .article-image {
   display: block;
-  width: 70%;
-  max-width: 550px;
-  height: auto;
+  width: 50%;
+  max-width: 400px;
+  height: 250;
+  object-fit: cover;
   margin: 30px auto;
   border-radius: 12px;
 }
