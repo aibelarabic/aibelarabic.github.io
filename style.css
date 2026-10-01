@@ -178,3 +178,11 @@ footer {
     font-size: 17px;
   }
     }
+.article-image {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 30px auto;
+  border-radius: 12px;
+}
