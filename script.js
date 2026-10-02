@@ -79,58 +79,53 @@ analyzeButton.addEventListener("click", async () => {
 
     detectorStatus.textContent = "تم تحليل الصورة بنجاح.";
 
-    let resultText = "";
-    let resultClass = "";
+   let resultText = "";
+let resultClass = "";
 
-    if (percentage >= 80) {
+if (percentage >= 80) {
+  resultText =
+    "تشير النتيجة إلى احتمال مرتفع أن تكون الصورة مولدة بالذكاء الاصطناعي.";
+  resultClass = "high";
 
-      resultText =
-        "تشير النتيجة إلى احتمال مرتفع أن تكون الصورة مولدة بالذكاء الاصطناعي.";
+} else if (percentage >= 50) {
+  resultText =
+    "النتيجة غير حاسمة، وقد تحتاج الصورة إلى تحليل إضافي.";
+  resultClass = "medium";
 
-      resultClass = "high";
+} else {
+  resultText =
+    "تشير النتيجة إلى احتمال منخفض أن تكون الصورة مولدة بالذكاء الاصطناعي.";
+  resultClass = "low";
+}
 
-    } else if (percentage >= 50) {
+detectorResult.innerHTML = `
+  <div class="detector-result ${resultClass}">
 
-      resultText =
-        "النتيجة غير حاسمة، وقد تحتاج الصورة إلى تحليل إضافي.";
+    <h3>نتيجة التحليل</h3>
 
-      resultClass = "medium";
-
-    } else {
-
-      resultText =
-        "تشير النتيجة إلى احتمال منخفض أن تكون الصورة مولدة بالذكاء الاصطناعي.";
-
-      resultClass = "low";
-    }
-
-
-    detectorResult.innerHTML = `
-      <div class="detector-result ${resultClass}">
-
-        <h3>نتيجة التحليل</h3>
-
-        <div class="ai-percentage">
-          ${percentage}%
-        </div>
-
-        <p>
-          احتمال أن تكون الصورة مولدة بالذكاء الاصطناعي
-        </p>
-
-        <div class="progress-container">
-          <div
-            class="progress-bar"
-            style="width: ${percentage}%;">
-          </div>
-        </div>
-
-        <p class="result-description">
-          ${resultText}
-        </p>
-
+    <div class="score-circle">
+      <div class="score-circle-inner">
+        <span>${percentage}%</span>
       </div>
-    `;
+    </div>
+
+    <p>
+      احتمال أن تكون الصورة مولدة بالذكاء الاصطناعي
+    </p>
+
+    <div class="progress-container">
+      <div
+        class="progress-bar"
+        style="width: ${percentage}%;">
+      </div>
+    </div>
+
+    <p class="result-description">
+      ${resultText}
+    </p>
+
+  </div>
+`; 
 
     resetDetector.style.display = "block";
 
