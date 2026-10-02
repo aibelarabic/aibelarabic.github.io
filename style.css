@@ -279,4 +279,18 @@ header h1 a {
   color: white !important;
   text-decoration: none !important;
 }
-
+.article-image {
+  display: block;
+  width: 50% !important;
+  max-width: 350px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 30px auto !important;
+  border-radius: 12px;
+}
+@media (max-width: 600px) {
+  .article-image {
+    width: 70% !important;
+    max-width: 280px !important;
+  }
+}
