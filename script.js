@@ -103,7 +103,7 @@ detectorResult.innerHTML = `
 
     <h3>نتيجة التحليل</h3>
 
-    <div class="score-circle">
+    <div class="score-circle" style="--score: ${percentage * 3.6};">
       <div class="score-circle-inner">
         <span>${percentage}%</span>
       </div>
