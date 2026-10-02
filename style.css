@@ -198,9 +198,10 @@ footer {
 
 .home-card > img {
   display: block;
-  width: 100%;
-  height: 280px;
+  width: 60%;
+  height: 220px;
   object-fit: cover;
+  margin: 0 auto;
 }
 
 .home-card-content {
