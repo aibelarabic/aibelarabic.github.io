@@ -242,3 +242,35 @@ footer {
     font-size: 23px;
   }
 }
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  font-size: 16px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid #ddd;
+  padding: 14px;
+  text-align: center;
+}
+
+.comparison-table th {
+  font-weight: bold;
+}
+
+.comparison-table tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+@media (max-width: 600px) {
+  .comparison-table {
+    font-size: 14px;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 9px 6px;
+  }
+}
