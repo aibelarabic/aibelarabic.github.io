@@ -181,17 +181,17 @@ footer {
 .home-card > img {
   display: block;
   width: 60%;
+  max-width: 400px;
   height: auto;
-  max-height: 300px;
   object-fit: contain;
   margin: 0 auto;
 }
 
 @media (max-width: 600px) {
   .home-card > img {
-    width: 100%;
+    width: 80%;
+    max-width: 300px;
     height: auto;
-    max-height: 250px;
   }
 }
 .home-card {
