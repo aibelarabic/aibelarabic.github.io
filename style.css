@@ -178,14 +178,21 @@ footer {
     font-size: 17px;
   }
     }
-.article-image {
+.home-card > img {
   display: block;
-  width: 50%;
-  max-width: 400px;
-  height: 200;
-  object-fit: cover;
-  margin: 30px auto;
-  border-radius: 12px;
+  width: 60%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .home-card > img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+  }
 }
 .home-card {
   background: white;
