@@ -402,24 +402,25 @@ header h1 a {
   height: 170px;
   margin: 25px auto;
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background:
-    conic-gradient(
-      currentColor 0deg,
-      currentColor calc(var(--score) * 1deg),
-      #ddd calc(var(--score) * 1deg),
-      #ddd 360deg
-    );
+  background: conic-gradient(
+    #222 0deg,
+    #222 var(--score),
+    #ddd var(--score),
+    #ddd 360deg
+  );
 }
 
 .score-circle-inner {
-  width: 135px;
-  height: 135px;
+  width: 130px;
+  height: 130px;
+
   border-radius: 50%;
-  background: inherit;
+  background: #ffffff;
 
   display: flex;
   align-items: center;
@@ -427,7 +428,9 @@ header h1 a {
 }
 
 .score-circle-inner span {
+  display: block;
+  color: #111111 !important;
   font-size: 32px;
   font-weight: bold;
-  color: #222;
+  line-height: 1;
 }
