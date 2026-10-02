@@ -313,10 +313,13 @@ header h1 a {
 }
 
 .image-preview img {
-  max-width: 100%;
-  max-height: 400px;
+  width: 280px;
+  height: 280px;
+  max-width: 90%;
   border-radius: 15px;
   object-fit: contain;
+  display: block;
+  margin: 15px auto;
 }
 
 #analyzeButton,
