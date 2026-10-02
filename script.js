@@ -2,81 +2,167 @@ const imageInput = document.getElementById("imageInput");
 const analyzeButton = document.getElementById("analyzeButton");
 const detectorStatus = document.getElementById("detectorStatus");
 const detectorResult = document.getElementById("detectorResult");
+const imagePreview = document.getElementById("imagePreview");
+const resetDetector = document.getElementById("resetDetector");
 
 const WORKER_URL = "https://ai-image-detector.khelmy627.workers.dev/";
 
-analyzeButton.addEventListener("click", async () => {
-const file = imageInput.files[0];
 
-if (!file) {
-detectorStatus.textContent = "من فضلك اختر صورة أولًا.";
-detectorResult.innerHTML = "";
-return;
-}
+// عرض الصورة عند اختيارها
+imageInput.addEventListener("change", () => {
 
-detectorStatus.textContent = "جاري تحليل الصورة...";
-detectorResult.innerHTML = "";
-analyzeButton.disabled = true;
+  const file = imageInput.files[0];
 
-try {
-const formData = new FormData();
-formData.append("media", file);
+  detectorResult.innerHTML = "";
+  detectorStatus.textContent = "";
+  resetDetector.style.display = "none";
 
-const response = await fetch(WORKER_URL, {
-  method: "POST",
-  body: formData
+  if (!file) {
+    imagePreview.innerHTML = "";
+    return;
+  }
+
+  if (!file.type.startsWith("image/")) {
+    detectorStatus.textContent = "من فضلك اختر ملف صورة.";
+    imageInput.value = "";
+    imagePreview.innerHTML = "";
+    return;
+  }
+
+  const imageURL = URL.createObjectURL(file);
+
+  imagePreview.innerHTML = `
+    <img src="${imageURL}" alt="الصورة التي تم اختيارها">
+  `;
 });
 
-const data = await response.json();
 
-if (!response.ok || data.status !== "success") {
-  throw new Error(data.error || "حدث خطأ أثناء تحليل الصورة.");
-}
+// تحليل الصورة
+analyzeButton.addEventListener("click", async () => {
 
-const aiScore = data.type?.ai_generated;
+  const file = imageInput.files[0];
 
-if (typeof aiScore !== "number") {
-  throw new Error("لم يتم العثور على نتيجة تحليل الصورة.");
-}
+  if (!file) {
+    detectorStatus.textContent = "من فضلك اختر صورة أولًا.";
+    return;
+  }
 
-const percentage = Math.round(aiScore * 100);
+  detectorStatus.textContent = "جاري تحليل الصورة...";
+  detectorResult.innerHTML = "";
+  analyzeButton.disabled = true;
 
-detectorStatus.textContent = "تم تحليل الصورة بنجاح.";
+  try {
 
-if (percentage >= 80) {
-  detectorResult.innerHTML = `
-    <div>
-      <h3>النتيجة</h3>
-      <p>احتمال أن تكون الصورة مولدة بالذكاء الاصطناعي:</p>
-      <strong>${percentage}%</strong>
-      <p>تشير النتيجة إلى احتمال مرتفع أن تكون الصورة مولدة بالذكاء الاصطناعي.</p>
-    </div>
-  `;
-} else if (percentage >= 50) {
-  detectorResult.innerHTML = `
-    <div>
-      <h3>النتيجة</h3>
-      <p>احتمال أن تكون الصورة مولدة بالذكاء الاصطناعي:</p>
-      <strong>${percentage}%</strong>
-      <p>النتيجة غير حاسمة، وقد تحتاج الصورة إلى تحليل إضافي.</p>
-    </div>
-  `;
-} else {
-  detectorResult.innerHTML = `
-    <div>
-      <h3>النتيجة</h3>
-      <p>احتمال أن تكون الصورة مولدة بالذكاء الاصطناعي:</p>
-      <strong>${percentage}%</strong>
-      <p>تشير النتيجة إلى احتمال منخفض أن تكون الصورة مولدة بالذكاء الاصطناعي.</p>
-    </div>
-  `;
-}
+    const formData = new FormData();
+    formData.append("media", file);
 
-} catch (error) {
-detectorStatus.textContent = "حدث خطأ أثناء التحليل.";
+    const response = await fetch(WORKER_URL, {
+      method: "POST",
+      body: formData
+    });
 
-detectorResult.innerHTML = `
-  <p>${error.message}</p>
-`;
+    const data = await response.json();
 
-} finally {analyzeButton.disabled = false;}});
+    if (!response.ok || data.status !== "success") {
+      throw new Error(
+        data.error || "حدث خطأ أثناء تحليل الصورة."
+      );
+    }
+
+    const aiScore = data.type?.ai_generated;
+
+    if (typeof aiScore !== "number") {
+      throw new Error("لم يتم العثور على نتيجة تحليل الصورة.");
+    }
+
+    const percentage = Math.round(aiScore * 100);
+
+    detectorStatus.textContent = "تم تحليل الصورة بنجاح.";
+
+    let resultText = "";
+    let resultClass = "";
+
+    if (percentage >= 80) {
+
+      resultText =
+        "تشير النتيجة إلى احتمال مرتفع أن تكون الصورة مولدة بالذكاء الاصطناعي.";
+
+      resultClass = "high";
+
+    } else if (percentage >= 50) {
+
+      resultText =
+        "النتيجة غير حاسمة، وقد تحتاج الصورة إلى تحليل إضافي.";
+
+      resultClass = "medium";
+
+    } else {
+
+      resultText =
+        "تشير النتيجة إلى احتمال منخفض أن تكون الصورة مولدة بالذكاء الاصطناعي.";
+
+      resultClass = "low";
+    }
+
+
+    detectorResult.innerHTML = `
+      <div class="detector-result ${resultClass}">
+
+        <h3>نتيجة التحليل</h3>
+
+        <div class="ai-percentage">
+          ${percentage}%
+        </div>
+
+        <p>
+          احتمال أن تكون الصورة مولدة بالذكاء الاصطناعي
+        </p>
+
+        <div class="progress-container">
+          <div
+            class="progress-bar"
+            style="width: ${percentage}%;">
+          </div>
+        </div>
+
+        <p class="result-description">
+          ${resultText}
+        </p>
+
+      </div>
+    `;
+
+    resetDetector.style.display = "block";
+
+  } catch (error) {
+
+    detectorStatus.textContent = "حدث خطأ أثناء التحليل.";
+
+    detectorResult.innerHTML = `
+      <div class="detector-error">
+        ${error.message}
+      </div>
+    `;
+
+  } finally {
+
+    analyzeButton.disabled = false;
+
+  }
+});
+
+
+// إعادة ضبط الأداة
+resetDetector.addEventListener("click", () => {
+
+  imageInput.value = "";
+
+  imagePreview.innerHTML = "";
+
+  detectorStatus.textContent = "";
+
+  detectorResult.innerHTML = "";
+
+  resetDetector.style.display = "none";
+
+});
