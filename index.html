@@ -15,6 +15,7 @@
 
   <!-- كاشف الصور -->
 <section id="detector">
+
   <h2>كاشف الصور بالذكاء الاصطناعي</h2>
 
   <p>
@@ -23,19 +24,49 @@
 
   <div class="ai-detector">
 
-    <div class="upload-box">
-      <input type="file" id="imageInput" accept="image/*">
+    <!-- Drag & Drop Area -->
+    <div id="dropZone" class="drop-zone">
 
-      <div id="imagePreview" class="image-preview"></div>
+      <div class="upload-icon">🖼️</div>
+
+      <h3>Drop your image here</h3>
+
+      <p>أو اسحب الصورة هنا</p>
+
+      <span>JPG, PNG, WEBP</span>
+
+      <button type="button" id="browseButton">
+        Browse Image
+      </button>
+
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/*"
+        hidden
+      >
+
     </div>
 
-    <button id="analyzeButton">تحليل الصورة</button>
+    <!-- Image Preview -->
+    <div id="imagePreview" class="image-preview"></div>
+
+    <!-- Analyze -->
+    <button id="analyzeButton">
+      تحليل الصورة
+    </button>
 
     <p id="detectorStatus"></p>
 
+    <!-- Result -->
     <div id="detectorResult"></div>
 
-    <button id="resetDetector" class="reset-button" style="display:none;">
+    <!-- Reset -->
+    <button
+      id="resetDetector"
+      class="reset-button"
+      style="display:none;"
+    >
       تحليل صورة أخرى
     </button>
 
@@ -44,6 +75,7 @@
   <p class="detector-note">
     ⚠️ النتيجة تقديرية وليست دليلًا قاطعًا على أن الصورة مولدة بالذكاء الاصطناعي.
   </p>
+
 </section>
 
   <h2>أحدث المقالات</h2>
