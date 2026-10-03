@@ -396,41 +396,202 @@ header h1 a {
 
 
 /* AI Score Circle */
+/* =========================
+   AI IMAGE DETECTOR
+========================= */
 
-.score-circle {
-  width: 170px;
-  height: 170px;
+.ai-detector {
+  max-width: 650px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+
+/* Drag & Drop */
+
+.drop-zone {
+  width: 100%;
+  max-width: 600px;
+  min-height: 250px;
+
   margin: 25px auto;
-  border-radius: 50%;
+
+  border: 2px dashed #999;
+  border-radius: 18px;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  background: conic-gradient(
-    #222 0deg,
-    #222 var(--score),
-    #ddd var(--score),
-    #ddd 360deg
-  );
+  padding: 30px 20px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+
+  box-sizing: border-box;
 }
 
-.score-circle-inner {
-  width: 130px;
-  height: 130px;
-
-  border-radius: 50%;
-  background: #ffffff;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.drop-zone:hover {
+  border-color: #333;
+  transform: translateY(-2px);
 }
 
-.score-circle-inner span {
+.drop-zone.dragover {
+  border-color: #333;
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.01);
+}
+
+
+/* Upload Icon */
+
+.upload-icon {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+
+/* Text */
+
+.drop-zone h3 {
+  margin: 5px 0;
+  font-size: 22px;
+}
+
+.drop-zone p {
+  margin: 5px 0;
+  opacity: 0.7;
+}
+
+.drop-zone span {
+  font-size: 13px;
+  opacity: 0.6;
+  margin: 8px 0 15px;
+}
+
+
+/* Browse Button */
+
+#browseButton {
+  border: none;
+  padding: 11px 22px;
+
+  border-radius: 9px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+}
+
+
+/* Preview */
+
+.image-preview {
+  margin: 20px auto;
+}
+
+.image-preview img {
+  width: 280px;
+  height: 280px;
+
+  max-width: 90%;
+
+  object-fit: contain;
+
+  border-radius: 15px;
+
   display: block;
-  color: #111111 !important;
-  font-size: 32px;
-  font-weight: bold;
-  line-height: 1;
+
+  margin: auto;
 }
+
+
+/* Analyze Button */
+
+#analyzeButton,
+.reset-button {
+  padding: 12px 25px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  margin: 10px;
+}
+
+#analyzeButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* Result */
+
+.detector-result {
+  margin-top: 25px;
+  padding: 25px;
+
+  border-radius: 15px;
+}
+
+.detector-result.high {
+  border: 2px solid #d9534f;
+}
+
+.detector-result.medium {
+  border: 2px solid #f0ad4e;
+}
+
+.detector-result.low {
+  border: 2px solid #5cb85c;
+}
+
+
+/* Error */
+
+.detector-error {
+  margin-top: 20px;
+  padding: 15px;
+
+  border-radius: 10px;
+}
+
+
+/* Note */
+
+.detector-note {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 20px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .drop-zone {
+    min-height: 220px;
+    padding: 25px 15px;
+  }
+
+  .drop-zone h3 {
+    font-size: 19px;
+  }
+
+  .image-preview img {
+    width: 220px;
+    height: 220px;
+  }
+
+}
+
