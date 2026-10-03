@@ -25,172 +25,250 @@
 
   </nav>
   <main>
+    <main>
+
+  <!-- الصفحة الرئيسية -->
+  <section id="home">
+
+    <!-- كاشف الصور -->
+    <section id="detector">
+
+      <h2>كاشف الصور بالذكاء الاصطناعي</h2>
+
+      <p>
+        ارفع صورة لمعرفة احتمالية كونها مولدة بالذكاء الاصطناعي.
+      </p>
+
+      <div class="ai-detector">
+
+        <!-- Drag & Drop Area -->
+        <div id="dropZone" class="drop-zone">
+
+          <div class="upload-icon">🖼️</div>
+
+          <h3>Drop your image here</h3>
+
+          <p>أو اسحب الصورة هنا</p>
+
+          <span>JPG, PNG, WEBP</span>
+
+          <button type="button" id="browseButton">
+            Browse Image
+          </button>
+
+          <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+            hidden
+          >
+
+        </div>
+
+        <!-- Image Preview -->
+        <div id="imagePreview" class="image-preview"></div>
+
+        <!-- Analyze -->
+        <button id="analyzeButton">
+          تحليل الصورة
+        </button>
+
+        <p id="detectorStatus"></p>
+
+        <!-- Result -->
+        <div id="detectorResult"></div>
+
+        <!-- Reset -->
+        <button
+          id="resetDetector"
+          class="reset-button"
+          style="display:none;"
+        >
+          تحليل صورة أخرى
+        </button>
+
+      </div>
+
+      <p class="detector-note">
+        ⚠️ النتيجة تقديرية وليست دليلًا قاطعًا على أن الصورة مولدة بالذكاء الاصطناعي.
+      </p>
+
+    </section>
+
+
     <!-- أحدث المقالات -->
-<section id="home">
+    <section id="latest-articles">
 
-  <!-- كاشف الصور -->
-<section id="detector">
-
-  <h2>كاشف الصور بالذكاء الاصطناعي</h2>
-
-  <p>
-    ارفع صورة لمعرفة احتمالية كونها مولدة بالذكاء الاصطناعي.
-  </p>
-
-  <div class="ai-detector">
-
-    <!-- Drag & Drop Area -->
-    <div id="dropZone" class="drop-zone">
-
-      <div class="upload-icon">🖼️</div>
-
-      <h3>Drop your image here</h3>
-
-      <p>أو اسحب الصورة هنا</p>
-
-      <span>JPG, PNG, WEBP</span>
-
-      <button type="button" id="browseButton">
-        Browse Image
-      </button>
-
-      <input
-        type="file"
-        id="imageInput"
-        accept="image/*"
-        hidden
-      >
-
-    </div>
-
-    <!-- Image Preview -->
-    <div id="imagePreview" class="image-preview"></div>
-
-    <!-- Analyze -->
-    <button id="analyzeButton">
-      تحليل الصورة
-    </button>
-
-    <p id="detectorStatus"></p>
-
-    <!-- Result -->
-    <div id="detectorResult"></div>
-
-    <!-- Reset -->
-    <button
-      id="resetDetector"
-      class="reset-button"
-      style="display:none;"
-    >
-      تحليل صورة أخرى
-    </button>
-
-  </div>
-
-  <p class="detector-note">
-    ⚠️ النتيجة تقديرية وليست دليلًا قاطعًا على أن الصورة مولدة بالذكاء الاصطناعي.
-  </p>
-
-</section>
-
-  <h2>أحدث المقالات</h2>
-
-  <article class="home-card">
-    <img src="image/pexels-beyzaa-yurtkuran-279977530-16245252.jpg" alt="استخدام ChatGPT">
-
-    <div class="home-card-content">
-      <span class="category">الذكاء الاصطناعي</span>
-
-      <h3>كيف تستخدم ChatGPT؟ دليل كامل للمبتدئين</h3>
+      <h2>أحدث المقالات</h2>
 
       <p>
-        تعرف على طريقة استخدام ChatGPT وكتابة طلبات واضحة للحصول على إجابات أفضل.
+        تعرف على أحدث المقالات والشروحات عن الذكاء الاصطناعي والتقنية.
       </p>
 
-      <a href="article.html" class="read-more">اقرأ المقال ←</a>
-    </div>
-  </article>
+
+      <!-- مقال ChatGPT -->
+      <article class="home-card">
+
+        <img
+          src="image/pexels-beyzaa-yurtkuran-279977530-16245252.jpg"
+          alt="استخدام ChatGPT"
+        >
+
+        <div class="home-card-content">
+
+          <span class="category">
+            الذكاء الاصطناعي
+          </span>
+
+          <h3>
+            كيف تستخدم ChatGPT؟ دليل كامل للمبتدئين
+          </h3>
+
+          <p>
+            تعرف على طريقة استخدام ChatGPT وكتابة طلبات واضحة
+            للحصول على إجابات أفضل والاستفادة من الذكاء الاصطناعي
+            في التعلم والكتابة والبحث.
+          </p>
+
+          <a
+            href="article.html"
+            class="read-more"
+          >
+            اقرأ المقال ←
+          </a>
+
+        </div>
+
+      </article>
 
 
-  <article class="home-card">
-    <img src="image/planet-volumes-LTJGCRNEw7g-unsplash.jpg"
-         alt="Claude AI">
+      <!-- مقال Claude -->
+      <article class="home-card">
 
-    <div class="home-card-content">
-      <span class="category">الذكاء الاصطناعي</span>
+        <img
+          src="image/planet-volumes-LTJGCRNEw7g-unsplash.jpg"
+          alt="Claude AI"
+        >
 
-      <h3>ما هو Claude AI؟ دليل شامل للمبتدئين</h3>
+        <div class="home-card-content">
+
+          <span class="category">
+            الذكاء الاصطناعي
+          </span>
+
+          <h3>
+            ما هو Claude AI؟ دليل شامل للمبتدئين
+          </h3>
+
+          <p>
+            تعرف على Claude AI واستخداماته في الكتابة
+            والبرمجة وتحليل المعلومات والملفات،
+            وما الذي يميزه كمساعد للذكاء الاصطناعي.
+          </p>
+
+          <a
+            href="Claude.html"
+            class="read-more"
+          >
+            اقرأ المقال ←
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- مقال Claude vs ChatGPT -->
+      <article class="home-card">
+
+        <img
+          src="image/Claude AI VS ChatGPT.jpg"
+          alt="مقارنة بين Claude وChatGPT"
+        >
+
+        <div class="home-card-content">
+
+          <span class="category">
+            الذكاء الاصطناعي
+          </span>
+
+          <h3>
+            Claude AI vs ChatGPT: هل هما نفس الشيء؟
+          </h3>
+
+          <p>
+            مقارنة بين Claude وChatGPT من حيث الكتابة
+            والبرمجة وتحليل الملفات والاستخدامات المختلفة.
+          </p>
+
+          <a
+            href="claude-vs-chatgpt.html"
+            class="read-more"
+          >
+            اقرأ المقال ←
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- جميع المقالات -->
+      <div style="text-align:center; margin-top:30px;">
+
+        <a
+          href="articles.html"
+          class="read-more"
+        >
+          عرض جميع المقالات ←
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- الذكاء الاصطناعي -->
+    <section id="ai">
+
+      <h2>الذكاء الاصطناعي</h2>
 
       <p>
-        تعرف على Claude AI واستخداماته في الكتابة والبرمجة وتحليل المعلومات والملفات.
+        أخبار وشروحات وأدوات الذكاء الاصطناعي باللغة العربية.
       </p>
 
-      <a href="Claude.html" class="read-more">اقرأ المقال ←</a>
-    </div>
-  </article>
+    </section>
 
-  <article class="home-card">
-    <img src="image/Claude AI VS ChatGPT.jpg"
-         alt="مقارنة بين Claude وChatGPT">
 
-    <div class="home-card-content">
-      <span class="category">الذكاء الاصطناعي</span>
+    <!-- التقنية -->
+    <section id="tech">
 
-      <h3>Claude AI vs ChatGPT: هل هما نفس الشيء؟</h3>
+      <h2>التقنية</h2>
 
       <p>
-        مقارنة بين Claude وChatGPT من حيث الكتابة والبرمجة
-        وتحليل الملفات والاستخدامات المختلفة.
+        مقالات مبسطة عن أحدث التقنيات.
       </p>
 
-      <a href="claude-vs-chatgpt.html" class="read-more">
-        اقرأ المقال ←
-      </a>
-    </div>
-  </article>
-
-</section>
+    </section>
 
 
-<!-- الذكاء الاصطناعي -->
-<section id="ai">
+    <!-- عن الموقع -->
+    <section id="about">
 
-  <h2>الذكاء الاصطناعي</h2>
+      <h2>عن AI بالعربي</h2>
 
-  <p>
-    أخبار وشروحات وأدوات الذكاء الاصطناعي باللغة العربية.
-  </p>
+      <p>
+        AI بالعربي هو موقع يهدف إلى تقديم محتوى مبسط عن
+        الذكاء الاصطناعي والتقنية باللغة العربية.
+      </p>
 
-</section>
+    </section>
 
+  </section>
 
-<!-- التقنية -->
-<section id="tech">
+  </main>
 
-  <h2>التقنية</h2>
-
-  <p>
-    مقالات مبسطة عن أحدث التقنيات.
-  </p>
-
-</section>
-
-
-
-<!-- عن الموقع -->
-<section id="about">
-
-  <h2>عن AI بالعربي</h2>
-
-  <p>
-    AI بالعربي هو موقع يهدف إلى تقديم محتوى مبسط عن
-    الذكاء الاصطناعي والتقنية باللغة العربية.
-  </p>
-
-</section>
-
-  </main>  <footer><p>© 2026 AI بالعربي</p>
-
+   <footer><p>© 2026 AI بالعربي</p>
   </footer>  <script src="script.js?v=6"></script>
   
   </body>
