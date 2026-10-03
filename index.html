@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+0<!DOCTYPE html><html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>AI بالعربي | الذكاء الاصطناعي والتقنية باللغة العربية</title>  <link rel="icon" type="image/png" href="images/logo.png">  <meta name="description" content="AI بالعربي يقدم شروحات ومقالات مبسطة عن الذكاء الاصطناعي، ChatGPT، وأحدث التقنيات باللغة العربية.">  <meta name="keywords" content="الذكاء الاصطناعي, AI, ChatGPT, التقنية, الذكاء الاصطناعي بالعربي">  <meta name="author" content="AI بالعربي">  <meta name="robots" content="index, follow">  <link rel="canonical" href="https://aibelarabic.github.io/">  <link rel="stylesheet" href="style.css">
 </head><body>  <header>
@@ -12,6 +12,39 @@
     <a href="#about">عن الموقع</a>
   </nav>  <main><!-- أحدث المقالات -->
 <section id="home">
+
+  <!-- كاشف الصور -->
+<section id="detector">
+  <h2>كاشف الصور بالذكاء الاصطناعي</h2>
+
+  <p>
+    ارفع صورة لمعرفة احتمالية كونها مولدة بالذكاء الاصطناعي.
+  </p>
+
+  <div class="ai-detector">
+
+    <div class="upload-box">
+      <input type="file" id="imageInput" accept="image/*">
+
+      <div id="imagePreview" class="image-preview"></div>
+    </div>
+
+    <button id="analyzeButton">تحليل الصورة</button>
+
+    <p id="detectorStatus"></p>
+
+    <div id="detectorResult"></div>
+
+    <button id="resetDetector" class="reset-button" style="display:none;">
+      تحليل صورة أخرى
+    </button>
+
+  </div>
+
+  <p class="detector-note">
+    ⚠️ النتيجة تقديرية وليست دليلًا قاطعًا على أن الصورة مولدة بالذكاء الاصطناعي.
+  </p>
+</section>
 
   <h2>أحدث المقالات</h2>
 
@@ -124,39 +157,6 @@
 
 </section>
 
-
-<!-- كاشف الصور -->
-<section id="detector">
-  <h2>كاشف الصور بالذكاء الاصطناعي</h2>
-
-  <p>
-    ارفع صورة لمعرفة احتمالية كونها مولدة بالذكاء الاصطناعي.
-  </p>
-
-  <div class="ai-detector">
-
-    <div class="upload-box">
-      <input type="file" id="imageInput" accept="image/*">
-
-      <div id="imagePreview" class="image-preview"></div>
-    </div>
-
-    <button id="analyzeButton">تحليل الصورة</button>
-
-    <p id="detectorStatus"></p>
-
-    <div id="detectorResult"></div>
-
-    <button id="resetDetector" class="reset-button" style="display:none;">
-      تحليل صورة أخرى
-    </button>
-
-  </div>
-
-  <p class="detector-note">
-    ⚠️ النتيجة تقديرية وليست دليلًا قاطعًا على أن الصورة مولدة بالذكاء الاصطناعي.
-  </p>
-</section>
 
 
 <!-- عن الموقع -->
