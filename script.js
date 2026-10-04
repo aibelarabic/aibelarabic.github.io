@@ -32,34 +32,20 @@ if (
   resetDetector
 ) {
 
-  // =========================
   // Browse Button
-  // =========================
-
   browseButton.addEventListener("click", (event) => {
-
     event.stopPropagation();
-
     imageInput.click();
-
   });
 
 
-  // =========================
   // Click Drop Zone
-  // =========================
-
   dropZone.addEventListener("click", () => {
-
     imageInput.click();
-
   });
 
 
-  // =========================
   // File Selected
-  // =========================
-
   imageInput.addEventListener("change", () => {
 
     const file = imageInput.files[0];
@@ -71,10 +57,7 @@ if (
   });
 
 
-  // =========================
   // Drag Over
-  // =========================
-
   dropZone.addEventListener("dragover", (event) => {
 
     event.preventDefault();
@@ -84,10 +67,7 @@ if (
   });
 
 
-  // =========================
   // Drag Leave
-  // =========================
-
   dropZone.addEventListener("dragleave", () => {
 
     dropZone.classList.remove("dragover");
@@ -95,10 +75,7 @@ if (
   });
 
 
-  // =========================
   // Drop
-  // =========================
-
   dropZone.addEventListener("drop", (event) => {
 
     event.preventDefault();
@@ -114,10 +91,7 @@ if (
   });
 
 
-  // =========================
   // Handle Image
-  // =========================
-
   function handleFile(file) {
 
     if (!file.type.startsWith("image/")) {
@@ -129,7 +103,6 @@ if (
     }
 
 
-    // Put file into input
     const dataTransfer = new DataTransfer();
 
     dataTransfer.items.add(file);
@@ -137,7 +110,6 @@ if (
     imageInput.files = dataTransfer.files;
 
 
-    // Preview
     const imageURL = URL.createObjectURL(file);
 
     imagePreview.innerHTML = `
@@ -148,7 +120,6 @@ if (
     `;
 
 
-    // Reset previous result
     detectorStatus.textContent = "";
 
     detectorResult.innerHTML = "";
@@ -158,10 +129,7 @@ if (
   }
 
 
-  // =========================
   // Analyze Image
-  // =========================
-
   analyzeButton.addEventListener("click", async () => {
 
     const file = imageInput.files[0];
@@ -192,11 +160,8 @@ if (
 
 
       const response = await fetch(WORKER_URL, {
-
         method: "POST",
-
         body: formData
-
       });
 
 
@@ -267,7 +232,6 @@ if (
       }
 
 
-      // Result
       detectorResult.innerHTML = `
 
         <div class="detector-result ${resultClass}">
@@ -345,10 +309,7 @@ if (
   });
 
 
-  // =========================
   // Reset
-  // =========================
-
   resetDetector.addEventListener("click", () => {
 
     imageInput.value = "";
@@ -418,3 +379,5 @@ if (darkModeToggle) {
     }
 
   });
+
+      }
