@@ -343,3 +343,42 @@ resetDetector.addEventListener("click", () => {
   resetDetector.style.display = "none";
 
 }); 
+
+// =========================
+// DARK MODE
+// =========================
+
+const darkModeToggle =
+  document.getElementById("darkModeToggle");
+
+if (darkModeToggle) {
+
+  // Restore saved mode
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+    darkModeToggle.textContent = "☀️ الوضع الفاتح";
+  }
+
+  // Toggle mode
+  darkModeToggle.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+
+      localStorage.setItem("darkMode", "enabled");
+
+      darkModeToggle.textContent =
+        "☀️ الوضع الفاتح";
+
+    } else {
+
+      localStorage.setItem("darkMode", "disabled");
+
+      darkModeToggle.textContent =
+        "🌙 الوضع الداكن";
+    }
+
+  });
+
+}
