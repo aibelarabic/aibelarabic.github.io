@@ -595,3 +595,102 @@ header h1 a {
 
 }
 
+/* =========================
+   DARK MODE
+========================= */
+
+#darkModeToggle {
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0 12px;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+#darkModeToggle:hover {
+  background: #f1f1f1;
+}
+
+
+/* Dark Mode */
+
+body.dark-mode {
+  background: #111827;
+  color: #f3f4f6;
+}
+
+body.dark-mode header {
+  background: #030712;
+}
+
+body.dark-mode nav {
+  background: #1f2937;
+  border-bottom-color: #374151;
+}
+
+body.dark-mode nav a {
+  color: #f3f4f6;
+}
+
+body.dark-mode #darkModeToggle {
+  color: #f3f4f6;
+}
+
+body.dark-mode #darkModeToggle:hover {
+  background: #374151;
+}
+
+body.dark-mode article,
+body.dark-mode section {
+  background: #1f2937;
+  color: #f3f4f6;
+}
+
+body.dark-mode .home-card-content p {
+  color: #d1d5db;
+}
+
+body.dark-mode .article-date {
+  color: #9ca3af;
+}
+
+body.dark-mode .tip-box {
+  background: #111827;
+  border-right-color: #9ca3af;
+}
+
+body.dark-mode .back-home {
+  color: #f3f4f6;
+}
+
+body.dark-mode footer {
+  background: #030712;
+}
+
+body.dark-mode .drop-zone {
+  border-color: #6b7280;
+}
+
+body.dark-mode .drop-zone:hover {
+  border-color: #d1d5db;
+}
+
+body.dark-mode .drop-zone.dragover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .score-circle-inner {
+  background: #1f2937;
+}
+
+body.dark-mode .score-circle-inner span {
+  color: #f3f4f6 !important;
+}
+
+body.dark-mode .progress-container {
+  background: #374151;
+}
