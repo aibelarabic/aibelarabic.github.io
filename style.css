@@ -694,3 +694,27 @@ body.dark-mode .score-circle-inner span {
 body.dark-mode .progress-container {
   background: #374151;
 }
+
+
+/* =========================
+   FIX COMPARISON TABLE DARK MODE
+========================= */
+
+body.dark-mode table {
+  color: #f3f4f6;
+}
+
+body.dark-mode table th {
+  background: #111827 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode table td {
+  background: #1f2937 !important;
+  color: #f3f4f6 !important;
+}
+
+body.dark-mode table tr:nth-child(even) td {
+  background: #374151 !important;
+  color: #f3f4f6 !important;
+}
