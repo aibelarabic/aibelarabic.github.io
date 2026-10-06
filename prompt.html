@@ -1,60 +1,20 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>محسن الـPrompt بالعربي | AI بالعربي</title>
+  <title>محسن الـPrompt بالذكاء الاصطناعي | AI بالعربي</title>
 
-<meta
-name="description"
-content="حسّن أفكارك وحوّلها إلى Prompts واضحة واحترافية باستخدام أداة تحسين البرومبت من AI بالعربي."
-
->
-
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="AI بالعربي">
-
-  <link
-    rel="canonical"
-    href="https://aibelarabic.github.io/prompt.html"
-  >
-
-  <link
-    rel="icon"
-    type="image/png"
-    href="image/Icon.png"
-  >
+  <meta name="description" content="حسّن الـPrompt الخاص بك باستخدام الذكاء الاصطناعي واحصل على صياغة أوضح وأكثر دقة.">
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Google Analytics -->
-
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-SYXLTRRN4Q">
-  </script>
-
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag(){
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'G-SYXLTRRN4Q');
-  </script>
-
   <style>
-
-    .prompt-page {
-      max-width: 900px;
+    .prompt-tool {
+      max-width: 850px;
       margin: 40px auto;
-      padding: 0 15px;
+      padding: 0 20px;
     }
 
     .prompt-header {
@@ -62,573 +22,358 @@ content="حسّن أفكارك وحوّلها إلى Prompts واضحة واحت
       margin-bottom: 30px;
     }
 
-    .prompt-header h2 {
+    .prompt-header h1 {
       font-size: 32px;
       margin-bottom: 12px;
     }
 
     .prompt-header p {
       color: #666;
-      font-size: 17px;
       line-height: 1.8;
     }
 
     .prompt-box {
       background: #fff;
-      padding: 25px;
       border-radius: 14px;
+      padding: 25px;
       box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-      border: 1px solid #e5e7eb;
     }
 
-    .prompt-label {
+    .prompt-box label {
       display: block;
       font-weight: bold;
       margin-bottom: 10px;
-      font-size: 17px;
     }
 
     #promptInput {
       width: 100%;
       min-height: 180px;
-      padding: 16px;
-      border: 1px solid #d1d5db;
-      border-radius: 10px;
       resize: vertical;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
       font-family: inherit;
       font-size: 16px;
-      line-height: 1.8;
+      line-height: 1.7;
       box-sizing: border-box;
-      background: #fff;
-      color: #111827;
+      outline: none;
     }
 
     #promptInput:focus {
-      outline: none;
       border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
     }
 
-    .prompt-actions {
-      display: flex;
-      gap: 10px;
+    .optimize-btn {
+      width: 100%;
       margin-top: 15px;
-      flex-wrap: wrap;
-    }
-
-    .prompt-button {
+      padding: 14px;
       border: none;
-      border-radius: 9px;
-      padding: 12px 22px;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      font-size: 17px;
       font-family: inherit;
-      font-size: 16px;
       cursor: pointer;
       transition: 0.2s;
     }
 
-    .prompt-button.primary {
-      background: #2563eb;
-      color: white;
+    .optimize-btn:hover {
+      background: #1d4ed8;
     }
 
-    .prompt-button.primary:hover {
-      opacity: 0.9;
-    }
-
-    .prompt-button.secondary {
-      background: #e5e7eb;
-      color: #111827;
-    }
-
-    .prompt-button:disabled {
+    .optimize-btn:disabled {
       opacity: 0.6;
       cursor: not-allowed;
     }
 
-    .prompt-status {
-      margin-top: 15px;
-      display: none;
+    .status {
       text-align: center;
+      margin-top: 15px;
       font-size: 15px;
     }
 
-    .prompt-result {
+    .result-box {
       display: none;
       margin-top: 25px;
       background: #fff;
-      padding: 25px;
       border-radius: 14px;
-      border: 1px solid #e5e7eb;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      padding: 25px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
     }
 
-    .prompt-result-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
+    .result-box h2 {
+      margin-top: 0;
+      font-size: 22px;
     }
 
-    .prompt-result h3 {
-      margin: 0;
-    }
-
-    #promptOutput {
+    #resultText {
       white-space: pre-wrap;
-      background: #f8fafc;
-      border: 1px solid #e5e7eb;
+      line-height: 1.9;
+      background: #f5f7fa;
       border-radius: 10px;
       padding: 18px;
-      line-height: 1.9;
       font-size: 16px;
-      min-height: 120px;
-      direction: rtl;
     }
 
-    .copy-button {
+    .copy-btn {
+      margin-top: 12px;
+      padding: 11px 18px;
       border: none;
+      border-radius: 8px;
       background: #111827;
       color: white;
-      padding: 9px 15px;
-      border-radius: 8px;
-      cursor: pointer;
       font-family: inherit;
-    }
-
-    .prompt-examples {
-      margin-top: 30px;
-      background: #f8fafc;
-      border-radius: 12px;
-      padding: 20px;
-    }
-
-    .prompt-examples h3 {
-      margin-top: 0;
-    }
-
-    .example {
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      padding: 12px 15px;
-      border-radius: 8px;
-      margin-top: 10px;
       cursor: pointer;
-      transition: 0.2s;
     }
 
-    .example:hover {
-      border-color: #2563eb;
+    .back-home {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      color: #2563eb;
+      text-decoration: none;
     }
 
     /* Dark mode */
     body.dark-mode .prompt-box,
-    body.dark-mode .prompt-result {
+    body.dark-mode .result-box {
       background: #1f2937;
-      border-color: #374151;
-    }
-
-    body.dark-mode #promptInput {
-      background: #111827;
-      color: #f9fafb;
-      border-color: #374151;
-    }
-
-    body.dark-mode #promptOutput {
-      background: #111827;
-      border-color: #374151;
-      color: #f9fafb;
-    }
-
-    body.dark-mode .prompt-examples {
-      background: #111827;
-    }
-
-    body.dark-mode .example {
-      background: #1f2937;
-      border-color: #374151;
+      color: #fff;
     }
 
     body.dark-mode .prompt-header p {
       color: #d1d5db;
     }
 
-    body.dark-mode .prompt-button.secondary {
-      background: #374151;
-      color: #f9fafb;
+    body.dark-mode #promptInput {
+      background: #111827;
+      color: #fff;
+      border-color: #374151;
     }
 
+    body.dark-mode #resultText {
+      background: #111827;
+      color: #fff;
+    }
   </style>
-
 </head>
 
 <body>
 
   <header>
+    <div class="container">
+      <a href="index.html" style="text-decoration:none; color:inherit;">
+        <h1>AI بالعربي</h1>
+      </a>
 
-```
-<h1>
-  <a href="index.html">
-    AI بالعربي
-  </a>
-</h1>
-
-<p>
-  الذكاء الاصطناعي والتقنية باللغة العربية
-</p>
-```
-
+      <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="articles.html">المقالات</a>
+        <button id="darkModeToggle" type="button">🌙</button>
+      </nav>
+    </div>
   </header>
 
-  <nav>
+  <main class="prompt-tool">
 
-```
-<a href="index.html">الرئيسية</a>
+    <section class="prompt-header">
+      <h1>محسّن الـPrompt 🤖</h1>
 
-<a href="articles.html">المقالات</a>
+      <p>
+        اكتب الـPrompt الخاص بك، ودع الذكاء الاصطناعي يساعدك
+        على تحسينه وجعله أكثر وضوحًا ودقة للحصول على نتائج أفضل.
+      </p>
+    </section>
 
-<a href="prompt.html">أدوات AI</a>
+    <section class="prompt-box">
 
-<a href="index.html#about">عن الموقع</a>
+      <label for="promptInput">اكتب الـPrompt هنا</label>
 
-<button
-  id="darkModeToggle"
-  type="button">
-  🌙 الوضع الداكن
-</button>
-```
-
-  </nav>
-
-  <main>
-
-```
-<section class="prompt-page">
-
-  <div class="prompt-header">
-
-    <span class="category">
-      أدوات AI
-    </span>
-
-    <h2>
-      محسن الـPrompt بالعربي
-    </h2>
-
-    <p>
-      اكتب فكرتك بطريقة بسيطة، ودع الأداة تحولها إلى
-      Prompt أوضح وأكثر تفصيلًا لتحصل على نتائج أفضل
-      من أدوات الذكاء الاصطناعي.
-    </p>
-
-  </div>
-
-
-  <div class="prompt-box">
-
-    <label
-      class="prompt-label"
-      for="promptInput">
-      اكتب فكرتك هنا
-    </label>
-
-    <textarea
-      id="promptInput"
-      placeholder="مثال: أريد صورة لمدينة مستقبلية في الليل..."
-    ></textarea>
-
-    <div class="prompt-actions">
+      <textarea
+        id="promptInput"
+        placeholder="مثال: اكتب لي مقال عن الذكاء الاصطناعي..."
+      ></textarea>
 
       <button
-        id="improveButton"
-        class="prompt-button primary"
-        type="button">
-        ✨ حسّن الـPrompt
+        id="optimizeButton"
+        class="optimize-btn"
+        type="button"
+      >
+        ✨ تحسين الـPrompt
       </button>
 
-      <button
-        id="clearButton"
-        class="prompt-button secondary"
-        type="button">
-        مسح
+      <div id="status" class="status"></div>
+
+    </section>
+
+    <section id="resultBox" class="result-box">
+
+      <h2>الـPrompt المحسّن</h2>
+
+      <div id="resultText"></div>
+
+      <button id="copyButton" class="copy-btn" type="button">
+        📋 نسخ الـPrompt
       </button>
 
-    </div>
+    </section>
 
-    <div
-      id="promptStatus"
-      class="prompt-status">
-    </div>
-
-  </div>
-
-
-  <div
-    id="promptResult"
-    class="prompt-result">
-
-    <div class="prompt-result-header">
-
-      <h3>
-        الـPrompt المحسن
-      </h3>
-
-      <button
-        id="copyButton"
-        class="copy-button"
-        type="button">
-        📋 نسخ
-      </button>
-
-    </div>
-
-    <div id="promptOutput"></div>
-
-  </div>
-
-
-  <div class="prompt-examples">
-
-    <h3>
-      أمثلة يمكنك تجربتها
-    </h3>
-
-    <div
-      class="example"
-      data-example="أريد صورة لمدينة مستقبلية في الليل">
-      🏙️ صورة لمدينة مستقبلية
-    </div>
-
-    <div
-      class="example"
-      data-example="أريد كتابة مقال عن فوائد الذكاء الاصطناعي للطلاب">
-      ✍️ مقال عن الذكاء الاصطناعي
-    </div>
-
-    <div
-      class="example"
-      data-example="أريد تصميم شعار بسيط لموقع عربي عن الذكاء الاصطناعي">
-      🎨 تصميم شعار لموقع AI
-    </div>
-
-  </div>
-
-</section>
-```
+    <a class="back-home" href="index.html">
+      ← العودة إلى الرئيسية
+    </a>
 
   </main>
 
-  <footer>
-
-```
-<p>
-  © 2026 AI بالعربي
-</p>
-```
-
-  </footer>
-
-  <script src="script.js?v=7"></script>
-
   <script>
 
-    /*
-      ضع هنا رابط Cloudflare Worker الخاص بك
-      بعد إنشائه.
+    // رابط Cloudflare Worker
+    const WORKER_URL =
+      "https://ai-prompt-optimizer.khelmy627.workers.dev/";
 
-      مثال:
-      https://ai-prompt.aibelarabic.workers.dev
-    */
-
-    const API_URL =
-      "ضع-رابط-الـWorker-هنا";
-
-
-    const input =
+    const promptInput =
       document.getElementById("promptInput");
 
-    const improveButton =
-      document.getElementById("improveButton");
+    const optimizeButton =
+      document.getElementById("optimizeButton");
 
-    const clearButton =
-      document.getElementById("clearButton");
+    const status =
+      document.getElementById("status");
+
+    const resultBox =
+      document.getElementById("resultBox");
+
+    const resultText =
+      document.getElementById("resultText");
 
     const copyButton =
       document.getElementById("copyButton");
 
-    const output =
-      document.getElementById("promptOutput");
 
-    const result =
-      document.getElementById("promptResult");
+    optimizeButton.addEventListener("click", async () => {
 
-    const status =
-      document.getElementById("promptStatus");
+      const prompt = promptInput.value.trim();
 
+      if (!prompt) {
+        status.textContent = "من فضلك اكتب Prompt أولًا.";
+        return;
+      }
 
-    improveButton.addEventListener(
-      "click",
-      async function () {
+      optimizeButton.disabled = true;
+      optimizeButton.textContent = "⏳ جاري تحسين الـPrompt...";
+      status.textContent = "";
+      resultBox.style.display = "none";
 
-        const text =
-          input.value.trim();
+      try {
 
-        if (!text) {
+        const response = await fetch(WORKER_URL, {
+          method: "POST",
 
-          status.style.display = "block";
+          headers: {
+            "Content-Type": "application/json"
+          },
 
-          status.textContent =
-            "اكتب فكرتك أولًا.";
+          body: JSON.stringify({
+            prompt: prompt
+          })
+        });
 
-          return;
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(
+            data.error || "حدث خطأ أثناء معالجة الطلب."
+          );
         }
 
+        if (!data.result) {
+          throw new Error(
+            "لم يتم الحصول على نتيجة من الذكاء الاصطناعي."
+          );
+        }
 
-        improveButton.disabled = true;
+        resultText.textContent = data.result;
 
-        status.style.display = "block";
+        resultBox.style.display = "block";
+
+        status.textContent = "تم تحسين الـPrompt بنجاح ✅";
+
+        resultBox.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      } catch (error) {
+
+        console.error(error);
 
         status.textContent =
-          "⏳ جاري تحسين الـPrompt...";
+          "حدث خطأ أثناء الاتصال بالخدمة. حاول مرة أخرى.";
 
-        result.style.display = "none";
+      } finally {
 
-
-        try {
-
-          const response =
-            await fetch(API_URL, {
-
-              method: "POST",
-
-              headers: {
-                "Content-Type": "application/json"
-              },
-
-              body: JSON.stringify({
-                prompt: text
-              })
-
-            });
-
-
-          const data =
-            await response.json();
-
-
-          if (!response.ok) {
-
-            throw new Error(
-              data.error ||
-              "حدث خطأ أثناء الاتصال بالخادم."
-            );
-
-          }
-
-
-          output.textContent =
-            data.result;
-
-          result.style.display =
-            "block";
-
-          status.textContent =
-            "✅ تم تحسين الـPrompt بنجاح.";
-
-
-        } catch (error) {
-
-          console.error(error);
-
-          status.textContent =
-            "❌ حدث خطأ. تأكد من إعداد الـWorker ورابطه.";
-
-        } finally {
-
-          improveButton.disabled =
-            false;
-
-        }
+        optimizeButton.disabled = false;
+        optimizeButton.textContent = "✨ تحسين الـPrompt";
 
       }
-    );
+
+    });
 
 
-    clearButton.addEventListener(
-      "click",
-      function () {
+    copyButton.addEventListener("click", async () => {
 
-        input.value = "";
+      const text = resultText.textContent;
 
-        output.textContent = "";
+      if (!text) return;
 
-        result.style.display = "none";
+      try {
 
-        status.style.display = "none";
+        await navigator.clipboard.writeText(text);
+
+        copyButton.textContent = "تم النسخ ✅";
+
+        setTimeout(() => {
+          copyButton.textContent = "📋 نسخ الـPrompt";
+        }, 2000);
+
+      } catch {
+
+        copyButton.textContent = "تعذر النسخ";
 
       }
-    );
+
+    });
 
 
-    copyButton.addEventListener(
-      "click",
-      async function () {
+    // Dark Mode
+    const darkModeToggle =
+      document.getElementById("darkModeToggle");
 
-        const text =
-          output.textContent;
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark-mode");
+    }
 
-        if (!text) return;
+    if (darkModeToggle) {
 
-        try {
+      darkModeToggle.addEventListener("click", () => {
 
-          await navigator.clipboard.writeText(text);
+        document.body.classList.toggle("dark-mode");
 
-          copyButton.textContent =
-            "✅ تم النسخ";
-
-          setTimeout(
-            function () {
-
-              copyButton.textContent =
-                "📋 نسخ";
-
-            },
-            1500
+        if (
+          document.body.classList.contains("dark-mode")
+        ) {
+          localStorage.setItem(
+            "darkMode",
+            "enabled"
           );
-
-        } catch {
-
-          copyButton.textContent =
-            "انسخ النص يدويًا";
-
+        } else {
+          localStorage.removeItem("darkMode");
         }
-
-      }
-    );
-
-
-    document
-      .querySelectorAll(".example")
-      .forEach(function (example) {
-
-        example.addEventListener(
-          "click",
-          function () {
-
-            input.value =
-              example.dataset.example;
-
-            input.focus();
-
-          }
-        );
 
       });
+
+    }
 
   </script>
 
 </body>
-
   </html>
-  
