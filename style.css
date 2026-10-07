@@ -124,7 +124,8 @@ footer {
 
 .article-content {
   font-size: 18px;
-}
+  padding: 0 18px;
+  }
 
 .article-content h3 {
   font-size: 25px;
