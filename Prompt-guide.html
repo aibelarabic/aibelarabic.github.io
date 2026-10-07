@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>كيفية كتابة Prompt احترافي؟ دليل عملي | AI بالعربي</title>
+
+  <meta name="description"
+    content="تعرف على كيفية كتابة Prompt احترافي للحصول على نتائج أفضل من أدوات الذكاء الاصطناعي، مع أمثلة عملية وقوالب جاهزة وأهم الأخطاء التي يجب تجنبها.">
+
+  <meta name="keywords"
+    content="كتابة Prompt, برومبت احترافي, Prompt احترافي, هندسة البرومبت, الذكاء الاصطناعي, ChatGPT, Gemini, Claude">
+
+  <meta name="author" content="AI بالعربي">
+
+  <link rel="canonical" href="https://aibelarabic.github.io/prompt-guide.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* Hero */
+
+    .prompt-hero {
+      background:
+        radial-gradient(circle at 15% 20%,
+        rgba(59, 130, 246, 0.28),
+        transparent 35%),
+        radial-gradient(circle at 85% 80%,
+        rgba(99, 102, 241, 0.22),
+        transparent 35%),
+        linear-gradient(135deg, #111827, #1e3a5f);
+
+      color: white;
+      padding: 55px 25px;
+      border-radius: 18px;
+      margin-bottom: 30px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prompt-hero::before {
+      content: "✦";
+      position: absolute;
+      font-size: 150px;
+      opacity: 0.04;
+      left: 20px;
+      top: -45px;
+    }
+
+    .prompt-hero::after {
+      content: "</>";
+      position: absolute;
+      font-size: 80px;
+      opacity: 0.035;
+      right: 20px;
+      bottom: -15px;
+      font-weight: bold;
+    }
+
+    .prompt-hero h1 {
+      margin: 0 auto 18px;
+      font-size: 2.1rem;
+      line-height: 1.5;
+      max-width: 800px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .prompt-hero p {
+      margin: 0 auto;
+      max-width: 720px;
+      line-height: 1.9;
+      font-size: 1.05rem;
+      color: #dbeafe;
+      position: relative;
+      z-index: 1;
+    }
+
+    .article-date {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: #bfdbfe;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Article */
+
+    .article-content {
+      line-height: 2;
+      font-size: 1.05rem;
+    }
+
+    .article-content h2 {
+      margin-top: 45px;
+      margin-bottom: 18px;
+      font-size: 1.55rem;
+      color: #111827;
+    }
+
+    .article-content h3 {
+      margin-top: 30px;
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+      color: #1f2937;
+    }
+
+    .article-content p {
+      margin: 15px 0;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      padding-right: 25px;
+      margin: 15px 0;
+    }
+
+    .article-content li {
+      margin-bottom: 10px;
+    }
+
+    /* Table of contents */
+
+    .toc {
+      background: #f1f5f9;
+      border-right: 4px solid #2563eb;
+      padding: 22px;
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+
+    .toc h2 {
+      margin: 0 0 15px;
+      font-size: 1.25rem;
+      color: #111827;
+    }
+
+    .toc ul {
+      margin: 0;
+      padding-right: 20px;
+    }
+
+    .toc li {
+      margin-bottom: 9px;
+    }
+
+    .toc a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    /* Prompt examples */
+
+    .prompt-example {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .prompt-example h3 {
+      margin-top: 0;
+    }
+
+    .bad-prompt {
+      border-right: 4px solid #ef4444;
+    }
+
+    .good-prompt {
+      border-right: 4px solid #22c55e;
+    }
+
+    .prompt-label {
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .bad-prompt .prompt-label {
+      color: #dc2626;
+    }
+
+    .good-prompt .prompt-label {
+      color: #16a34a;
+    }
+
+    .prompt-code {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 18px;
+      border-radius: 10px;
+      line-height: 1.9;
+      direction: rtl;
+      text-align: right;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* Special boxes */
+
+    .formula-box {
+      background: linear-gradient(135deg, #eff6ff, #f8fafc);
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 22px;
+      margin: 25px 0;
+      text-align: center;
+    }
+
+    .formula-box strong {
+      display: block;
+      color: #1d4ed8;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .tip-box {
+      background: #ecfdf5;
+      border-right: 4px solid #10b981;
+      padding: 18px;
+      border-radius: 10px;
+      margin: 25px 0;
+    }
+
+    .warning-box {
+      background: #fff7ed;
+      border-right: 4px solid #f97316;
+      padding: 18px;
+      border-radius: 10px;
+      margin: 25px 0;
+    }
+
+    /* Dark mode */
+
+    body.dark-mode .prompt-hero {
+      background:
+        radial-gradient(circle at 15% 20%,
+        rgba(59, 130, 246, .25),
+        transparent 35%),
+        radial-gradient(circle at 85% 80%,
+        rgba(99, 102, 241, .20),
+        transparent 35%),
+        linear-gradient(135deg, #0f172a, #172554);
+    }
+
+    body.dark-mode .article-content h2,
+    body.dark-mode .article-content h3 {
+      color: #f3f4f6;
+    }
+
+    body.dark-mode .toc {
+      background: #1f2937;
+      border-right-color: #60a5fa;
+    }
+
+    body.dark-mode .toc h2 {
+      color: #f3f4f6;
+    }
+
+    body.dark-mode .toc a {
+      color: #60a5fa;
+    }
+
+    body.dark-mode .prompt-example {
+      background: #1f2937;
+      border-color: #374151;
+    }
+
+    body.dark-mode .formula-box {
+      background: #172554;
+      border-color: #1e40af;
+    }
+
+    body.dark-mode .formula-box strong {
+      color: #93c5fd;
+    }
+
+    body.dark-mode .tip-box {
+      background: #052e25;
+    }
+
+    body.dark-mode .warning-box {
+      background: #431407;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+
+      <a href="index.html" class="logo">
+        AI بالعربي
+      </a>
+
+      <div class="nav-links">
+
+        <a href="index.html">
+          الرئيسية
+        </a>
+
+        <a href="articles.html">
+          المقالات
+        </a>
+
+        <button id="darkModeToggle"
+          aria-label="تبديل الوضع الداكن">
+          🌙
+        </button>
+
+      </div>
+    </nav>
+  </header>
+
+
+  <main class="container">
+
+    <!-- Hero -->
+
+    <section class="prompt-hero">
+
+      <h1>
+        كيفية كتابة Prompt احترافي؟
+        <br>
+        دليل عملي للحصول على أفضل نتائج من الذكاء الاصطناعي
+      </h1>
+
+      <p>
+        تعلّم كيف تكتب تعليمات واضحة وفعّالة للذكاء الاصطناعي،
+        مع أمثلة عملية وقوالب جاهزة تساعدك على الحصول على نتائج أفضل.
+      </p>
+
+      <div class="article-date">
+        دليل عملي من AI بالعربي
+      </div>
+
+    </section>
+
+
+    <article class="article-content">
+
+
+      <!-- Table of Contents -->
+
+      <div class="toc">
+
+        <h2>
+          ماذا سنتناول في هذا المقال؟
+        </h2>
+
+        <ul>
+
+          <li>
+            <a href="#what-is-prompt">
+              ما هو الـPrompt؟
+            </a>
+          </li>
+
+          <li>
+            <a href="#why-important">
+              لماذا طريقة كتابة الـPrompt مهمة؟
+            </a>
+          </li>
+
+          <li>
+            <a href="#elements">
+              عناصر الـPrompt الاحترافي
+            </a>
+          </li>
+
+          <li>
+            <a href="#step-by-step">
+              كيف تكتب Prompt احترافي خطوة بخطوة؟
+            </a>
+          </li>
+
+          <li>
+            <a href="#examples">
+              أمثلة على تحسين الـPrompts
+            </a>
+          </li>
+
+          <li>
+            <a href="#templates">
+              قوالب Prompts جاهزة
+            </a>
+          </li>
+
+          <li>
+            <a href="#mistakes">
+              أخطاء شائعة عند كتابة الـPrompt
+            </a>
+          </li>
+
+          <li>
+            <a href="#english">
+              هل يجب كتابة الـPrompt بالإنجليزية؟
+            </a>
+          </li>
+
+          <li>
+            <a href="#conclusion">
+              الخلاصة
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- Introduction -->
+
+      <h2 id="what-is-prompt">
+        ما هو الـPrompt؟
+      </h2>
+
+      <p>
+        الـPrompt هو النص أو التعليمات التي تكتبها للذكاء الاصطناعي
+        حتى توضح له المهمة التي تريد تنفيذها.
+      </p>
+
+      <p>
+        ببساطة، عندما تستخدم أدوات مثل ChatGPT أو Gemini أو Claude،
+        فإن الطريقة التي تصيغ بها طلبك تؤثر بشكل كبير على النتيجة
+        التي ستحصل عليها.
+      </p>
+
+      <p>
+        لذلك، لا يكفي أن تعرف ماذا تريد فقط، بل من المفيد أيضًا
+        أن تعرف كيف تشرح ما تريده للذكاء الاصطناعي بطريقة واضحة.
+      </p>
+
+
+      <!-- Why important -->
+
+      <h2 id="why-important">
+        لماذا طريقة كتابة الـPrompt مهمة؟
+      </h2>
+
+      <p>
+        الذكاء الاصطناعي يستطيع التعامل مع عدد كبير جدًا من المهام،
+        لكن النتيجة تعتمد على المعلومات والتعليمات التي تقدمها له.
+      </p>
+
+      <p>
+        على سبيل المثال، إذا كتبت:
+      </p>
+
+      <div class="prompt-example bad-prompt">
+
+        <span class="prompt-label">
+          Prompt ضعيف:
+        </span>
+
+        <div class="prompt-code">
+اكتب مقال عن الذكاء الاصطناعي
+        </div>
+
+      </div>
+
+      <p>
+        فمن المحتمل أن تحصل على مقال عام جدًا.
+        لكن عندما تحدد الموضوع والجمهور وطول المقال وشكله،
+        يصبح من الأسهل الحصول على نتيجة مناسبة لما تريده.
+      </p>
+
+
+      <div class="prompt-example good-prompt">
+
+        <span class="prompt-label">
+          Prompt أفضل:
+        </span>
+
+        <div class="prompt-code">
+اكتب مقالًا مبسطًا عن الذكاء الاصطناعي للمبتدئين،
+بطول حوالي 800 كلمة، واشرح الفكرة باستخدام أمثلة
+من الحياة اليومية، واجعل الأسلوب واضحًا وغير تقني.
+        </div>
+
+      </div>
+
+
+      <!-- Elements -->
+
+      <h2 id="elements">
+        عناصر الـPrompt الاحترافي
+      </h2>
+
+      <p>
+        لا توجد صيغة واحدة إلزامية لكتابة Prompt احترافي،
+        لكن هناك مجموعة من العناصر التي تساعدك على الحصول
+        على نتائج أكثر دقة.
+      </p>
+
+      <h3>
+        1. المهمة
+      </h3>
+
+      <p>
+        ابدأ بتحديد الشيء الذي تريد من الذكاء الاصطناعي القيام به.
+        هل تريد كتابة مقال؟ تلخيص نص؟ شرح موضوع؟ ترجمة؟
+        إنشاء أفكار؟
+      </p>
+
+      <h3>
+        2. السياق
+      </h3>
+
+      <p>
+        أعطِ الذكاء الاصطناعي المعلومات التي يحتاجها لفهم الموقف.
+        كلما كان السياق مهمًا لتنفيذ المهمة، كان من الأفضل ذكره.
+      </p>
+
+      <h3>
+        3. الجمهور المستهدف
+      </h3>
+
+      <p>
+        أخبره بمن ستوجه إليه النتيجة.
+        فطريقة شرح موضوع لطالب مبتدئ تختلف عن طريقة شرحه لشخص متخصص.
+      </p>
+
+      <h3>
+        4. شكل النتيجة</h3>
+
+      <p>
+        يمكنك تحديد الطريقة التي تريد أن تظهر بها الإجابة،
+        مثل نقاط، جدول، مقال، خطوات أو قائمة.
+      </p>
+
+      <h3>
+        5. القيود
+      </h3>
+
+      <p>
+        إذا كانت هناك شروط معينة، اذكرها بوضوح.
+        مثل عدد الكلمات، مستوى اللغة، أو الأشياء التي لا تريدها.
+      </p>
+
+
+      <div class="formula-box">
+
+        <strong>
+          معادلة بسيطة لـPrompt جيد
+        </strong>
+
+        المهمة + السياق + الجمهور + التفاصيل + شكل النتيجة + القيود
+
+      </div>
+
+
+      <!-- Step by step -->
+
+      <h2 id="step-by-step">
+        كيف تكتب Prompt احترافي خطوة بخطوة؟
+      </h2>
+
+      <p>
+        يمكنك بناء الـPrompt تدريجيًا بدلًا من كتابة طلب عشوائي.
+      </p>
+
+      <ol>
+
+        <li>
+          حدد النتيجة التي تريد الوصول إليها.
+        </li>
+
+        <li>
+          اشرح السياق والمعلومات المهمة.
+        </li>
+
+        <li>
+          حدد الجمهور المستهدف إذا كان ذلك مهمًا.
+        </li>
+
+        <li>
+          وضح شكل الإجابة الذي تريده.
+        </li>
+
+        <li>
+          أضف أي شروط أو قيود ضرورية.
+        </li>
+
+        <li>
+          راجع النتيجة وعدّل الـPrompt إذا احتجت إلى ذلك.
+        </li>
+
+      </ol>
+
+
+      <h3>
+        مثال عملي
+      </h3>
+
+      <p>
+        بدلًا من كتابة:
+      </p>
+
+      <div class="prompt-example bad-prompt">
+
+        <span class="prompt-label">
+          طلب عام:
+        </span>
+
+        <div class="prompt-code">
+اشرح لي التسويق الرقمي
+        </div>
+
+      </div>
+
+      <p>
+        يمكنك جعله أكثر تحديدًا:
+      </p>
+
+      <div class="prompt-example good-prompt">
+
+        <span class="prompt-label">
+          طلب أكثر احترافية:
+        </span>
+
+        <div class="prompt-code">
+اشرح لي أساسيات التسويق الرقمي لشخص مبتدئ،
+وقسّم الشرح إلى 5 نقاط رئيسية، مع مثال عملي
+لكل نقطة، واستخدم لغة عربية بسيطة وواضحة.
+        </div>
+
+      </div>
+
+
+      <!-- Examples -->
+
+      <h2 id="examples">
+        أمثلة على تحسين الـPrompts
+      </h2>
+
+      <h3>
+        كتابة مقال
+      </h3>
+
+      <div class="prompt-code">
+اكتب مقالًا باللغة العربية عن فوائد استخدام
+الذكاء الاصطناعي في التعليم.
+
+اجعل المقال مناسبًا للمبتدئين، وقسّمه إلى
+مقدمة و4 عناوين فرعية وخاتمة.
+
+استخدم أسلوبًا بسيطًا وواضحًا، وتجنب المصطلحات
+التقنية المعقدة.
+      </div>
+
+
+      <h3>
+        التعلم
+      </h3>
+
+      <div class="prompt-code">
+اشرح لي مفهوم Machine Learning كما لو كنت
+أتعلمه لأول مرة.
+
+ابدأ بشرح الفكرة الأساسية، ثم أعطني مثالًا
+من الحياة اليومية، وبعد ذلك اشرح الفرق بينه
+وبين الذكاء الاصطناعي بطريقة بسيطة.
+      </div>
+
+
+      <h3>
+        صناعة المحتوى
+      </h3>
+
+      <div class="prompt-code">
+اقترح لي 10 أفكار لمقالات عن الذكاء الاصطناعي
+مناسبة لموقع عربي جديد.
+
+اجعل الأفكار مفيدة للمبتدئين وغير مكررة،
+واكتب عنوانًا مقترحًا ووصفًا قصيرًا لكل فكرة.
+      </div>
+
+
+      <!-- End of Part 1 -->
+
+    </article>
+
+  </main>
+        <!-- Templates -->
+
+      <h2 id="templates">
+        قوالب Prompts جاهزة
+      </h2>
+
+      <p>
+        بدلًا من البدء من الصفر في كل مرة، يمكنك استخدام قوالب
+        بسيطة وتعديلها حسب المهمة التي تريد تنفيذها.
+      </p>
+
+      <h3>
+        قالب عام
+      </h3>
+
+      <div class="prompt-code">
+أريد منك أن تقوم بـ [المهمة].
+
+السياق:
+[اكتب المعلومات المهمة عن الموضوع]
+
+الجمهور المستهدف:
+[حدد لمن ستكون النتيجة]
+
+طريقة الإخراج:
+[حدد الشكل الذي تريده]
+
+القيود:
+[أي شروط أو أشياء يجب تجنبها]
+      </div>
+
+
+      <h3>
+        قالب للتعلم
+      </h3>
+
+      <div class="prompt-code">
+أريد أن أتعلم [الموضوع].
+
+اشرحه لي من البداية وبطريقة مناسبة للمبتدئين،
+ثم أعطني مثالًا عمليًا، وبعد ذلك اختبر فهمي
+بـ5 أسئلة قصيرة مع توضيح الإجابات.
+      </div>
+
+
+      <h3>
+        قالب لتحسين النصوص
+      </h3>
+
+      <div class="prompt-code">
+أعد صياغة النص التالي ليصبح أكثر وضوحًا واحترافية،
+مع الحفاظ على المعنى الأساسي.
+
+اجعل الأسلوب [رسمي / بسيط / ودود]،
+ولا تضف معلومات غير موجودة في النص.
+
+النص:
+[ضع النص هنا]
+      </div>
+
+
+      <!-- Mistakes -->
+
+      <h2 id="mistakes">
+        أخطاء شائعة عند كتابة الـPrompt
+      </h2>
+
+      <p>
+        حتى لو كنت تستخدم الذكاء الاصطناعي بشكل مستمر،
+        هناك بعض الأخطاء التي يمكن أن تجعل النتيجة أقل جودة.
+      </p>
+
+      <h3>
+        1. الطلب الغامض
+      </h3>
+
+      <p>
+        كلما كان الطلب غير واضح، زادت احتمالية أن يعطيك
+        الذكاء الاصطناعي إجابة عامة لا تناسب ما تريده.
+      </p>
+
+      <h3>
+        2. عدم إعطاء السياق
+      </h3>
+
+      <p>
+        أحيانًا يعرف المستخدم النتيجة التي يريدها في ذهنه،
+        لكنه لا يخبر الذكاء الاصطناعي بالمعلومات التي يحتاجها
+        لفهم المهمة.
+      </p>
+
+      <h3>
+        3. عدم تحديد شكل النتيجة
+      </h3>
+
+      <p>
+        إذا كنت تريد جدولًا أو قائمة أو خطوات محددة،
+        فمن الأفضل أن تطلب ذلك بشكل مباشر بدلًا من ترك
+        شكل الإجابة للصدفة.
+      </p>
+
+      <h3>
+        4. وضع تعليمات كثيرة غير ضرورية
+      </h3>
+
+      <p>
+        الـPrompt الطويل ليس بالضرورة Prompt أفضل.
+        إضافة معلومات لا علاقة لها بالمهمة قد تجعل الطلب
+        أكثر تعقيدًا بدون فائدة حقيقية.
+      </p>
+
+      <div class="warning-box">
+
+        <strong>
+          نصيحة مهمة:
+        </strong>
+
+        لا تحاول جعل كل Prompt طويلًا جدًا.
+        ركّز على المعلومات التي يحتاجها الذكاء الاصطناعي
+        فعلًا لتنفيذ المهمة.
+
+      </div>
+
+
+      <!-- English -->
+
+      <h2 id="english">
+        هل يجب كتابة الـPrompt بالإنجليزية؟
+      </h2>
+
+      <p>
+        لا، ليس من الضروري أن تكتب الـPrompt باللغة الإنجليزية
+        حتى تحصل على نتيجة جيدة.
+      </p>
+
+      <p>
+        معظم أدوات الذكاء الاصطناعي الحديثة تستطيع التعامل
+        مع اللغة العربية، ويمكنك كتابة طلبك بالعربية إذا كانت
+        هي اللغة التي تشعر معها براحة أكبر.
+      </p>
+
+      <p>
+        ومع ذلك، قد تختلف جودة النتائج من أداة إلى أخرى
+        ومن مهمة إلى أخرى، لذلك من المفيد تجربة اللغة التي
+        تعطيك أفضل نتيجة في المهمة التي تقوم بها.
+      </p>
+
+      <h3>
+        هل يمكن استخدام أكثر من لغة؟
+      </h3>
+
+      <p>
+        نعم، يمكنك أحيانًا الجمع بين العربية والإنجليزية
+        عندما تحتاج إلى مصطلح تقني أو اسم أداة أو مفهوم
+        يصعب التعبير عنه بالعربية.
+      </p>
+
+
+      <!-- Iteration -->
+
+      <h2>
+        لا تتوقع الحصول على أفضل نتيجة من أول محاولة
+      </h2>
+
+      <p>
+        واحدة من أهم المهارات في استخدام الذكاء الاصطناعي
+        هي القدرة على تحسين الـPrompt بعد رؤية النتيجة الأولى.
+      </p>
+
+      <p>
+        إذا لم تكن الإجابة مناسبة، لا تحتاج بالضرورة إلى
+        كتابة Prompt جديد بالكامل.
+        يمكنك ببساطة توضيح الجزء الذي لم يعجبك وإعطاء
+        تعليمات إضافية.
+      </p>
+
+      <div class="prompt-example good-prompt">
+
+        <span class="prompt-label">
+          مثال:
+        </span>
+
+        <div class="prompt-code">
+الإجابة جيدة، لكن اجعل المقدمة أقصر،
+وأضف مثالين عمليين، واستخدم لغة أبسط
+تناسب شخصًا ليس لديه خبرة في الموضوع.
+        </div>
+
+      </div>
+
+
+      <h2>
+        كيف تجعل الـPrompt أكثر دقة؟
+      </h2>
+
+      <p>
+        هناك عدة طرق بسيطة يمكنك استخدامها لتحسين دقة النتائج
+        بدون جعل الـPrompt معقدًا.
+      </p>
+
+      <h3>
+        استخدم لغة مباشرة
+      </h3>
+
+      <p>
+        بدلًا من استخدام جمل طويلة وغير واضحة،
+        اكتب التعليمات بطريقة مباشرة ومحددة.
+      </p>
+
+      <h3>
+        حدد ما تريده وما لا تريده
+      </h3>
+
+      <p>
+        إذا كنت لا تريد استخدام أسلوب معين أو إضافة معلومات
+        غير موجودة، أخبر الذكاء الاصطناعي بذلك.
+      </p>
+
+      <h3>
+        اطلب شكلًا محددًا للإجابة
+      </h3>
+
+      <p>
+        يمكنك أن تطلب مثلًا أن تكون الإجابة في صورة
+        نقاط مختصرة أو جدول أو خطوات مرتبة.
+      </p>
+
+
+      <h2>
+        هل الـPrompt الطويل أفضل؟
+      </h2>
+
+      <p>
+        ليس بالضرورة.
+      </p>
+
+      <p>
+        الهدف من الـPrompt الاحترافي ليس أن يكون طويلًا،
+        وإنما أن يحتوي على المعلومات الضرورية التي تساعد
+        الذكاء الاصطناعي على فهم المهمة.
+      </p>
+
+      <div class="tip-box">
+
+        <strong>
+          القاعدة البسيطة:
+        </strong>
+
+        إذا كانت معلومة لا تساعد في تنفيذ المهمة،
+        فغالبًا لا تحتاج إلى وضعها في الـPrompt.
+
+      </div>
+
+
+      <!-- Examples inside prompts -->
+
+      <h2>
+        استخدام الأمثلة داخل الـPrompt
+      </h2>
+
+      <p>
+        في بعض المهام، إعطاء الذكاء الاصطناعي مثالًا على
+        الشكل الذي تريده للنتيجة يمكن أن يكون مفيدًا جدًا.
+      </p>
+
+      <p>
+        مثلًا، إذا كنت تريد إنشاء عناوين لمقالات بأسلوب معين،
+        يمكنك إعطاؤه عنوانين أو ثلاثة كأمثلة على الأسلوب المطلوب.
+      </p>
+
+      <div class="prompt-code">
+أريد منك اقتراح عناوين لمقالات عن الذكاء الاصطناعي.
+
+استخدم أسلوبًا مشابهًا لهذه الأمثلة:
+
+"ما هو ChatGPT؟ دليل بسيط للمبتدئين"
+
+"هل الذكاء الاصطناعي خطير؟ أهم المخاطر التي يجب معرفتها"
+
+اجعل العناوين واضحة ومناسبة لمحركات البحث،
+ولكن بدون مبالغة أو عناوين مضللة.
+      </div>
+
+
+      <h2>
+        تحديد شخصية الذكاء الاصطناعي
+      </h2>
+
+      <p>
+        في بعض الحالات، يمكنك تحديد الدور الذي تريد من
+        الذكاء الاصطناعي أن يتعامل من خلاله مع المهمة.
+      </p>
+
+      <p>
+        على سبيل المثال، يمكنك أن تطلب منه التعامل مع المهمة
+        كمدرس أو محرر أو كاتب محتوى أو مستشار تقني.
+      </p>
+
+      <div class="prompt-code">
+تصرف كمدرس يشرح الذكاء الاصطناعي للمبتدئين.
+
+اشرح لي مفهوم Large Language Models
+بطريقة بسيطة، ثم أعطني مثالًا من الحياة اليومية.
+      </div>
+
+
+      <!-- Part 2 end -->
+
+    </article>
+
+</main>
+        <!-- Study -->
+
+      <h2>
+        كيف تستخدم الـPrompt في الدراسة؟
+      </h2>
+
+      <p>
+        يمكن أن يكون الذكاء الاصطناعي أداة مفيدة في التعلم
+        إذا استخدمته لفهم المعلومات والتدرب عليها، وليس فقط
+        للحصول على الإجابة النهائية.
+      </p>
+
+      <p>
+        مثلًا، يمكنك أن تطلب منه شرح درس معين بطريقة مبسطة،
+        أو إنشاء أسئلة تدريبية، أو توضيح الفرق بين مفهومين.
+      </p>
+
+      <div class="prompt-code">
+اشرح لي درس [اسم الدرس] بطريقة مناسبة للمبتدئين.
+
+ابدأ بالفكرة الأساسية، ثم اشرح أهم النقاط
+بأمثلة بسيطة، وفي النهاية أعطني 5 أسئلة
+للتأكد من فهمي للدرس.
+      </div>
+
+
+      <!-- Content creation -->
+
+      <h2>
+        كيف تستخدم الـPrompt في صناعة المحتوى؟
+      </h2>
+
+      <p>
+        يمكن استخدام الـPrompts أيضًا للمساعدة في كتابة المقالات،
+        توليد الأفكار، تحسين العناوين، تنظيم المحتوى، وإعادة صياغة
+        النصوص.
+      </p>
+
+      <p>
+        لكن من الأفضل أن تتعامل مع النتيجة التي ينتجها الذكاء
+        الاصطناعي كنقطة بداية، ثم تراجعها وتعدلها بما يناسب
+        أسلوبك والمعلومات التي تريد تقديمها.
+      </p>
+
+      <div class="prompt-code">
+اقترح لي 10 أفكار لمقالات عن الذكاء الاصطناعي
+لجمهور عربي مبتدئ.
+
+لكل فكرة اكتب:
+- عنوانًا مقترحًا
+- وصفًا قصيرًا
+- الفائدة التي سيحصل عليها القارئ
+
+تجنب الأفكار العامة أو المتكررة.
+      </div>
+
+
+      <!-- Bad result -->
+
+      <h2>
+        ماذا تفعل إذا كانت النتيجة سيئة؟
+      </h2>
+
+      <p>
+        إذا كانت الإجابة التي حصلت عليها لا تناسبك،
+        فلا يعني ذلك بالضرورة أن الأداة لا تستطيع تنفيذ المهمة.
+        في كثير من الحالات تحتاج فقط إلى تحسين التعليمات.
+      </p>
+
+      <p>
+        جرّب أن تسأل نفسك:
+      </p>
+
+      <ul>
+
+        <li>
+          هل شرحت المطلوب بشكل واضح؟
+        </li>
+
+        <li>
+          هل أعطيت الذكاء الاصطناعي السياق الكافي؟
+        </li>
+
+        <li>
+          هل حددت شكل النتيجة التي أريدها؟
+        </li>
+
+        <li>
+          هل هناك معلومات مهمة نسيت إضافتها؟
+        </li>
+
+        <li>
+          هل وضعت تعليمات كثيرة أو متناقضة؟
+        </li>
+
+      </ul>
+
+      <p>
+        بعد ذلك عدّل الـPrompt وأرسل الطلب مرة أخرى.
+        هذه العملية تسمى أحيانًا التكرار أو
+        <strong>Iteration</strong>، وهي جزء طبيعي من استخدام
+        أدوات الذكاء الاصطناعي.
+      </p>
+
+
+      <!-- Conclusion -->
+
+      <h2 id="conclusion">
+        الخلاصة
+      </h2>
+
+      <p>
+        كتابة Prompt احترافي لا تعني كتابة نص طويل ومعقد،
+        بل تعني أن توضح للذكاء الاصطناعي ماذا تريد،
+        ولماذا تريده، وما المعلومات التي يحتاجها،
+        وكيف تريد أن تكون النتيجة.
+      </p>
+
+      <p>
+        ومع الوقت، ستكتشف أن أفضل طريقة لكتابة الـPrompt
+        هي تجربة الطلب، ملاحظة النتيجة، ثم تعديل التعليمات
+        حتى تصل إلى النتيجة التي تبحث عنها.
+      </p>
+
+      <div class="formula-box">
+
+        <strong>
+          تذكر القاعدة الأساسية
+        </strong>
+
+        كن واضحًا، حدد هدفك، أعطِ السياق،
+        وحدد شكل النتيجة.
+
+      </div>
+
+
+      <!-- Final tips -->
+
+      <h2>
+        أهم 5 نصائح في سطر واحد
+      </h2>
+
+      <ol>
+
+        <li>
+          حدد المطلوب بوضوح.
+        </li>
+
+        <li>
+          أعطِ السياق والمعلومات المهمة.
+        </li>
+
+        <li>
+          حدد الجمهور أو مستوى المعرفة عند الحاجة.
+        </li>
+
+        <li>
+          وضح شكل النتيجة التي تريدها.
+        </li>
+
+        <li>
+          عدّل الـPrompt بناءً على النتيجة التي تحصل عليها.
+        </li>
+
+      </ol>
+
+
+      <!-- CTA -->
+
+      <div class="article-cta">
+
+        <h2>
+          جرّب بنفسك
+        </h2>
+
+        <p>
+          الآن بعد أن عرفت أساسيات كتابة الـPrompt،
+          جرّب تطبيق هذه القواعد على ChatGPT أو Gemini
+          أو أي أداة ذكاء اصطناعي تستخدمها.
+        </p>
+
+        <p>
+          كلما جربت أكثر، ستصبح أفضل في معرفة الطريقة
+          التي تحصل بها على النتائج التي تريدها.
+        </p>
+
+      </div>
+
+
+    </article>
+
+  </main>
+
+
+  <script>
+
+    const darkModeToggle =
+      document.getElementById("darkModeToggle");
+
+    const savedMode =
+      localStorage.getItem("darkMode");
+
+
+    if (savedMode === "enabled") {
+
+      document.body.classList.add("dark-mode");
+
+      darkModeToggle.textContent = "☀️";
+
+    }
+
+
+    darkModeToggle.addEventListener("click", function () {
+
+      document.body.classList.toggle("dark-mode");
+
+
+      if (document.body.classList.contains("dark-mode")) {
+
+        localStorage.setItem("darkMode", "enabled");
+
+        darkModeToggle.textContent = "☀️";
+
+      } else {
+
+        localStorage.setItem("darkMode", "disabled");
+
+        darkModeToggle.textContent = "🌙";
+
+      }
+
+    });
+
+  </script>
+
+</body>
+
+</html>
