@@ -868,7 +868,143 @@ body.dark-mode table tr:nth-child(even) td {
 .articles-grid .home-card {
   margin: 0;
 }
+/* =========================
+   بحث الموقع
+========================= */
 
+.site-search {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 25px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.site-search h2 {
+  margin-bottom: 8px;
+}
+
+.site-search p {
+  margin-bottom: 18px;
+}
+
+.search-box {
+  max-width: 650px;
+  margin: auto;
+}
+
+.search-box input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 18px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  direction: rtl;
+}
+
+.search-box input:focus {
+  border-color: #2563eb;
+}
+
+.search-suggestions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.search-suggestions span {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.search-suggestions button {
+  border: none;
+  background: #eef2ff;
+  color: #2563eb;
+  padding: 7px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-suggestions button:hover {
+  background: #dbeafe;
+}
+
+.search-results {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.search-result {
+  display: block;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #f8fafc;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e5e7eb;
+  transition: 0.2s;
+}
+
+.search-result:hover {
+  transform: translateY(-2px);
+}
+
+.search-result h3 {
+  margin: 0 0 6px;
+}
+
+.search-result p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.search-empty {
+  text-align: center;
+  padding: 15px;
+  opacity: 0.7;
+}
+
+/* الوضع الداكن */
+body.dark-mode .site-search {
+  background: #1f2937;
+}
+
+body.dark-mode .search-box input {
+  background: #111827;
+  color: #fff;
+  border-color: #374151;
+}
+
+body.dark-mode .search-result {
+  background: #111827;
+  border-color: #374151;
+}
+
+body.dark-mode .search-suggestions button {
+  background: #1e3a8a;
+  color: #bfdbfe;
+}
+
+@media (max-width: 600px) {
+  .site-search {
+    margin: 20px 10px;
+    padding: 20px 15px;
+  }
+
+  .search-box input {
+    font-size: 15px;
+  }
+}
 /* الصور */
 .articles-grid .home-card img {
   width: 100%;
