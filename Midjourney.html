@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ما هو Midjourney؟ دليل المبتدئين لإنشاء الصور بالذكاء الاصطناعي | AI بالعربي</title>
+
+  <meta name="description" content="تعرف على Midjourney وكيفية استخدامه لإنشاء الصور بالذكاء الاصطناعي خطوة بخطوة، مع أمثلة Prompts ونصائح للمبتدئين وأسعار الاشتراك.">
+
+  <meta name="keywords" content="Midjourney, ميدجورني, ما هو Midjourney, شرح Midjourney, إنشاء صور بالذكاء الاصطناعي, AI Image Generator, برومبت الصور">
+  <meta name="author" content="AI بالعربي">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aibelarabic.github.io/Midjourney.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ما هو Midjourney؟ دليل المبتدئين">
+  <meta property="og:description" content="دليل عملي يشرح Midjourney وطريقة إنشاء الصور بالذكاء الاصطناعي للمبتدئين.">
+  <meta property="og:site_name" content="AI بالعربي">
+  <meta property="og:url" content="https://aibelarabic.github.io/Midjourney.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYXLTRRN4Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SYXLTRRN4Q');
+  </script>
+
+  <style>
+    .article-toc {
+      background: #f3f6fb;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 25px 0;
+    }
+
+    .article-toc h2 {
+      margin-top: 0;
+    }
+
+    .article-toc ul {
+      padding-right: 22px;
+      margin-bottom: 0;
+    }
+
+    .article-toc li {
+      margin: 10px 0;
+    }
+
+    .article-content h2 {
+      margin-top: 32px;
+      line-height: 1.7;
+    }
+
+    .article-content h3 {
+      margin-top: 24px;
+    }
+
+    .article-content p,
+    .article-content li {
+      line-height: 1.95;
+    }
+
+    .article-content a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    .prompt-example {
+      direction: ltr;
+      text-align: left;
+      background: #f3f4f6;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+      margin: 12px 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .article-note {
+      padding: 14px;
+      border-right: 4px solid #2563eb;
+      background: #eff6ff;
+      border-radius: 8px;
+      margin: 18px 0;
+      line-height: 1.9;
+    }
+
+    body.dark-mode .article-toc,
+    body.dark-mode .prompt-example {
+      background: #1f2937;
+      color: #f3f4f6;
+    }
+
+    body.dark-mode .article-note {
+      background: #1e293b;
+      color: #f3f4f6;
+    }
+
+    @media (max-width: 600px) {
+      .article-toc {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1><a href="index.html">AI بالعربي</a></h1>
+  <p>الذكاء الاصطناعي والتقنية باللغة العربية</p>
+</header>
+
+<main class="article-content">
+
+  <article>
+    <h1>ما هو Midjourney؟ دليلك للمبتدئين لإنشاء الصور بالذكاء الاصطناعي</h1>
+
+    <p>
+      تخيل إنك تقدر تحول فكرة في دماغك إلى صورة فنية أو مشهد واقعي بمجرد ما تكتب وصفًا بالكلمات.
+      ده بالضبط النوع من المهام اللي بتقدر تعملها أداة <strong>Midjourney</strong>،
+      واحدة من أشهر أدوات توليد الصور بالذكاء الاصطناعي.
+    </p>
+
+    <p>
+      سواء كنت بتتعلم التصميم، أو بتجهز صورًا لمقالاتك، أو بتحب تجربة الأفكار الإبداعية،
+      الدليل ده هيساعدك تفهم Midjourney من البداية، وتعرف تستخدمه، وتكتب أوصافًا أفضل،
+      وتفهم تكلفة الاشتراك قبل ما تقرر تجربته.
+    </p>
+
+    <div class="article-toc">
+      <h2>ماذا سنتناول في هذا المقال؟</h2>
+      <ul>
+        <li><a href="#what-is-midjourney">ما هو Midjourney؟</a></li>
+        <li><a href="#how-it-works">كيف يعمل؟</a></li>
+        <li><a href="#how-to-start">كيف تبدأ استخدامه؟</a></li>
+        <li><a href="#prompts">كيف تكتب Prompt جيدًا؟</a></li>
+        <li><a href="#examples">أمثلة جاهزة للمبتدئين</a></li>
+        <li><a href="#improve">كيف تعدل الصور وتحسن النتائج؟</a></li>
+        <li><a href="#pricing">أسعار Midjourney والاشتراكات</a></li>
+        <li><a href="#advantages">المميزات والعيوب</a></li>
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+      </ul>
+    </div>
+
+    <h2 id="what-is-midjourney">ما هو Midjourney؟</h2>
+
+    <p>
+      <strong>Midjourney</strong> هي خدمة تعتمد على الذكاء الاصطناعي لإنشاء الصور من الأوصاف النصية.
+      بدل ما ترسم الصورة بنفسك، بتكتب وصفًا للفكرة التي تريدها، والنظام يولد صورًا بناءً على الوصف.
+    </p>
+
+    <p>
+      مثلًا، لو كتبت وصفًا لمدينة مستقبلية ليلًا، فيها مبانٍ مضيئة وشوارع مبللة بعد المطر،
+      ممكن تحصل على مشهد فني يجمع العناصر دي في صورة واحدة.
+      وكل ما كان وصفك أوضح في التفاصيل المهمة، زادت قدرتك على توجيه النتيجة نحو فكرتك.
+    </p>
+
+    <p>
+      تقدر تبدأ من
+      <a href="https://www.midjourney.com/" target="_blank" rel="noopener noreferrer">الموقع الرسمي لـ Midjourney</a>
+      وتتعرف على الصور التي أنشأها المستخدمون، ثم تستخدم صفحة الإنشاء بعد تسجيل الدخول والاشتراك.
+    </p>
+
+    <h2 id="how-it-works">كيف يعمل Midjourney؟</h2>
+
+    <p>
+      الفكرة الأساسية بسيطة: أنت تكتب وصفًا يسمى
+      <strong>Prompt (برومبت)</strong>، وهو مجموعة كلمات تشرح الصورة التي تريد إنشاءها.
+      بعد ذلك، يعالج Midjourney الوصف ويولد صورًا تحاول التعبير عن الفكرة.
+    </p>
+
+    <p>عادةً، يتكون الوصف الجيد من بعض العناصر، مثل:</p>
+
+    <ul>
+      <li><strong>الموضوع:</strong> الشخص أو الشيء الذي تريد ظهوره في الصورة.</li>
+      <li><strong>المكان:</strong> أين يحدث المشهد؟ في شارع، أو غابة، أو غرفة؟</li>
+      <li><strong>الأسلوب:</strong> صورة فوتوغرافية، رسم رقمي، أو لوحة فنية.</li>
+      <li><strong>الإضاءة والألوان:</strong> إضاءة ناعمة، ألوان دافئة، أو أجواء ليلية.</li>
+      <li><strong>زاوية التصوير:</strong> لقطة قريبة، صورة واسعة، أو مشهد من الأعلى.</li>
+    </ul>
+
+    <p>
+      مش لازم تكتب كل العناصر في كل مرة. ابدأ بالأساسيات، وبعدها أضف التفاصيل اللي تفرق فعلًا في الصورة.
+    </p>
+
+    <h2 id="how-to-start">كيف تبدأ استخدام Midjourney خطوة بخطوة؟</h2>
+
+    <h3>1. افتح الموقع الرسمي</h3>
+    <p>
+      ادخل إلى
+      <a href="https://www.midjourney.com/" target="_blank" rel="noopener noreferrer">midjourney.com</a>
+      وسجل الدخول بالطريقة المتاحة لك. راجع تفاصيل الاشتراك قبل الدفع، لأن إنشاء الصور على الموقع يتطلب اشتراكًا.
+    </p>
+
+    <h3>2. افتح صفحة الإنشاء</h3>
+    <p>
+      بعد تسجيل الدخول والاشتراك، افتح صفحة Create أو صفحة الإنشاء.
+      هتلاقي مكانًا لكتابة الوصف النصي، ويُعرف باسم Imagine Bar.
+    </p>
+
+    <h3>3. اكتب وصف الصورة</h3>
+    <p>
+      ابدأ بوصف واضح وبسيط. مثلًا، بدل ما تكتب كلمة «قطة» فقط،
+      اكتب وصفًا يحدد شكل المشهد والإضاءة والأسلوب الذي تريده.
+    </p>
+
+    <div class="prompt-example">
+      A fluffy orange cat sitting beside a window, soft morning light, cozy room, realistic photography
+    </div>
+
+    <h3>4. أنشئ الصورة</h3>
+    <p>
+      اضغط زر الإرسال أو اضغط Enter، وانتظر حتى تظهر النتائج.
+      قد تختلف واجهة الموقع وأسماء بعض الخيارات مع التحديثات.
+    </p>
+
+    <h3>5. اختر النتيجة المناسبة</h3>
+    <p>
+      شوف الصور الناتجة، واختار الأقرب لفكرتك. لو النتيجة مش مناسبة،
+      تقدر تعدل الوصف أو تستخدم أدوات التعديل المتاحة بدل ما تبدأ من الصفر كل مرة.
+    </p>
+
+    <div class="article-note">
+      <strong>نصيحة للمبتدئين:</strong>
+      ما تحاولش تكتب وصفًا طويلًا جدًا من أول محاولة.
+      ابدأ بفكرة واحدة واضحة، وغيّر عنصرًا واحدًا في كل تجربة عشان تعرف تأثيره على النتيجة.
+      </div>
+
+    
+    <h2 id="prompts">كيف تكتب Prompt جيدًا في Midjourney؟</h2>
+
+    <p>
+      الـPrompt هو أهم وسيلة للتواصل مع مولد الصور. مش مطلوب تكون محترفًا في الرسم،
+      لكن محتاج تتعلم إزاي توصف فكرتك بطريقة واضحة.
+      وتنصح وثائق Midjourney الرسمية باستخدام كلمات محددة والتركيز على العناصر المهمة بدل تكديس تفاصيل كثيرة بلا هدف.
+    </p>
+
+    <p>
+      تقدر تبدأ بالتركيبة دي:
+    </p>
+
+    <div class="prompt-example">
+      Subject + Environment + Style + Lighting + Composition
+    </div>
+
+    <p>
+      يعني: <strong>الموضوع + المكان + الأسلوب + الإضاءة + طريقة عرض الصورة.</strong>
+      اعتبرها نقطة بداية، مش قاعدة إلزامية.
+    </p>
+
+    <h3>اختار كلمات محددة</h3>
+    <p>
+      لو عايز صورة لشخص، وضّح هل هي صورة شخصية قريبة أم لقطة كاملة.
+      ولو عايز منظرًا طبيعيًا، حدد الوقت والأجواء والألوان المهمة.
+      الكلمات المحددة بتساعدك تتحكم في النتيجة أكثر من الوصف العام.
+    </p>
+
+    <h3>حدد الأسلوب الفني</h3>
+    <p>
+      من أمثلة الكلمات اللي تقدر تجربها:
+    </p>
+    <ul>
+      <li><strong>Photorealistic:</strong> مظهر قريب من التصوير الفوتوغرافي.</li>
+      <li><strong>Digital illustration:</strong> رسم رقمي.</li>
+      <li><strong>Watercolor painting:</strong> أسلوب الألوان المائية.</li>
+      <li><strong>3D render:</strong> مظهر تصميم ثلاثي الأبعاد.</li>
+      <li><strong>Cinematic lighting:</strong> إضاءة بطابع سينمائي.</li>
+    </ul>
+
+    <h3>اكتب ما تريد ظهوره بدل التركيز على النفي</h3>
+    <p>
+      في البداية، حاول توصف العناصر الإيجابية اللي تريدها في الصورة.
+      ولو محتاج تستبعد عنصرًا معينًا، تعرّف على الخيارات المخصصة لذلك،
+      لأن مجرد كتابة كلمة مثل "no" داخل الوصف مش دايمًا يضمن استبعاد العنصر بالطريقة المتوقعة.
+    </p>
+
+    <h3>هل الأفضل كتابة الـPrompt بالعربي أم بالإنجليزي؟</h3>
+    <p>
+      تقدر تجرب الأوصاف بلغات مختلفة، لكن الإنجليزية غالبًا اختيار عملي للبداية،
+      خصوصًا عند استخدام مصطلحات فنية متخصصة. لو النتيجة مش مناسبة، جرّب إعادة صياغة الوصف
+      بكلمات أبسط وأكثر تحديدًا.
+    </p>
+
+    <p>
+      للمزيد من التفاصيل، راجع
+      <a href="https://docs.midjourney.com/docs/prompts" target="_blank" rel="noopener noreferrer">
+        دليل كتابة الأوصاف الرسمي من Midjourney
+      </a>.
+    </p>
+
+    <h2 id="examples">5 أمثلة Prompts جاهزة للمبتدئين</h2>
+
+    <p>
+      الأمثلة التالية للتجربة والتعلم. انسخ أي وصف، وعدّل تفاصيله حسب الصورة اللي في خيالك.
+    </p>
+
+    <h3>1. صورة واقعية لقطة</h3>
+    <div class="prompt-example">
+      A fluffy orange cat sitting on a wooden windowsill, soft morning sunlight, detailed fur, realistic photography, cozy atmosphere
+    </div>
+    <p>
+      مناسب للتعلم على وصف الموضوع والإضاءة والمظهر الواقعي.
+    </p>
+
+    <h3>2. منظر طبيعي خيالي</h3>
+    <div class="prompt-example">
+      A magical forest with glowing plants, a small river, soft mist, blue and green tones, fantasy digital art, wide composition
+    </div>
+    <p>
+      جرّب تغيير الألوان أو إضافة عناصر أخرى لتشوف تأثيرها على المشهد.
+    </p>
+
+    <h3>3. صورة لمدينة مستقبلية</h3>
+    <div class="prompt-example">
+      A futuristic city at night, glowing skyscrapers, wet streets reflecting neon lights, cinematic atmosphere, wide-angle view
+    </div>
+    <p>
+      مثال على الجمع بين المكان والإضاءة والأجواء وزاوية التصوير.
+    </p>
+
+    <h3>4. صورة منتج بخلفية بسيطة</h3>
+    <div class="prompt-example">
+      A premium glass perfume bottle on a clean stone pedestal, soft studio lighting, beige background, elegant product photography
+    </div>
+    <p>
+      يمكن استخدام وصف مشابه لتجربة أفكار إعلانية وتصميمات أولية للمنتجات.
+      راجع الصورة الناتجة جيدًا قبل استخدامها في إعلان فعلي.
+    </p>
+
+    <h3>5. شخصية كرتونية</h3>
+    <div class="prompt-example">
+      A friendly little robot exploring a colorful garden, playful 3D cartoon style, soft lighting, vibrant colors, charming character design
+    </div>
+    <p>
+      مناسب لتجربة تصميم الشخصيات والأفكار البصرية للقصص والمشروعات الإبداعية.
+    </p>
+
+    <div class="article-note">
+      <strong>مهم:</strong>
+      الصور الناتجة قد تختلف حتى مع استخدام الوصف نفسه.
+      وكتابة وصف جيد لا تضمن ظهور كل التفاصيل بصورة صحيحة من أول محاولة.
+    </div>
+
+    <h2 id="improve">كيف تعدل الصور وتحسن النتيجة؟</h2>
+
+    <p>
+      بعد إنشاء الصور، مش لازم تعتبر أول نتيجة هي النتيجة النهائية.
+      تقدر تراجع الصورة، وتختار الأقرب لفكرتك، ثم تستخدم أدوات التعديل المتاحة في الواجهة.
+    </p>
+
+    <h3>عدّل الوصف بدل تغييره بالكامل</h3>
+    <p>
+      لو الصورة مناسبة لكن الإضاءة قوية، جرّب تعديل كلمات الإضاءة فقط.
+      ولو المشهد مزدحم، قلل عدد العناصر اللي وصفتها.
+      التغيير التدريجي بيساعدك تفهم العلاقة بين الكلمات والنتائج.
+    </p>
+
+    <h3>جرّب نسب أبعاد مختلفة</h3>
+    <p>
+      الصورة المربعة قد تكون مناسبة لمنشور، بينما الصورة الأفقية أنسب لصورة غلاف أو خلفية.
+      من الخيارات المعروفة في Midjourney معامل نسبة الأبعاد
+      <code>--ar</code>.
+    </p>
+
+    <div class="prompt-example">
+      A peaceful mountain lake at sunrise, realistic landscape photography --ar 16:9
+    </div>
+
+    <p>
+      في المثال السابق، <code>--ar 16:9</code> يطلب صورة بنسبة أبعاد أفقية 16:9.
+      تقدر تغيّر النسبة حسب الاستخدام، مع مراعاة الخيارات التي يدعمها إصدار الأداة.
+    </p>
+
+    <h3>استخدم الصور المرجعية عند الحاجة</h3>
+    <p>
+      تتيح Midjourney استخدام صورة مرجعية لتوجيه النتيجة، مثل الاستفادة من شكل أو تكوين صورة،
+      أو الاسترشاد بأسلوب بصري معين. طريقة الاستخدام والخيارات المتاحة تعتمد على واجهة الأداة وإصدارها.
+    </p>
+
+    <p>
+      شرح الخيارات موجود في
+      <a href="https://docs.midjourney.com/" target="_blank" rel="noopener noreferrer">
+        مركز مساعدة Midjourney الرسمي
+      </a>.
+      </p>
+      
+    <h2 id="pricing">أسعار Midjourney: هل هي مجانية؟</h2>
+
+    <p>
+      لازم تعرف إن Midjourney مش أداة مجانية بالكامل.
+      وفقًا لصفحة الأسعار الرسمية وقت إعداد هذا المقال، توجد أربع باقات أساسية،
+      وتختلف في وقت المعالجة والميزات المتاحة.
+    </p>
+
+    <div class="article-note">
+      <strong>قبل الاشتراك:</strong>
+      الأسعار التالية بالدولار الأمريكي، وقد تتغير. راجع
+      <a href="https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans"
+         target="_blank" rel="noopener noreferrer">صفحة مقارنة الباقات الرسمية</a>
+      للتأكد من السعر والتفاصيل الحالية قبل الدفع.
+    </div>
+
+    <h3>الباقات الشهرية</h3>
+
+    <ul>
+      <li>
+        <strong>Basic — 10 دولارات شهريًا:</strong>
+        تشمل نحو 3.3 ساعات من وقت المعالجة السريعة شهريًا، وهي مناسبة لمن يريد تجربة الأداة
+        واستخدامها بشكل محدود.
+      </li>
+      <li>
+        <strong>Standard — 30 دولارًا شهريًا:</strong>
+        تشمل 15 ساعة من وقت المعالجة السريعة شهريًا، بالإضافة إلى إنشاء صور غير محدود
+        في وضع Relax وفق شروط الباقة.
+      </li>
+      <li>
+        <strong>Pro — 60 دولارًا شهريًا:</strong>
+        تشمل 30 ساعة من وقت المعالجة السريعة، وميزات إضافية مثل وضع Stealth للحفاظ على خصوصية
+        الصور ضمن حدود الباقة.
+      </li>
+      <li>
+        <strong>Mega — 120 دولارًا شهريًا:</strong>
+        تشمل 60 ساعة من وقت المعالجة السريعة، وهي موجهة للمستخدمين ذوي الاستخدام المكثف.
+      </li>
+    </ul>
+
+    <p>
+      وضع Relax يسمح بإنشاء الصور دون استهلاك وقت المعالجة السريعة بالطريقة نفسها،
+      لكنه قد يجعل انتظار النتيجة أطول. راجع شروط الباقة لمعرفة التفاصيل والحدود الدقيقة.
+    </p>
+
+    <h3>هل يوجد استخدام مجاني؟</h3>
+
+    <p>
+      لا تتوفر حاليًا تجربة مجانية على موقع Midjourney أو من خلال Discord.
+      لكن توجد تجربة محدودة على تطبيق Niji Journey للهواتف، وقد تختلف إمكانية الاستفادة منها
+      حسب الشروط المتاحة وقت الاستخدام.
+    </p>
+
+    <p>
+      لو هدفك إنشاء صور من غير دفع، تقدر تبحث عن مولد صور يقدم خطة مجانية،
+      مع الانتباه إلى حدود الاستخدام وجودة النتائج وشروط الترخيص.
+    </p>
+
+    <h2 id="advantages">مميزات وعيوب Midjourney</h2>
+
+    <h3>المميزات</h3>
+    <ul>
+      <li>يساعدك على تحويل الأفكار النصية إلى صور فنية متنوعة.</li>
+      <li>يوفر خيارات لتعديل النتائج وتجربة أساليب بصرية مختلفة.</li>
+      <li>يمكن الاستفادة منه في التصور الأولي للتصميمات والمشروعات الإبداعية.</li>
+      <li>توجد أدوات وإعدادات تسمح بمزيد من التحكم في شكل الصورة.</li>
+    </ul>
+
+    <h3>العيوب</h3>
+    <ul>
+      <li>يتطلب اشتراكًا مدفوعًا لإنشاء الصور على الموقع الرسمي.</li>
+      <li>قد تحتاج إلى عدة محاولات للوصول إلى النتيجة المطلوبة.</li>
+      <li>قد يخطئ في بعض التفاصيل أو النصوص الموجودة داخل الصورة.</li>
+      <li>تحتاج إلى مراجعة شروط الاستخدام والخصوصية قبل استعمال الصور في مشروع تجاري.</li>
+    </ul>
+
+    <h2>هل Midjourney مناسب للمبتدئين؟</h2>
+
+    <p>
+      نعم، يمكن للمبتدئ استخدام Midjourney حتى من دون خبرة سابقة في الرسم.
+      التحدي الأساسي هو تعلم وصف الفكرة بوضوح، ثم تجربة النتائج وتعديل الكلمات عند الحاجة.
+    </p>
+
+    <p>
+      لكن لو ميزانيتك محدودة، فالأفضل أن تبدأ بالتعرف على أدوات إنشاء الصور المجانية،
+      وتحدد هل تحتاج إلى الميزات التي تقدمها Midjourney فعلًا قبل الاشتراك.
+    </p>
+
+    <h2>نصائح مهمة قبل استخدام الصور</h2>
+
+    <ul>
+      <li>راجع الصورة قبل نشرها، خصوصًا لو كانت تحتوي على كتابة أو تفاصيل دقيقة.</li>
+      <li>لا تفترض أن كل صورة مولدة مناسبة تلقائيًا للاستخدام التجاري.</li>
+      <li>اقرأ شروط الخدمة المتعلقة بحقوق الاستخدام والخصوصية.</li>
+      <li>تجنب رفع صور شخصية أو حساسة إذا لم تكن مرتاحًا لطريقة معالجة الخدمة لها.</li>
+    </ul>
+
+    <h2 id="faq">الأسئلة الشائعة عن Midjourney</h2>
+
+    <h3>هل Midjourney مجاني؟</h3>
+    <p>
+      لا توجد حاليًا تجربة مجانية على الموقع الرسمي أو Discord، بينما تتوفر تجربة محدودة
+      على تطبيق Niji Journey وفق الشروط الحالية.
+    </p>
+
+    <h3>هل أحتاج إلى خبرة في التصميم؟</h3>
+    <p>
+      لا. يمكنك البدء بوصف بسيط باللغة الطبيعية، ثم تحسينه تدريجيًا مع التعلم والتجربة.
+    </p>
+
+    <h3>هل يمكن استخدام Midjourney من المتصفح؟</h3>
+    <p>
+      نعم، يمكنك إنشاء الصور من خلال موقع Midjourney بعد تسجيل الدخول والاشتراك.
+      وتختلف بعض خطوات الاستخدام حسب الواجهة والتحديثات.
+    </p>
+
+    <h3>هل يدعم Midjourney اللغة العربية؟</h3>
+    <p>
+      يمكنك تجربة الأوصاف العربية، لكن قد تحصل على نتائج أفضل عند صياغة بعض الأوصاف الفنية
+      بالإنجليزية. جرّب أكثر من صياغة للوصول إلى نتيجة مناسبة.
+    </p>
+
+    <h3>هل يمكن استخدام الصور في مشروع تجاري؟</h3>
+    <p>
+      يعتمد ذلك على شروط الخدمة ونوع الاشتراك والقوانين المعمول بها.
+      راجع شروط Midjourney الحالية قبل استخدام الصور في الإعلانات أو المنتجات التجارية.
+    </p>
+
+    <h2>الخلاصة</h2>
+
+    <p>
+      Midjourney أداة لإنشاء الصور بالذكاء الاصطناعي، ويمكن للمبتدئين استخدامها لتحويل أفكارهم
+      إلى مشاهد ورسومات وصور متنوعة. أفضل طريقة لتعلمها هي البدء بوصف واضح،
+      وتجربة تغييرات صغيرة، ثم تطوير أسلوبك في كتابة الـPrompts.
+    </p>
+
+    <p>
+      أما قرار الاشتراك، فيعتمد على ميزانيتك وعدد الصور التي تحتاج إلى إنشائها.
+      لو استخدامك بسيط أو لا تريد الدفع، ابدأ باستكشاف البدائل المجانية أولًا.
+    </p>
+
+    <p>
+      <strong>المصدر الرسمي:</strong>
+      <a href="https://docs.midjourney.com/" target="_blank" rel="noopener noreferrer">
+        وثائق Midjourney
+      </a>
+      |
+      <a href="https://www.midjourney.com/" target="_blank" rel="noopener noreferrer">
+        موقع Midjourney
+      </a>
+    </p>
+
+    <hr>
+
+    <h2>اقرأ أيضًا</h2>
+
+    <div class="related-articles">
+      <article class="home-card">
+        <div class="home-card-content">
+          <h3>ما هو Google Gemini؟</h3>
+          <p>تعرف على مساعد Google للذكاء الاصطناعي وأهم استخداماته.</p>
+          <a href="Gemini.html" class="read-more">اقرأ المقال ←</a>
+        </div>
+      </article>
+
+      <article class="home-card">
+        <div class="home-card-content">
+          <h3>ما هو Claude؟</h3>
+          <p>تعرف على مساعد Claude واستخداماته في الكتابة والعمل.</p>
+          <a href="Claude.html" class="read-more">اقرأ المقال ←</a>
+        </div>
+      </article>
+    </div>
+
+  </article>
+</main>
+
+<footer>
+  <p>© AI بالعربي - جميع الحقوق محفوظة</p>
+  <p><a href="index.html">العودة إلى الصفحة الرئيسية</a></p>
+</footer>
+
+<script src="script.js?v=8"></script>
+</body>
+        </html>
