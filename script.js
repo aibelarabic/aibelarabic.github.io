@@ -380,29 +380,48 @@ if (darkModeToggle) {
 
   });
 
-      }
+}
 
 
-    },
+// =========================
+// SITE SEARCH
+// =========================
 
-    {
-      const searchInput = document.getElementById("siteSearch");
-const searchResults = document.getElementById("searchResults");
+const searchInput =
+  document.getElementById("siteSearch");
+
+const searchResults =
+  document.getElementById("searchResults");
+
 
 if (searchInput && searchResults) {
 
+  // Read article cards automatically
   const articleCards = [
     ...document.querySelectorAll(".home-card")
   ];
 
+
   const articles = articleCards.map(card => ({
-    title: card.querySelector("h3")?.textContent.trim() || "",
-    description: card.querySelector("p")?.textContent.trim() || "",
-    url: card.querySelector(".read-more")?.getAttribute("href") || "#",
-    keywords: card.dataset.keywords || ""
+
+    title:
+      card.querySelector("h3")?.textContent.trim() || "",
+
+    description:
+      card.querySelector("p")?.textContent.trim() || "",
+
+    url:
+      card.querySelector(".read-more")?.getAttribute("href") || "#",
+
+    keywords:
+      card.dataset.keywords || ""
+
   }));
 
+
+  // Normalize Arabic text
   function normalizeText(text) {
+
     return text
       .toLowerCase()
       .replace(/[أإآ]/g, "ا")
@@ -410,63 +429,124 @@ if (searchInput && searchResults) {
       .replace(/ى/g, "ي")
       .replace(/[ًٌٍَُِّْـ]/g, "")
       .trim();
+
   }
 
-  function searchArticles(query) {
-    const words = normalizeText(query)
-      .split(/\s+/)
-      .filter(Boolean);
 
+  // Search
+  function searchArticles(query) {
+
+    const words =
+      normalizeText(query)
+        .split(/\s+/)
+        .filter(Boolean);
+
+
+    // Empty search
     if (!words.length) {
+
       searchResults.innerHTML = "";
+
       return;
+
     }
 
-    const results = articles
-      .map(article => {
 
-        const title = normalizeText(article.title);
-        const description = normalizeText(article.description);
-        const keywords = normalizeText(article.keywords);
+    const results =
+      articles
+        .map(article => {
 
-        let score = 0;
+          const title =
+            normalizeText(article.title);
 
-        words.forEach(word => {
-          if (title.includes(word)) score += 10;
-          if (keywords.includes(word)) score += 8;
-          if (description.includes(word)) score += 4;
-        });
+          const description =
+            normalizeText(article.description);
 
-        return {
-          ...article,
-          score
-        };
-      })
-      .filter(article => article.score > 0)
-      .sort((a, b) => b.score - a.score);
+          const keywords =
+            normalizeText(article.keywords);
 
+
+          let score = 0;
+
+
+          words.forEach(word => {
+
+            if (title.includes(word)) {
+              score += 10;
+            }
+
+            if (keywords.includes(word)) {
+              score += 8;
+            }
+
+            if (description.includes(word)) {
+              score += 4;
+            }
+
+          });
+
+
+          return {
+            ...article,
+            score
+          };
+
+        })
+
+        .filter(article => article.score > 0)
+
+        .sort((a, b) =>
+          b.score - a.score
+        );
+
+
+    // No Results
     if (!results.length) {
+
       searchResults.innerHTML = `
         <div class="search-empty">
           لا توجد نتائج مطابقة لبحثك.
         </div>
       `;
+
       return;
+
     }
 
-    searchResults.innerHTML = results
-      .slice(0, 6)
-      .map(article => `
-        <a href="${article.url}" class="search-result">
-          <h3>${article.title}</h3>
-          <p>${article.description}</p>
-        </a>
-      `)
-      .join("");
+
+    // Show Results
+    searchResults.innerHTML =
+      results
+        .slice(0, 6)
+        .map(article => `
+
+          <a
+            href="${article.url}"
+            class="search-result"
+          >
+
+            <h3>
+              ${article.title}
+            </h3>
+
+            <p>
+              ${article.description}
+            </p>
+
+          </a>
+
+        `)
+        .join("");
+
   }
 
-  searchInput.addEventListener("input", () => {
-    searchArticles(searchInput.value);
-  });
-}
-        
+
+  // Search while typing
+  searchInput.addEventListener(
+    "input",
+    () => {
+      searchArticles(searchInput.value);
+    }
+  );
+
+          }
