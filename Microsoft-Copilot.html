@@ -1,0 +1,597 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ما هو Microsoft Copilot؟ دليل المبتدئين | AI بالعربي</title>
+  <meta name="description" content="تعرف على Microsoft Copilot وكيفية استخدامه مجانًا، ومميزاته في الكتابة والتلخيص وإنشاء الصور، والفرق بين النسخة المجانية والمدفوعة.">
+  <meta name="keywords" content="Microsoft Copilot, مايكروسوفت كوبايلوت, كوبايلوت, مساعد الذكاء الاصطناعي, Copilot مجاني, Copilot Word Excel PowerPoint">
+  <meta name="author" content="AI بالعربي">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aibelarabic.github.io/Microsoft-Copilot.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ما هو Microsoft Copilot؟ دليل المبتدئين">
+  <meta property="og:description" content="شرح مبسط لمايكروسوفت كوبايلوت واستخداماته ومميزاته المجانية والمدفوعة.">
+  <meta property="og:site_name" content="AI بالعربي">
+  <meta property="og:url" content="https://aibelarabic.github.io/Microsoft-Copilot.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYXLTRRN4Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SYXLTRRN4Q');
+  </script>
+
+  <style>
+    .article-toc {
+      background: #f3f6fb;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 25px 0;
+    }
+
+    .article-toc h2 {
+      margin-top: 0;
+    }
+
+    .article-toc ul {
+      padding-right: 22px;
+      margin-bottom: 0;
+    }
+
+    .article-toc li {
+      margin: 10px 0;
+    }
+
+    .article-content h2 {
+      margin-top: 32px;
+      line-height: 1.7;
+    }
+
+    .article-content h3 {
+      margin-top: 24px;
+    }
+
+    .article-content p,
+    .article-content li {
+      line-height: 1.95;
+    }
+
+    .article-content a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+
+    .article-note {
+      padding: 14px;
+      border-right: 4px solid #2563eb;
+      background: #eff6ff;
+      border-radius: 8px;
+      margin: 18px 0;
+      line-height: 1.9;
+    }
+
+    .prompt-example {
+      direction: ltr;
+      text-align: left;
+      background: #f3f4f6;
+      color: #111827;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+      margin: 12px 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body.dark-mode {
+      background: #111827;
+      color: #f3f4f6;
+    }
+
+    body.dark-mode .article-content,
+    body.dark-mode .article-content h1,
+    body.dark-mode .article-content h2,
+    body.dark-mode .article-content h3,
+    body.dark-mode .article-content p,
+    body.dark-mode .article-content li {
+      color: #f3f4f6;
+    }
+
+    body.dark-mode .article-toc,
+    body.dark-mode .prompt-example {
+      background: #1f2937;
+      color: #f3f4f6;
+    }
+
+    body.dark-mode .article-note {
+      background: #1e293b;
+      color: #f3f4f6;
+    }
+
+    body.dark-mode .article-content a {
+      color: #93c5fd;
+    }
+
+    body.dark-mode header,
+    body.dark-mode footer {
+      color: #f3f4f6;
+    }
+
+    body.dark-mode header a,
+    body.dark-mode footer a {
+      color: inherit;
+    }
+
+    @media (max-width: 600px) {
+      .article-toc {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1><a href="index.html">AI بالعربي</a></h1>
+  <p>الذكاء الاصطناعي والتقنية باللغة العربية</p>
+  <button id="darkModeToggle" type="button">🌙 الوضع الداكن</button>
+</header>
+
+<main class="article-content">
+<article>
+
+<h1>ما هو Microsoft Copilot؟ دليلك لاستخدام مساعد مايكروسوفت بالذكاء الاصطناعي</h1>
+
+<p>
+تخيل إنك تقدر تسأل مساعدًا ذكيًا عن معلومة، أو تطلب منه تلخيص موضوع طويل،
+أو يساعدك في كتابة رسالة أو تجهيز أفكار لعرض تقديمي.
+ده جزء من المهام اللي يقدر يساعدك فيها <strong>Microsoft Copilot</strong>.
+</p>
+
+<p>
+لكن Copilot مش مجرد روبوت محادثة؛ مايكروسوفت بتوفره بأشكال مختلفة،
+من مساعد مجاني على الويب والتطبيقات، إلى ميزات مرتبطة بتطبيقات Microsoft 365
+زي Word وExcel وPowerPoint، حسب نوع الحساب والاشتراك.
+في الدليل ده هنتعرف عليه خطوة بخطوة ونشوف إمتى يكون مفيدًا ليك.
+</p>
+
+<div class="article-toc">
+  <h2>ماذا سنتناول في هذا المقال؟</h2>
+  <ul>
+    <li><a href="#what-is-copilot">ما هو Microsoft Copilot؟</a></li>
+    <li><a href="#how-it-works">كيف يعمل؟</a></li>
+    <li><a href="#how-to-use">كيف تبدأ استخدامه؟</a></li>
+    <li><a href="#uses">أهم استخداماته</a></li>
+    <li><a href="#prompts">أمثلة Prompts عملية</a></li>
+    <li><a href="#microsoft-apps">Copilot مع Word وExcel وPowerPoint</a></li>
+    <li><a href="#free-paid">هل Copilot مجاني؟</a></li>
+    <li><a href="#pros-cons">المميزات والعيوب</a></li>
+    <li><a href="#privacy">الخصوصية ودقة المعلومات</a></li>
+    <li><a href="#faq">الأسئلة الشائعة</a></li>
+  </ul>
+</div>
+
+<h2 id="what-is-copilot">ما هو Microsoft Copilot؟</h2>
+
+<p>
+<strong>Microsoft Copilot</strong> هو مساعد ذكاء اصطناعي من شركة Microsoft،
+مصمم لمساعدتك في الإجابة عن الأسئلة، وكتابة النصوص، وتلخيص المعلومات،
+وتوليد الأفكار والصور، وتنفيذ مهام إنتاجية مختلفة حسب النسخة التي تستخدمها.
+</p>
+
+<p>
+تقدر تستخدم النسخة المجانية من خلال المتصفح أو التطبيق،
+من غير ما تحتاج تشتري اشتراك Microsoft 365 لمجرد بدء المحادثة.
+أما الميزات المتقدمة والتكامل مع تطبيقات Office، فتوفرها يعتمد على الخطة
+والحساب والمنطقة التي تستخدم الخدمة منها.
+</p>
+
+<p>
+ابدأ من
+<a href="https://copilot.microsoft.com/" target="_blank" rel="noopener noreferrer">موقع Microsoft Copilot الرسمي</a>
+لتجربة المساعد والتعرف على المميزات المتاحة لحسابك.
+</p>
+
+<h2 id="how-it-works">كيف يعمل Copilot؟</h2>
+
+<p>
+تكتب طلبك أو سؤالك باللغة الطبيعية، ثم يحاول Copilot فهم المطلوب وتقديم إجابة مناسبة.
+ويمكنك متابعة المحادثة وطلب توضيح أو تعديل الإجابة بدلًا من كتابة طلب جديد بالكامل.
+</p>
+
+<p>مثلًا، تقدر تطلب منه:</p>
+
+<ul>
+  <li>شرح مفهوم علمي بطريقة بسيطة.</li>
+  <li>تلخيص مقال طويل في نقاط أساسية.</li>
+  <li>اقتراح أفكار لمشروع أو عرض تقديمي.</li>
+  <li>إعادة صياغة رسالة بأسلوب رسمي.</li>
+  <li>إنشاء صورة من وصف نصي، وفق الإمكانيات وحدود الاستخدام المتاحة.</li>
+</ul>
+
+<div class="article-note">
+  <strong>مهم:</strong>
+  Copilot ممكن يقدم معلومات غير دقيقة أو قديمة أحيانًا.
+  استخدمه كمساعد، وراجع المعلومات المهمة من مصادر موثوقة، خصوصًا في الدراسة أو القرارات العملية.
+</div>
+
+<h2 id="how-to-use">كيف تبدأ استخدام Microsoft Copilot؟</h2>
+
+<h3>1. افتح الموقع الرسمي</h3>
+
+<p>
+ادخل إلى
+<a href="https://copilot.microsoft.com/" target="_blank" rel="noopener noreferrer">copilot.microsoft.com</a>
+من الموبايل أو التابلت أو الكمبيوتر.
+</p>
+
+<h3>2. سجل الدخول إذا احتجت</h3>
+
+<p>
+تقدر تبدأ استخدام بعض إمكانيات Copilot من غير تسجيل دخول،
+لكن تسجيل الدخول بحسابك قد يتيح لك ميزات إضافية مثل سجل المحادثات
+وإمكانيات أخرى بحسب الحساب والمنطقة.
+</p>
+
+<h3>3. اكتب طلبًا واضحًا</h3>
+
+<p>
+اكتب اللي تحتاجه بشكل مباشر، وحدد شكل الإجابة اللي تفضله.
+بدل ما تكتب «اشرح الطاقة»، ممكن تطلب شرحًا مبسطًا مع أمثلة وأسئلة للمراجعة.
+</p>
+
+<h3>4. راجع الإجابة واطلب تحسينها</h3>
+
+<p>
+لو الإجابة طويلة أو معقدة، اطلب اختصارها أو شرح المصطلحات الصعبة.
+ولو وجدت معلومة مهمة، تحقق منها بمصدر موثوق قبل الاعتماد عليها.
+</p>
+
+<p>
+تقدر كمان تتعرف على طرق الاستخدام من
+<a href="https://support.microsoft.com/copilot" target="_blank" rel="noopener noreferrer">مركز دعم Microsoft Copilot</a>.
+</p>
+
+<!-- يتبع في الجزء الثاني -->
+</article>
+  </main>
+
+  
+<section id="uses">
+  <h2>استخدامات Microsoft Copilot: تقدر تعمل بيه إيه؟</h2>
+
+  <p>
+    Microsoft Copilot مش مجرد أداة للإجابة عن الأسئلة؛ تقدر تستخدمه في الكتابة،
+    والتلخيص، والتعلم، وتنظيم الأفكار، والمساعدة في المهام اليومية. ودي أهم استخداماته:
+  </p>
+
+  <h3>1. كتابة المحتوى وتعديله</h3>
+  <p>
+    لو بتكتب مقالًا أو إيميلًا أو منشورًا للسوشيال ميديا، تقدر تطلب من Copilot
+    كتابة مسودة أولية، أو إعادة صياغة النص، أو تصحيح الأخطاء وتحسين أسلوب الكتابة.
+  </p>
+
+  <h3>2. البحث وفهم المعلومات</h3>
+  <p>
+    تقدر تسأله عن موضوع معين، وتطلب منه شرحًا مبسطًا أو مقارنة بين عدة اختيارات.
+    وفي الأسئلة التي تعتمد على الويب، قد يعرض مصادر وروابط تساعدك على مراجعة المعلومات.
+    ومع ذلك، الأفضل تتأكد من المصادر، خصوصًا في المعلومات المهمة.
+  </p>
+
+  <h3>3. الدراسة والتعلم</h3>
+  <p>
+    ممكن يساعدك في فهم المفاهيم الصعبة، وتلخيص ملاحظاتك، وإعداد أسئلة للمراجعة،
+    وشرح موضوع بخطوات بسيطة. استخدمه لفهم الإجابة والتعلم منها، مش للاعتماد عليها
+    من غير مراجعة.
+  </p>
+
+  <h3>4. توليد الصور</h3>
+  <p>
+    يقدر Copilot يساعدك في إنشاء صور بالذكاء الاصطناعي من خلال وصف نصي.
+    اكتب وصفًا واضحًا للصورة التي تريدها، مع تحديد العناصر والألوان والأسلوب.
+    ميزة إنشاء الصور وحدود استخدامها قد تختلف حسب الحساب والخطة والمنطقة.
+  </p>
+
+  <h3>5. التخطيط وتنظيم المهام</h3>
+  <p>
+    تقدر تطلب منه تقسيم مشروع كبير إلى خطوات، أو إعداد جدول مذاكرة،
+    أو اقتراح أفكار لمشروع جديد، أو ترتيب قائمة مهام حسب الأولوية.
+    راجع الخطة وعدّلها بما يناسب وقتك واحتياجاتك.
+  </p>
+</section>
+
+<section id="prompts">
+  <h2>أمثلة Prompts جاهزة لاستخدام Microsoft Copilot</h2>
+
+  <p>
+    جودة النتيجة بتعتمد بدرجة كبيرة على وضوح طلبك. بدل ما تكتب سؤالًا عامًا،
+    وضّح الهدف والسياق وشكل الإجابة التي تريدها.
+  </p>
+
+  <h3>مثال لكتابة مقال</h3>
+  <div class="prompt-example">
+    اكتب مقالًا باللغة العربية عن فوائد الذكاء الاصطناعي للطلاب.
+    اجعله مناسبًا للمبتدئين، مقسمًا إلى عناوين واضحة، مع أمثلة عملية
+    وخاتمة تلخص أهم النقاط. تجنب المعلومات غير المؤكدة.
+  </div>
+
+  <h3>مثال لتلخيص موضوع</h3>
+  <div class="prompt-example">
+    اشرح لي موضوع [اكتب الموضوع هنا] بطريقة مبسطة.
+    ثم لخّص أهم 5 نقاط، واذكر مثالًا على كل نقطة،
+    واختبر فهمي من خلال 5 أسئلة مع وضع الإجابات في نهاية الرد.
+  </div>
+
+  <h3>مثال لتنظيم الوقت</h3>
+  <div class="prompt-example">
+    ساعدني في إعداد جدول أسبوعي للمذاكرة.
+    المواد التي أدرسها هي [اكتب المواد]، والوقت المتاح يوميًا هو [عدد الساعات].
+    اترك فترات راحة، ووزّع المواد حسب الأولوية، واعرض الجدول في صورة جدول منظم.
+  </div>
+
+  <h3>مثال للمقارنة بين منتجات</h3>
+  <div class="prompt-example">
+    قارن بين [المنتج الأول] و[المنتج الثاني].
+    وضّح المميزات والعيوب والسعر إن كان متاحًا من مصادر موثوقة،
+    ثم اعرض مقارنة مختصرة وحدد الحالات التي يناسب فيها كل اختيار.
+  </div>
+
+  <div class="article-note">
+    <strong>نصيحة:</strong>
+    لو النتيجة مش مناسبة، اطلب تعديلًا محددًا، مثل:
+    «اختصر الإجابة»، أو «استخدم أمثلة أكثر»، أو «اشرح المصطلحات الصعبة».
+    وماتشاركش كلمات المرور أو البيانات الشخصية الحساسة داخل المحادثة.
+  </div>
+</section>
+
+<section id="microsoft-apps">
+  <h2>هل Microsoft Copilot موجود داخل Word وExcel وPowerPoint؟</h2>
+
+  <p>
+    أيوه، توجد إصدارات وميزات من Copilot مدمجة في تطبيقات Microsoft 365،
+    لكن لازم نفرّق بين Copilot المجاني الذي تستخدمه من خلال الويب،
+    وبين ميزات Copilot داخل تطبيقات العمل والإنتاجية.
+  </p>
+
+  <h3>Microsoft Copilot في Word</h3>
+  <p>
+    في الإصدارات والخطط المؤهلة، يمكنه المساعدة في إنشاء مسودات المستندات،
+    وإعادة صياغة الفقرات، وتلخيص النصوص وتحسين أسلوب الكتابة.
+    مدى توفر هذه الإمكانيات يعتمد على الترخيص وإصدار التطبيق.
+  </p>
+
+  <h3>Microsoft Copilot في Excel</h3>
+  <p>
+    قد يساعدك في فهم البيانات، واقتراح صيغ مناسبة، واستخلاص ملاحظات من الجداول،
+    أو توضيح الاتجاهات داخل البيانات. لكن لازم تراجع النتائج والصيغ،
+    خصوصًا لو بتستخدمها في حسابات مهمة.
+  </p>
+
+  <h3>Microsoft Copilot في PowerPoint</h3>
+  <p>
+    في الخطط التي تدعم الميزة، يمكنه المساعدة في تحويل الأفكار أو المحتوى إلى
+    مسودة عرض تقديمي، واقتراح ترتيب للشرائح وتلخيص المعلومات.
+    وقد تحتاج إلى تعديل التصميم والمحتوى يدويًا للوصول إلى النتيجة المطلوبة.
+  </p>
+
+  <h3>هل تحتاج إلى اشتراك مدفوع؟</h3>
+  <p>
+    استخدام Copilot على الويب متاح مجانًا مع حدود معينة، لكن استخدامه داخل تطبيقات
+    Microsoft 365 ومزاياه المتقدمة قد يتطلب اشتراكًا مؤهلًا.
+    وجود تطبيق Word أو Excel على جهازك لا يعني تلقائيًا أن جميع ميزات Copilot متاحة.
+  </p>
+
+  <p>
+    لمعرفة التفاصيل الرسمية، راجع
+    <a href="https://www.microsoft.com/en-us/copilot/pricing/individuals"
+       target="_blank" rel="noopener noreferrer">صفحة خطط Microsoft Copilot</a>
+    و
+    <a href="https://support.microsoft.com/en-us/microsoft-365-copilot/what-s-the-difference-between-microsoft-copilot-free-and-copilot-in-microsoft-365"
+       target="_blank" rel="noopener noreferrer">شرح الفرق بين Copilot المجاني وCopilot في Microsoft 365</a>.
+  </p>
+</section>
+
+<!-- يتبع في الجزء الثالث -->
+  
+<section id="free-paid">
+  <h2>Microsoft Copilot المجاني والمدفوع: إيه الفرق؟</h2>
+
+  <p>
+    من أهم مميزات Copilot إنك تقدر تبدأ باستخدامه مجانًا من غير ما تدفع اشتراكًا.
+    لكن توجد خطط وخدمات مدفوعة توفر مزايا إضافية، ويختلف المتاح حسب نوع الحساب
+    والمنطقة والاشتراك.
+  </p>
+
+  <h3>Copilot المجاني</h3>
+  <ul>
+    <li>طرح الأسئلة والحصول على إجابات وشروحات.</li>
+    <li>المساعدة في الكتابة وإعادة صياغة النصوص وتلخيصها.</li>
+    <li>البحث عن معلومات على الويب عند توفر الميزة.</li>
+    <li>إنشاء الصور بالذكاء الاصطناعي ضمن حدود الاستخدام المتاحة.</li>
+  </ul>
+
+  <h3>الخطط والمميزات المدفوعة</h3>
+  <p>
+    قد توفر الخطط المدفوعة حدود استخدام أعلى أو إمكانيات إضافية،
+    كما تتيح بعض اشتراكات Microsoft 365 استخدام Copilot داخل تطبيقات مثل
+    Word وExcel وPowerPoint وفقًا لشروط الخطة.
+  </p>
+
+  <p>
+    مش كل خطة مدفوعة بتوفر المميزات نفسها، ومش كل اشتراك Microsoft 365
+    بيشمل جميع وظائف Copilot. لذلك راجع تفاصيل الخطة قبل الدفع.
+  </p>
+
+  <p>
+    <a href="https://www.microsoft.com/en-us/copilot/pricing/individuals"
+       target="_blank" rel="noopener noreferrer">
+      راجع خطط Microsoft Copilot من الموقع الرسمي
+    </a>.
+  </p>
+
+  <div class="article-note">
+    <strong>ترشيحنا:</strong>
+    لو هدفك هو السؤال والبحث والكتابة والتعلم، ابدأ بالنسخة المجانية.
+    ما تدفعش في اشتراك إلا لو محتاج ميزة محددة وموجودة فعلًا في الخطة التي اخترتها.
+  </div>
+</section>
+
+<section id="pros-cons">
+  <h2>مميزات وعيوب Microsoft Copilot</h2>
+
+  <h3>المميزات</h3>
+  <ul>
+    <li>يوفر نسخة مجانية مناسبة للتجربة والاستخدام اليومي.</li>
+    <li>يساعد في الكتابة والتلخيص وتوليد الأفكار.</li>
+    <li>يمكنه الاستعانة بمعلومات الويب في بعض أنواع الإجابات.</li>
+    <li>يوفر إمكانيات لإنشاء الصور وفقًا لحدود الحساب.</li>
+    <li>يتكامل مع تطبيقات Microsoft 365 في الخطط المدعومة.</li>
+    <li>مناسب للمبتدئين، ولا يحتاج إلى خبرة برمجية لاستخدامه في المهام العادية.</li>
+  </ul>
+
+  <h3>العيوب</h3>
+  <ul>
+    <li>قد يقدم معلومات غير دقيقة أو إجابات تبدو صحيحة رغم وجود أخطاء.</li>
+    <li>توجد حدود للاستخدام المجاني، وقد تتغير بمرور الوقت.</li>
+    <li>بعض المميزات تحتاج إلى اشتراك أو حساب مؤهل.</li>
+    <li>قد تختلف جودة النتائج حسب صياغة السؤال واللغة والمهمة.</li>
+    <li>الميزات المتقدمة والتكامل مع تطبيقات Microsoft ليست متاحة بالطريقة نفسها لكل المستخدمين.</li>
+  </ul>
+</section>
+
+<section id="privacy">
+  <h2>هل استخدام Microsoft Copilot آمن؟</h2>
+
+  <p>
+    يعتمد الأمر على نوع الحساب والإعدادات وطريقة استخدامك للأداة.
+    لذلك من الأفضل مراجعة سياسة الخصوصية وشروط الخدمة الخاصة بـMicrosoft،
+    وعدم افتراض أن كل أنواع الحسابات تتمتع بالضوابط نفسها.
+  </p>
+
+  <p>للاستخدام الأكثر أمانًا، اتبع النصائح التالية:</p>
+  <ul>
+    <li>تجنب إدخال كلمات المرور أو أرقام البطاقات أو البيانات الشخصية الحساسة.</li>
+    <li>لا ترفع ملفات خاصة أو مستندات سرية إلا بعد فهم طريقة التعامل معها.</li>
+    <li>راجع المعلومات المهمة من مصادر موثوقة قبل الاعتماد عليها.</li>
+    <li>تحقق من الأذونات وإعدادات الخصوصية المرتبطة بحسابك.</li>
+    <li>في الاستخدام الدراسي أو المهني، راجع سياسة الجهة التي تتبعها قبل مشاركة البيانات.</li>
+  </ul>
+
+  <p>
+    يمكنك الاطلاع على
+    <a href="https://www.microsoft.com/en-us/privacy/privacystatement"
+       target="_blank" rel="noopener noreferrer">
+      بيان خصوصية Microsoft الرسمي
+    </a>
+    لمعرفة المزيد عن كيفية تعامل الشركة مع البيانات.
+  </p>
+</section>
+
+<section id="faq">
+  <h2>الأسئلة الشائعة عن Microsoft Copilot</h2>
+
+  <h3>هل Microsoft Copilot مجاني؟</h3>
+  <p>
+    نعم، توجد نسخة مجانية يمكن استخدامها في مهام مثل الأسئلة والكتابة والتلخيص،
+    لكن بعض المميزات لها حدود استخدام أو تتطلب خطة مدفوعة.
+  </p>
+
+  <h3>هل أحتاج إلى حساب Microsoft لاستخدامه؟</h3>
+  <p>
+    قد تتاح بعض إمكانيات الاستخدام دون تسجيل الدخول، لكن تسجيل الدخول بحساب
+    Microsoft قد يوفر ميزات إضافية. وتختلف المتطلبات حسب الخدمة والمنطقة.
+  </p>
+
+  <h3>هل Microsoft Copilot أفضل من ChatGPT؟</h3>
+  <p>
+    مفيش أداة أفضل في كل الحالات. قد يكون Copilot مناسبًا لمن يعتمد على خدمات
+    Microsoft والبحث عبر الويب، بينما قد يفضّل بعض المستخدمين ChatGPT في مهام
+    المحادثة أو التعلم أو الكتابة. الأفضل تجربة النسخ المجانية ومقارنة النتائج
+    وفقًا لاحتياجاتك.
+  </p>
+
+  <h3>هل يستطيع Copilot إنشاء الصور؟</h3>
+  <p>
+    نعم، يمكنه إنشاء صور من الأوصاف النصية في الحسابات والمناطق التي تدعم الميزة،
+    مع وجود حدود قد تختلف حسب الخطة.
+  </p>
+
+  <h3>هل يمكن استخدام Copilot باللغة العربية؟</h3>
+  <p>
+    نعم، يمكنك كتابة الأسئلة والأوامر باللغة العربية. وقد تختلف جودة النتائج
+    حسب الموضوع وطريقة صياغة الطلب، لذلك راجع الإجابة إذا كانت المعلومات مهمة.
+  </p>
+
+  <h3>هل يمكن الاعتماد على إجاباته بالكامل؟</h3>
+  <p>
+    لا. Copilot أداة مساعدة وقد يخطئ في الحقائق أو الحسابات أو فهم السياق.
+    تحقق من المعلومات المهمة، خصوصًا في الأمور الدراسية المتخصصة أو القرارات الحساسة.
+  </p>
+</section>
+
+<section class="article-note">
+  <h2>الخلاصة: هل يستحق Microsoft Copilot التجربة؟</h2>
+  <p>
+    لو بتدور على أداة ذكاء اصطناعي تساعدك في الكتابة والتعلم والبحث وتنظيم الأفكار،
+    فإن Microsoft Copilot يستحق التجربة، خصوصًا إنك تقدر تبدأ بالنسخة المجانية.
+    أما لو محتاج استخدامه داخل Word وExcel وPowerPoint، فتأكد أولًا من المميزات
+    المتاحة في حسابك وتكلفة الاشتراك قبل اتخاذ القرار.
+  </p>
+</section>
+
+<hr>
+
+<section class="related-articles">
+  <h2>اقرأ أيضًا</h2>
+
+  <article class="home-card">
+    <div class="home-card-content">
+      <h3>ما هو ChatGPT؟ دليل المبتدئين</h3>
+      <p>تعرف على ChatGPT وأهم استخداماته وكيف تبدأ في الاستفادة منه.</p>
+      <a href="article.html" class="read-more">اقرأ المقال ←</a>
+    </div>
+  </article>
+
+  <article class="home-card">
+    <div class="home-card-content">
+      <h3>ما هو Google Gemini؟</h3>
+      <p>اكتشف مساعد Google للذكاء الاصطناعي وأبرز مميزاته واستخداماته.</p>
+      <a href="Gemini.html" class="read-more">اقرأ المقال ←</a>
+    </div>
+  </article>
+
+  <article class="home-card">
+    <div class="home-card-content">
+      <h3>Claude أم ChatGPT؟</h3>
+      <p>قارن بين أداتين شهيرتين للذكاء الاصطناعي واختر الأنسب لاحتياجاتك.</p>
+      <a href="claude-vs-chatgpt.html" class="read-more">اقرأ المقال ←</a>
+    </div>
+  </article>
+
+  <article class="home-card">
+    <div class="home-card-content">
+      <h3>دليل كتابة Prompts احترافية</h3>
+      <p>تعلم كيف تكتب تعليمات واضحة للحصول على نتائج أفضل من أدوات الذكاء الاصطناعي.</p>
+      <a href="prompt-guide.html" class="read-more">اقرأ المقال ←</a>
+    </div>
+  </article>
+</section>
+
+</article>
+</main>
+
+<footer>
+  <p>© 2026 AI بالعربي - جميع الحقوق محفوظة</p>
+  <p><a href="index.html">الصفحة الرئيسية</a> | <a href="articles.html">كل المقالات</a></p>
+</footer>
+
+<script src="script.js?v=8"></script>
+</body>
+</html>
