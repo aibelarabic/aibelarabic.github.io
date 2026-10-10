@@ -949,3 +949,8 @@ body.dark-mode .search-result p {
     font-size: 15px;
   }
   }
+
+
+.home-card img {
+  border-radius: 12px;
+}
