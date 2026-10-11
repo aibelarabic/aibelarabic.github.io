@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>عداد الكلمات والحروف أونلاين مجانًا | AI بالعربي</title>
+  <meta name="description" content="استخدم عداد الكلمات والحروف المجاني من AI بالعربي لحساب الكلمات والحروف والجمل والفقرات ووقت القراءة بسهولة.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aibelarabic.github.io/word-counter.html">
+  <meta property="og:title" content="عداد الكلمات والحروف أونلاين | AI بالعربي">
+  <meta property="og:description" content="أداة مجانية لعد الكلمات والحروف والجمل والفقرات وحساب وقت القراءة.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="image/Icon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .counter-page {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .counter-intro {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .counter-intro h2 {
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .counter-panel {
+      background: #fff;
+      padding: 22px;
+      border-radius: 16px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.07);
+      border: 1px solid #e5e7eb;
+    }
+
+    .counter-panel label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    #counterText {
+      width: 100%;
+      min-height: 240px;
+      resize: vertical;
+      padding: 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 16px;
+      line-height: 1.9;
+      box-sizing: border-box;
+      background: #fff;
+      color: #1f2937;
+      outline: none;
+    }
+
+    #counterText:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+    }
+
+    .counter-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 18px 8px;
+      background: #f1f5f9;
+      border-radius: 12px;
+    }
+
+    .stat-box span {
+      display: block;
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+
+    .stat-box strong {
+      font-size: 26px;
+      color: #2563eb;
+      overflow-wrap: anywhere;
+    }
+
+    .counter-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .counter-actions button {
+      flex: 1;
+      min-width: 120px;
+      border: none;
+      border-radius: 9px;
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 15px;
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+    }
+
+    .counter-actions button:hover {
+      opacity: .88;
+    }
+
+    .counter-actions .secondary {
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+
+    .reading-time {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: #1e40af;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .counter-note {
+      margin-top: 25px;
+      line-height: 1.9;
+    }
+
+    body.dark-mode .counter-panel {
+      background: #1f2937;
+      border-color: #374151;
+      color: #f3f4f6;
+    }
+
+    body.dark-mode #counterText {
+      background: #111827;
+      color: #f3f4f6;
+      border-color: #4b5563;
+    }
+
+    body.dark-mode .stat-box {
+      background: #111827;
+    }
+
+    body.dark-mode .stat-box span {
+      color: #d1d5db;
+    }
+
+    body.dark-mode .stat-box strong {
+      color: #93c5fd;
+    }
+
+    body.dark-mode .counter-actions .secondary {
+      background: #374151;
+      color: #f3f4f6;
+    }
+
+    body.dark-mode .reading-time {
+      background: #1e3a5f;
+      color: #dbeafe;
+    }
+
+    @media (max-width: 600px) {
+      .counter-page {
+        padding: 12px;
+        margin: 15px auto;
+      }
+
+      .counter-panel {
+        padding: 14px;
+      }
+
+      .counter-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .stat-box {
+        padding: 14px 5px;
+      }
+
+      .stat-box strong {
+        font-size: 23px;
+      }
+
+      #counterText {
+        min-height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1><a href="index.html">AI بالعربي</a></h1>
+    <p>الذكاء الاصطناعي والتقنية باللغة العربية</p>
+    <button id="darkModeToggle" type="button">🌙 الوضع الداكن</button>
+  </header>
+
+  <main class="counter-page">
+
+    <section class="counter-intro">
+      <h2>عداد الكلمات والحروف</h2>
+      <p>
+        احسب كلماتك وحروفك وجملك بسهولة، واعرف وقت القراءة التقريبي
+        باستخدام أداة مجانية من AI بالعربي.
+      </p>
+    </section>
+
+    <section class="counter-panel">
+      <label for="counterText">اكتب النص أو الصقه هنا:</label>
+
+      <textarea
+        id="counterText"
+        placeholder="ابدأ الكتابة هنا أو الصق النص الذي تريد حساب كلماته..."
+        spellcheck="false"
+      ></textarea>
+
+      <div class="counter-stats">
+        <div class="stat-box">
+          <span>الكلمات</span>
+          <strong id="wordCount">0</strong>
+        </div>
+
+        <div class="stat-box">
+          <span>الحروف مع المسافات</span>
+          <strong id="charCount">0</strong>
+        </div>
+
+        <div class="stat-box">
+          <span>الحروف بدون مسافات</span>
+          <strong id="noSpaceCount">0</strong>
+        </div>
+
+        <div class="stat-box">
+          <span>الجمل</span>
+          <strong id="sentenceCount">0</strong>
+        </div>
+
+        <div class="stat-box">
+          <span>الفقرات</span>
+          <strong id="paragraphCount">0</strong>
+        </div>
+
+        <div class="stat-box">
+          <span>الأرقام والكلمات</span>
+          <strong id="readingCount">0</strong>
+        </div>
+      </div>
+
+      <div class="reading-time">
+        ⏱️ وقت القراءة التقريبي:
+        <strong id="readingTime">أقل من دقيقة</strong>
+      </div>
+
+      <div class="counter-actions">
+        <button id="copyText" type="button">📋 نسخ النص</button>
+        <button id="clearText" class="secondary" type="button">🗑️ مسح النص</button>
+      </div>
+
+      <p id="counterMessage" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="counter-note">
+      <h3>إزاي تستخدم عداد الكلمات؟</h3>
+      <p>
+        الصق النص في المربع، وهتظهر لك النتائج تلقائيًا.
+        الأداة مناسبة للمقالات والأبحاث والمنشورات ومحتوى المواقع.
+      </p>
+      <p>
+        عدد الكلمات ووقت القراءة تقديريّان؛ ووقت القراءة محسوب على أساس
+        متوسط 200 كلمة في الدقيقة.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© AI بالعربي - جميع الحقوق محفوظة</p>
+    <p>
+      <a href="index.html">الرئيسية</a> |
+      <a href="articles.html">المقالات</a>
+    </p>
+  </footer>
+
+  <script src="script.js?v=1"></script>
+
+  <script>
+    const textArea = document.getElementById("counterText");
+    const wordCount = document.getElementById("wordCount");
+    const charCount = document.getElementById("charCount");
+    const noSpaceCount = document.getElementById("noSpaceCount");
+    const sentenceCount = document.getElementById("sentenceCount");
+    const paragraphCount = document.getElementById("paragraphCount");
+    const readingCount = document.getElementById("readingCount");
+    const readingTime = document.getElementById("readingTime");
+    const message = document.getElementById("counterMessage");
+
+    function updateCounter() {
+      const text = textArea.value;
+      const trimmed = text.trim();
+
+      const words = trimmed
+        ? trimmed.split(/\s+/u).filter(Boolean)
+        : [];
+
+      const sentences = trimmed
+        ? trimmed
+            .split(/[.!?؟。؛؛]+/u)
+            .filter(part => part.trim().length > 0)
+        : [];
+
+      const paragraphs = text
+        .split(/\n+/u)
+        .filter(part => part.trim().length > 0);
+
+      const count = words.length;
+      const minutes = Math.ceil(count / 200);
+
+      wordCount.textContent = count.toLocaleString("ar-EG");
+      charCount.textContent = text.length.toLocaleString("ar-EG");
+      noSpaceCount.textContent =
+        text.replace(/\s/gu, "").length.toLocaleString("ar-EG");
+      sentenceCount.textContent = sentences.length.toLocaleString("ar-EG");
+      paragraphCount.textContent = paragraphs.length.toLocaleString("ar-EG");
+      readingCount.textContent = count.toLocaleString("ar-EG");
+
+      if (count === 0) {
+        readingTime.textContent = "أقل من دقيقة";
+      } else if (minutes <= 1) {
+        readingTime.textContent = "حوالي دقيقة واحدة";
+      } else {
+        readingTime.textContent = "حوالي " +
+          minutes.toLocaleString("ar-EG") + " دقيقة";
+      }
+
+      message.textContent = "";
+    }
+
+    textArea.addEventListener("input", updateCounter);
+
+    document.getElementById("clearText").addEventListener("click", () => {
+      textArea.value = "";
+      updateCounter();
+      textArea.focus();
+      message.textContent = "تم مسح النص.";
+    });
+
+    document.getElementById("copyText").addEventListener("click", async () => {
+      const text = textArea.value;
+
+      if (!text) {
+        message.textContent = "اكتب نصًا أولًا عشان تقدر تنسخه.";
+        return;
+      }
+
+      try {
+        await navigator.clipboard.writeText(text);
+        message.textContent = "تم نسخ النص بنجاح.";
+      } catch (error) {
+        textArea.select();
+        const copied = document.execCommand("copy");
+        message.textContent = copied
+          ? "تم نسخ النص بنجاح."
+          : "تعذر النسخ تلقائيًا. حدّد النص وانسخه يدويًا.";
+      }
+    });
+
+    updateCounter();
+  </script>
+
+</body>
+  </html>
