@@ -825,11 +825,63 @@
   });
 
   // مسح النص الناتج
-  document.getElementById("clearSttButton").addEventListener("click", function () {
-    sttResult.value = "";
-    finalTranscript = "";
-    sttStatus.textContent = "";
-  });
+  document.getElementById("speakButton").addEventListener("click", function () {
+  const text = document.getElementById("ttsText").value.trim();
+  const status = document.getElementById("ttsStatus");
+
+  if (!text) {
+    status.textContent = "اكتب نصًا أولًا لتشغيل الصوت.";
+    return;
+  }
+
+  if (!("speechSynthesis" in window)) {
+    status.textContent =
+      "المتصفح لا يدعم تشغيل النص صوتيًا. جرّب Google Chrome.";
+    return;
+  }
+
+  try {
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    const lang = document.getElementById("ttsLanguage").value;
+    const voiceSelect = document.getElementById("ttsVoice");
+    const availableVoices = window.speechSynthesis.getVoices();
+
+    utterance.lang = lang === "ar" ? "ar-EG" : lang;
+    utterance.rate = 0.9;
+    utterance.volume = 1;
+
+    if (voiceSelect.value !== "") {
+      const voice = availableVoices[Number(voiceSelect.value)];
+
+      if (voice) {
+        utterance.voice = voice;
+        utterance.lang = voice.lang;
+      }
+    }
+
+    utterance.onstart = function () {
+      status.textContent = "بدأ تشغيل الصوت...";
+    };
+
+    utterance.onend = function () {
+      status.textContent = "انتهت قراءة النص.";
+    };
+
+    utterance.onerror = function (event) {
+      status.textContent =
+        "تعذّر تشغيل الصوت: " + event.error +
+        ". جرّب تغيير الصوت أو المتصفح.";
+    };
+
+    window.speechSynthesis.speak(utterance);
+
+    status.textContent = "جارٍ تجهيز الصوت...";
+  } catch (error) {
+    status.textContent = "حدث خطأ أثناء تشغيل الصوت. أعد تحميل الصفحة.";
+  }
+});
 
 })();
 </script>
