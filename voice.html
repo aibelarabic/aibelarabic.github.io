@@ -844,6 +844,8 @@
     window.speechSynthesis.cancel();
 
     const utterance = new SpeechSynthesisUtterance(text);
+    console.log("Available voices:", speechSynthesis.getVoices());
+console.log("Text to speak:", text);
     const lang = document.getElementById("ttsLanguage").value;
     const voiceSelect = document.getElementById("ttsVoice");
     const availableVoices = window.speechSynthesis.getVoices();
