@@ -1,39 +1,236 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>تعلم Claude AI بالعربي للمبتدئين| AI بالعربي</title>
-  
-  <link rel="icon" type="image/png" href="image/Icon.png">
-  
-  <meta name="description" content="تعرف على Claude AI من Anthropic، وكيفية استخدامه خطوة بخطوة، وأهم مميزاته واستخداماته في الكتابة والبرمجة وتحليل الملفات.">
+  <title>ما هو Claude AI بالعربي؟ شرح كلود للمبتدئين | AI بالعربي</title>
+
+  <meta name="description" content="تعرف على Claude AI بالعربي، وما هو كلود من شركة Anthropic، وكيفية استخدامه في الكتابة والدراسة والبرمجة وتحليل الملفات، والفرق بين Claude Chat وCode وCowork وAPI.">
 
   <meta name="robots" content="index, follow">
-
   <meta name="author" content="AI بالعربي">
 
-  <link rel="canonical" href="https://aibelarabic.github.io/claude.html">
-
+  <link rel="canonical" href="https://aibelarabic.github.io/Claude.html">
+  <link rel="icon" type="image/png" href="image/Icon.png">
   <link rel="stylesheet" href="style.css">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYXLTRRN4Q"></script>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AI بالعربي">
+  <meta property="og:title" content="ما هو Claude AI بالعربي؟ شرح كلود للمبتدئين">
+  <meta property="og:description" content="دليل عملي لاستخدام Claude AI بالعربي في الدراسة والكتابة والبرمجة، مع مقارنة بين أدوات Claude المختلفة.">
+  <meta property="og:url" content="https://aibelarabic.github.io/Claude.html">
+  <meta property="og:image" content="https://aibelarabic.github.io/image/planet-volumes-LTJGCRNEw7g-unsplash.jpg">
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYXLTRRN4Q"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-
-    function gtag(){
+    function gtag() {
       dataLayer.push(arguments);
     }
-
     gtag('js', new Date());
-
     gtag('config', 'G-SYXLTRRN4Q');
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ما هو Claude AI بالعربي؟ شرح كلود للمبتدئين",
+    "description": "دليل عملي للتعرف على Claude AI واستخدامه بالعربية في الدراسة والكتابة والبرمجة وتحليل الملفات.",
+    "image": "https://aibelarabic.github.io/image/planet-volumes-LTJGCRNEw7g-unsplash.jpg",
+    "datePublished": "2026-10-13",
+    "dateModified": "2026-10-21",
+    "inLanguage": "ar",
+    "author": {
+      "@type": "Organization",
+      "name": "AI بالعربي",
+      "url": "https://aibelarabic.github.io/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AI بالعربي",
+      "url": "https://aibelarabic.github.io/"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://aibelarabic.github.io/Claude.html"
+    }
+  }
+  </script>
+
+  <style>
+    .claude-comparison {
+      margin: 24px 0;
+      color: #1f2937;
+      font-family: inherit;
+    }
+
+    .claude-comparison .table-wrap {
+      overflow-x: auto;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .claude-comparison table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      background: #fff;
+      text-align: right;
+    }
+
+    .claude-comparison th {
+      padding: 13px 12px;
+      background: #111827;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .claude-comparison td {
+      padding: 12px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 14px;
+      line-height: 1.9;
+      vertical-align: top;
+    }
+
+    .claude-comparison tbody tr:nth-child(even) {
+      background: #f5f7fa;
+    }
+
+    .claude-comparison tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .claude-comparison .product-name {
+      color: #2563eb;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .claude-comparison code {
+      direction: ltr;
+      display: inline-block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 3px 6px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+
+    .claude-faq details {
+      margin: 12px 0;
+      padding: 14px;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+    }
+
+    .claude-faq summary {
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 1.8;
+    }
+
+    .claude-faq details p {
+      margin-bottom: 0;
+      line-height: 1.9;
+    }
+
+    .claude-note {
+      padding: 14px;
+      margin: 18px 0;
+      border-right: 4px solid #2563eb;
+      border-radius: 8px;
+      background: #eff6ff;
+      color: #1e3a8a;
+      line-height: 1.9;
+    }
+
+    body.dark-mode .claude-comparison,
+    body.dark-mode .claude-faq {
+      color: #e5e7eb;
+    }
+
+    body.dark-mode .claude-comparison .table-wrap {
+      border-color: #374151;
+    }
+
+    body.dark-mode .claude-comparison table {
+      background: #1f2937;
+      color: #e5e7eb;
+    }
+
+    body.dark-mode .claude-comparison th {
+      background: #111827;
+      color: #fff;
+    }
+
+    body.dark-mode .claude-comparison td {
+      border-color: #374151;
+    }
+
+    body.dark-mode .claude-comparison tbody tr:nth-child(even) {
+      background: #273449;
+    }
+
+    body.dark-mode .claude-comparison code {
+      background: #374151;
+      color: #bfdbfe;
+    }
+
+    body.dark-mode .claude-faq details {
+      border-color: #374151;
+    }
+
+    body.dark-mode .claude-note {
+      background: #1e293b;
+      color: #dbeafe;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body:not(.dark-mode) .claude-comparison,
+      body:not(.dark-mode) .claude-faq {
+        color: #e5e7eb;
+      }
+
+      body:not(.dark-mode) .claude-comparison .table-wrap {
+        border-color: #374151;
+      }
+
+      body:not(.dark-mode) .claude-comparison table {
+        background: #1f2937;
+        color: #e5e7eb;
+      }
+
+      body:not(.dark-mode) .claude-comparison tbody tr:nth-child(even) {
+        background: #273449;
+      }
+
+      body:not(.dark-mode) .claude-comparison td {
+        border-color: #374151;
+      }
+
+      body:not(.dark-mode) .claude-comparison code {
+        background: #374151;
+        color: #bfdbfe;
+      }
+
+      body:not(.dark-mode) .claude-faq details {
+        border-color: #374151;
+      }
+
+      body:not(.dark-mode) .claude-note {
+        background: #1e293b;
+        color: #dbeafe;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -49,469 +246,454 @@
     <a href="index.html#ai">الذكاء الاصطناعي</a>
     <a href="index.html#tech">التقنية</a>
     <a href="index.html#about">عن الموقع</a>
-    <button id="darkModeToggle" type="button">
-      🌙 الوضع الداكن
-    </button>
+    <button id="darkModeToggle" type="button">🌙 الوضع الداكن</button>
   </nav>
 
   <main>
-
     <article class="article-page">
 
       <div class="article-header">
-
         <span class="category">الذكاء الاصطناعي</span>
-
-        <h2>تعلم Claude AI بالعربي للمبتدئين</h2>
-
-        <p class="article-date">آخر تحديث: 13 أكتوبر 2026</p>
-
+        <h2>ما هو Claude AI بالعربي؟ شرح كلود للمبتدئين وطريقة استخدامه</h2>
+        <p class="article-date">آخر تحديث: 21 أكتوبر 2026</p>
       </div>
 
       <div class="article-content">
 
         <p class="intro">
-          إذا كنت تتابع تطور أدوات الذكاء الاصطناعي، فمن المحتمل أنك سمعت عن
-          <a href="https://www.claude.ai/"
-             target="_blank"
-             rel="noopener noreferrer">Claude</a>.
-          وهو مساعد ذكاء اصطناعي طورته شركة
-          <a href="https://www.anthropic.com/"
-             target="_blank"
-             rel="noopener noreferrer">Anthropic</a>، ويمكن استخدامه في الكتابة،
-          وتحليل المعلومات، والبرمجة، والتعامل مع الملفات وغيرها من المهام.
+          إذا كنت تبحث عن <strong>Claude AI بالعربي</strong> أو تتساءل
+          «ما هو كلود AI؟»، فهو مساعد ذكاء اصطناعي طورته شركة
+          <a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer">Anthropic</a>.
+          يمكنك استخدامه لفهم المعلومات وكتابة المحتوى وتلخيص المستندات
+          والمساعدة في البرمجة وتنظيم الأفكار، مع إمكانية التفاعل معه باللغة العربية.
+          في هذا الدليل سنتعرف على طريقة استخدام Claude وأهم استخداماته
+          والفرق بين أدواته المختلفة.
         </p>
 
         <img
           src="image/planet-volumes-LTJGCRNEw7g-unsplash.jpg"
-          alt="استخدام الذكاء الاصطناعي على جهاز لابتوب"
+          alt="التعامل مع أدوات الذكاء الاصطناعي من خلال الكمبيوتر"
           class="article-image"
+          fetchpriority="high"
         >
 
         <div class="toc">
           <h3>ماذا سنتناول في هذا المقال؟</h3>
           <ul>
-            <li><a href="#what-is-claude">ما هو Claude؟</a></li>
-            <li><a href="#how-to-use">كيفية استخدام Claude AI خطوة بخطوة</a></li>
-            <li><a href="#claude-writing">Claude في الكتابة وصناعة المحتوى</a></li>
-            <li><a href="#claude-files">Claude وتحليل الملفات</a></li>
-            <li><a href="#claude-coding">Claude في البرمجة</a></li>
-            <li><a href="#what-is-the-difference">ما الفرق بين Chatو Claude Codeو Coworkو API ?</a></li>
+            <li><a href="#what-is-claude">ما هو Claude AI؟</a></li>
+            <li><a href="#arabic">هل Claude يدعم اللغة العربية؟</a></li>
+            <li><a href="#how-to-use">كيفية استخدام Claude خطوة بخطوة</a></li>
+            <li><a href="#examples">أمثلة عملية لطلبات Claude بالعربي</a></li>
+            <li><a href="#claude-writing">استخدام Claude في الكتابة وصناعة المحتوى</a></li>
+            <li><a href="#claude-files">استخدام Claude في تحليل الملفات</a></li>
+            <li><a href="#claude-coding">Claude والبرمجة</a></li>
+            <li><a href="#claude-tools">الفرق بين Claude Chat وCode وCowork وAPI</a></li>
             <li><a href="#claude-free">هل Claude مجاني؟</a></li>
             <li><a href="#claude-students">هل Claude مناسب للطلاب؟</a></li>
             <li><a href="#claude-chatgpt">Claude أم ChatGPT؟</a></li>
+            <li><a href="#claude-faq">الأسئلة الشائعة</a></li>
           </ul>
         </div>
 
-        <h3 id="what-is-claude">ما هو Claude؟</h3>
+        <h3 id="what-is-claude">ما هو Claude AI؟</h3>
 
         <p>
-          Claude هو مساعد ذكاء اصطناعي من تطوير شركة Anthropic.
-          يمكنك التعامل معه من خلال المحادثة وطرح الأسئلة عليه أو إعطائه مهمة
-          تريد المساعدة في تنفيذها.
+          Claude هو مساعد ذكاء اصطناعي توليدي من شركة Anthropic.
+          تتفاعل معه عن طريق كتابة الأسئلة أو وصف المهمة التي تريد المساعدة فيها،
+          ثم تراجع الإجابة وتطلب التوضيح أو التعديل عند الحاجة.
         </p>
 
         <p>
-          مثل غيره من المساعدين المعتمدين على الذكاء الاصطناعي التوليدي،
-          يمكن استخدام Claude في مجموعة واسعة من المهام التي تعتمد على فهم
-          النصوص والمعلومات وإنشاء محتوى جديد.
+          بدلًا من البحث عن معلومة واحدة فقط، يمكنك أن تطلب منه شرح موضوع
+          بالتدريج، أو مقارنة عدة أفكار، أو تلخيص نص طويل، أو مساعدتك في
+          فهم مشكلة برمجية. وتعتمد النتيجة على وضوح طلبك والمعلومات المتاحة
+          والميزات التي تستخدمها.
         </p>
 
-        <p>و سواء كنت تبحث عنه بـ "كلود ai" او " كلاود ai" فالمقصود هو Claude من Anthropic.</p>
+        <p>
+          قد تجد اسم الأداة مكتوبًا بأشكال مختلفة مثل Claude AI أو كلود AI
+          أو كلاود AI. المقصود في هذه الحالات غالبًا هو المساعد Claude
+          التابع لشركة Anthropic.
+        </p>
 
-        <!-- القسم الجديد: كيفية استخدام Claude -->
+        <p>
+          الموقع الرسمي:
+          <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude.ai</a>.
+        </p>
+
+        <h3 id="arabic">هل Claude AI يدعم اللغة العربية؟</h3>
+
+        <p>
+          يمكنك كتابة طلباتك باللغة العربية وطلب إجابات عربية من Claude.
+          ومن المفيد أن تحدد مستوى اللغة الذي تريده، مثل العربية الفصحى
+          المبسطة، أو أسلوب مناسب للمبتدئين، أو شرح بمصطلحات تقنية مع توضيحها.
+        </p>
+
+        <p>للحصول على نتيجة أوضح، جرّب أن تحدد ثلاثة أشياء في طلبك:</p>
+
+        <ul>
+          <li><strong>الهدف:</strong> ما الذي تريد فهمه أو إنجازه؟</li>
+          <li><strong>المستوى:</strong> هل أنت مبتدئ أم لديك معرفة سابقة؟</li>
+          <li><strong>شكل الإجابة:</strong> هل تفضل خطوات أم أمثلة أم جدولًا؟</li>
+        </ul>
+
+        <div class="claude-note">
+          <strong>مثال:</strong>
+          اشرح لي أساسيات الذكاء الاصطناعي بالعربية الفصحى المبسطة،
+          وافترض أنني مبتدئ تمامًا، واستخدم ثلاثة أمثلة من الحياة اليومية.
+        </div>
 
         <h3 id="how-to-use">كيفية استخدام Claude AI خطوة بخطوة</h3>
 
-        <p>
-          يمكنك البدء في استخدام Claude من خلال موقعه الرسمي. ولا تحتاج إلى
-          خبرة تقنية متقدمة للاستفادة منه في الكتابة أو التعلم أو تلخيص النصوص
-          أو الحصول على مساعدة في البرمجة.
-        </p>
-
-        <h4>1. افتح موقع Claude الرسمي</h4>
+        <h4>1. افتح الموقع الرسمي</h4>
 
         <p>
           ادخل إلى
-          <a href="https://claude.ai/"
-             target="_blank"
-             rel="noopener noreferrer">موقع Claude الرسمي</a>.
-          ستجد واجهة المحادثة التي تتيح لك التفاعل مع المساعد وطرح الأسئلة
-          وطلب تنفيذ المهام المختلفة.
+          <a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude.ai</a>.
+          استخدم الموقع الرسمي لتجنب الصفحات التي تنتحل اسم الخدمة.
         </p>
 
-        <h4>2. سجّل الدخول إلى حسابك</h4>
+        <h4>2. أنشئ حسابًا أو سجّل الدخول</h4>
 
         <p>
-          اتبع التعليمات التي تظهر على الموقع لإنشاء حساب أو تسجيل الدخول.
-          قد تختلف خيارات التسجيل حسب ما هو متاح وقت استخدامك للخدمة.
-          كما أن بعض الميزات وحدود الاستخدام قد تختلف حسب نوع الخطة.
+          اتبع تعليمات التسجيل الظاهرة على الموقع. قد تختلف طرق التسجيل
+          وإمكانية الوصول إلى الخدمة حسب البلد والسياسات الحالية.
         </p>
 
-        <h4>3. اكتب أول طلب لك</h4>
+        <h4>3. اكتب طلبًا واضحًا</h4>
 
         <p>
-          بعد الدخول إلى حسابك، اكتب سؤالك أو المهمة التي تريد تنفيذها في
-          مربع المحادثة، ثم أرسل الطلب وانتظر الإجابة. يمكنك كتابة طلبك
-          باللغة العربية وطلب أن تكون الإجابة بالعربية أيضًا.
+          اشرح المهمة التي تريد تنفيذها، وأضف السياق الضروري. كلما كان
+          المطلوب محددًا، أصبح من الأسهل تقييم مدى مناسبة الإجابة.
+        </p>
+
+        <h4>4. راجع النتيجة واطلب تعديلها</h4>
+
+        <p>
+          يمكنك متابعة المحادثة لطلب أمثلة إضافية أو تبسيط الشرح أو تصحيح
+          التنسيق. لا تحتاج دائمًا إلى كتابة طلب جديد بالكامل.
+        </p>
+
+        <h4>5. جرّب مهامًا مختلفة</h4>
+
+        <p>
+          ابدأ بمهمة بسيطة، مثل تلخيص مقال أو شرح مصطلح أو إعداد مسودة.
+          وبعدها جرّب مهامًا أكثر تفصيلًا وفقًا لاحتياجاتك.
         </p>
 
         <p>
-        <a href="prompt-guide.html" class="read-more">
-          كيفية كتابة برومبت احترافي←
-        </a>
+          إذا كنت تريد تحسين طريقة كتابة الطلبات، يمكنك قراءة دليلنا:
+          <a href="prompt-guide.html" class="read-more">كيفية كتابة برومبت احترافي ←</a>
         </p>
 
-        <div class="tip-box">
-          <strong>💡 مثال عملي:</strong>
-          <p>
-            اشرح لي مفهوم الذكاء الاصطناعي باللغة العربية البسيطة،
-            مع ثلاثة أمثلة من الحياة اليومية، ثم لخّص الإجابة في خمس نقاط.
-          </p>
+        <h3 id="examples">أمثلة عملية لطلبات Claude AI بالعربي</h3>
+
+        <p>
+          يمكنك نسخ الأمثلة التالية وتعديلها حسب المهمة التي تعمل عليها.
+          هذه أمثلة على صياغة الطلبات، وليست ضمانًا لصحة كل إجابة ينتجها النموذج.
+        </p>
+
+        <h4>مثال 1: شرح موضوع صعب</h4>
+
+        <div class="claude-note">
+          اشرح لي مفهوم تعلم الآلة كأنني مبتدئ، ثم أعطني مثالًا من الحياة
+          اليومية، وبعد ذلك لخّص الفكرة في خمس نقاط.
         </div>
 
-        <h4>4. اطلب تحسين الإجابة</h4>
+        <h4>مثال 2: كتابة مسودة مقال</h4>
 
-        <p>
-          إذا كانت الإجابة طويلة أو غير واضحة، يمكنك متابعة المحادثة وطلب
-          تعديلها بدلًا من البدء من جديد. اطلب مثلًا اختصار الإجابة أو
-          شرح نقطة معينة أو إضافة أمثلة عملية.
-        </p>
-
-        <div class="tip-box">
-          <strong>💡 مثال:</strong>
-          <p>
-            أعد شرح النقطة الثانية بطريقة أبسط، وأضف مثالًا عمليًا،
-            واجعل الإجابة مناسبة لشخص مبتدئ.
-          </p>
+        <div class="claude-note">
+          ساعدني في إعداد مسودة مقال عربي عن استخدامات الذكاء الاصطناعي
+          في التعليم. اقترح عنوانًا ومقدمة وعناوين فرعية وخاتمة،
+          وحدد المعلومات التي تحتاج إلى مصادر للتحقق منها.
         </div>
 
-        <h4>استخدم Claude في التعامل مع الملفات</h4>
+        <h4>مثال 3: تلخيص نص</h4>
+
+        <div class="claude-note">
+          لخّص النص الذي سأرسله في نقاط واضحة، وافصل بين الأفكار الرئيسية
+          والتفاصيل الثانوية. لا تضف معلومات غير موجودة في النص.
+        </div>
+
+        <h4>مثال 4: فهم خطأ برمجي</h4>
+
+        <div class="claude-note">
+          اشرح سبب الخطأ في الكود التالي، وحدد السطر المحتمل أن تكون فيه
+          المشكلة، ثم اقترح تعديلًا واشرح لماذا قد يحل المشكلة.
+          [ضع الكود ورسالة الخطأ هنا].
+        </div>
+
+        <h3 id="claude-writing">استخدام Claude في الكتابة وصناعة المحتوى</h3>
 
         <p>
-          عند توافر ميزة رفع الملفات في حسابك، يمكنك إرفاق ملف مناسب وطلب
-          تلخيصه أو استخراج أهم الأفكار منه أو شرح محتواه. راجع النتائج
-          بنفسك، وتجنب رفع معلومات شخصية أو سرية لا تحتاج إلى مشاركتها.
+          يمكن أن يساعد Claude في مراحل متعددة من صناعة المحتوى،
+          بداية من اقتراح الأفكار وحتى مراجعة المسودة النهائية.
+          ومن الاستخدامات الممكنة:
         </p>
-
-        <h4>.جرّب استخدامات مختلفة</h4>
-
-        <p>يمكنك تجربة Claude في مهام مثل:</p>
 
         <ul>
-          <li>تلخيص المقالات والمستندات الطويلة.</li>
-          <li>شرح المفاهيم الدراسية والأفكار المعقدة.</li>
-          <li>كتابة المسودات وإعادة صياغة النصوص.</li>
-          <li>المساعدة في فهم الأكواد البرمجية وتصحيح الأخطاء.</li>
-          <li>تنظيم الأفكار وإعداد الخطط وقوائم المهام.</li>
-        </ul>
-
-        <h4>نصائح للحصول على نتائج أفضل</h4>
-
-        <ul>
-          <li>اكتب هدفك بوضوح بدلًا من استخدام سؤال عام جدًا.</li>
-          <li>اذكر شكل الإجابة الذي تريده، مثل قائمة أو خطوات أو جدول.</li>
-          <li>أضف السياق الضروري حتى يفهم Claude ما تحتاج إليه.</li>
-          <li>اطلب توضيح النقاط غير المفهومة بدلًا من قبولها كما هي.</li>
-          <li>تحقق من المعلومات المهمة بالرجوع إلى مصادر موثوقة.</li>
+          <li>اقتراح أفكار لمقالات تتعلق بمجال معين.</li>
+          <li>تنظيم العناوين الفرعية قبل البدء في الكتابة.</li>
+          <li>إعادة صياغة جمل غير واضحة.</li>
+          <li>تلخيص نصوص طويلة مع الاحتفاظ بالنقاط الرئيسية.</li>
+          <li>مراجعة المسودة لغويًا واكتشاف التكرار.</li>
         </ul>
 
         <p>
-          يمكنك زيارة
-          <a href="https://support.claude.com/"
-             target="_blank"
-             rel="noopener noreferrer">مركز مساعدة Claude الرسمي</a>
-          للتعرف على شرح الميزات وطريقة استخدامها.
-        </p>
-
-        <!-- نهاية القسم الجديد -->
-
-        <h3 id="claude-writing">Claude في الكتابة وصناعة المحتوى</h3>
-
-        <p>
-          يمكن استخدام Claude للمساعدة في كتابة أنواع مختلفة من المحتوى،
-          مثل المقالات والمسودات والرسائل، بالإضافة إلى إعادة صياغة النصوص
-          وتنظيم الأفكار.
+          مثلًا، بدلًا من أن تطلب منه «اكتب مقالًا عن الذكاء الاصطناعي»،
+          حدد الجمهور المستهدف وطول المقال والنقاط التي تريد تناولها.
+          وبعد ذلك راجع المعلومات والأمثلة والمصادر بنفسك قبل النشر.
         </p>
 
         <p>
-          ويمكنك أيضًا إعطاؤه نصًا موجودًا بالفعل وطلب تلخيصه أو إعادة تنظيمه
-          بطريقة أسهل في القراءة.
-        </p>
-
-        <h3 id="claude-files">Claude وتحليل الملفات</h3>
-
-        <p>
-          من الاستخدامات المفيدة للمساعدات الذكية التعامل مع المعلومات الموجودة
-          داخل الملفات والمستندات.
-        </p>
-
-        <p>
-          يمكن استخدام Claude في المهام التي تتطلب قراءة وتحليل محتوى،
-          مثل استخراج النقاط المهمة من مستند أو مساعدتك على فهم معلومات
-          موجودة في ملف.
-        </p>
-
-        <h3 id="claude-coding">Claude في البرمجة</h3>
-
-        <p>
-          Claude يمكنه أيضًا مساعدة المبرمجين في فهم الأكواد وكتابتها
-          وتصحيح بعض الأخطاء وشرح طريقة عمل أجزاء مختلفة من البرنامج.
-        </p>
-
-        <p>
-          وتقدم Anthropic أيضًا أداة تسمى Claude Code مخصصة بشكل أكبر
-          للعمل مع مشاريع البرمجة والأكواد.
-        </p>
-
-        <div class="tip-box">
-          <strong>💡 مثال بسيط:</strong>
-          <p>
-            بدلًا من سؤال Claude: "اكتب لي كود"، يمكنك إعطاؤه تفاصيل أكثر
-            مثل لغة البرمجة المطلوبة، وما الذي تريد أن يفعله الكود،
-            والمشكلة التي تواجهها.
-          </p>
-        </div>
-
-        <h3 id="what-is-the-difference">ما الفرق بين Chat و Claude Code و Coworkو API</h3>
-
-        <p>هذه طرق لفهم استخدامات Claude</p>
-        
-<div class="claude-comparison" dir="rtl">
-  <style>
-    .claude-comparison {
-      margin: 25px 0;
-      font-family: inherit;
-      color: #1f2937;
-    }
-
-    .claude-comparison .table-wrap {
-      overflow-x: auto;
-      border-radius: 12px;
-      border: 1px solid #e5e7eb;
-    }
-
-    .claude-comparison table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 620px;
-      background: #fff;
-      text-align: right;
-    }
-
-    .claude-comparison th {
-      background: #111827;
-      color: #fff;
-      padding: 14px 12px;
-      font-size: 14px;
-    }
-
-    .claude-comparison td {
-      padding: 13px 12px;
-      border-bottom: 1px solid #e5e7eb;
-      font-size: 14px;
-      line-height: 1.8;
-      vertical-align: top;
-    }
-
-    .claude-comparison tbody tr:nth-child(even) {
-      background: #f5f7fa;
-    }
-
-    .claude-comparison tbody tr:last-child td {
-      border-bottom: none;
-    }
-
-    .claude-comparison .product-name {
-      font-weight: bold;
-      color: #2563eb;
-      white-space: nowrap;
-    }
-
-    .claude-comparison code {
-      direction: ltr;
-      display: inline-block;
-      background: #eef2ff;
-      color: #3730a3;
-      padding: 3px 6px;
-      border-radius: 5px;
-      font-size: 12px;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .claude-comparison {
-        color: #e5e7eb;
-      }
-
-      .claude-comparison .table-wrap {
-        border-color: #374151;
-      }
-
-      .claude-comparison table {
-        background: #1f2937;
-        color: #e5e7eb;
-      }
-
-      .claude-comparison th {
-        background: #111827;
-      }
-
-      .claude-comparison tbody tr:nth-child(even) {
-        background: #273449;
-      }
-
-      .claude-comparison td {
-        border-color: #374151;
-      }
-
-      .claude-comparison code {
-        background: #374151;
-        color: #bfdbfe;
-      }
-    }
-  </style>
-
-  <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>الأداة</th>
-          <th>الاستخدام الأساسي</th>
-          <th>مثال عملي</th>
-          <th>الكود أو طريقة الاستخدام</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td class="product-name">Claude Chat</td>
-          <td>الكتابة والشرح وتحليل الأفكار.</td>
-          <td>كتابة مقال عن Google Gemini.</td>
-          <td>اكتب طلبك مباشرة في المحادثة، مثل: <code>اكتب مقالًا عن Gemini</code></td>
-        </tr>
-
-        <tr>
-          <td class="product-name">Claude Code</td>
-          <td>إنشاء البرامج وتعديل ملفات الكود.</td>
-          <td>تطوير موقعك وإصلاح أخطاء HTML وCSS.</td>
-          <td>أمر مثل: <code>Fix the navigation across all pages</code></td>
-        </tr>
-
-        <tr>
-          <td class="product-name">Claude Cowork</td>
-          <td>تنفيذ المهام المتعددة وتنظيم الملفات.</td>
-          <td>مراجعة المقالات وإعداد تقرير بالمشكلات.</td>
-          <td>اكتب: راجع ملفات المقالات وأنشئ تقريرًا بالأخطاء.</td>
-        </tr>
-
-        <tr>
-          <td class="product-name">Claude API</td>
-          <td>دمج الذكاء الاصطناعي في المواقع والتطبيقات.</td>
-          <td>إنشاء أداة تكتب المقالات لزوار موقعك.</td>
-          <td>استخدام JavaScript مع واجهة Messages API عبر خادم آمن.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-        <p>هذه ليست أشياء منفصلة بل متخصصة فإذا طلبت من Chat أكواد برمجية سيعطيك اجابة.</p>
-
-
-        <h3 id="claude-free">هل Claude مجاني؟</h3>
-
-        <p>
-          توجد نسخة مجانية من Claude، كما توفر Anthropic خططًا مدفوعة
-          بحدود استخدام وميزات مختلفة.
-        </p>
-
-        <p>
-          وبما أن الخطط والأسعار والميزات يمكن أن تتغير مع الوقت،
-          فمن الأفضل مراجعة الموقع الرسمي لـ Claude قبل الاشتراك في أي خطة.
-        </p>
-
-        <h3 id="claude-students">هل Claude مناسب للطلاب؟</h3>
-
-        <p>
-          يمكن للطلاب استخدام Claude كأداة مساعدة في التعلم وفهم المعلومات،
-          مثل تبسيط مفهوم معين، أو تلخيص نص، أو تنظيم أفكار البحث،
-          أو المساعدة في فهم كود برمجي.
-        </p>
-
-        <p>
-          ومع ذلك، من الأفضل عدم الاعتماد عليه بشكل كامل في المعلومات المهمة،
-          لأن نماذج الذكاء الاصطناعي قد تقدم أحيانًا معلومات غير دقيقة.
-          لذلك يجب مراجعة المعلومات المهمة من مصادر موثوقة.
-        </p>
-
-        <h3 id="claude-chatgpt">Claude أم ChatGPT؟</h3>
-
-        <p>
-          Claude وChatGPT من أشهر أدوات الذكاء الاصطناعي المتاحة للمستخدمين،
-          لكنهما ليسا متطابقين في طريقة العمل والميزات المتوفرة.
-        </p>
-
-        <p>
-          لذلك لا توجد إجابة واحدة تناسب الجميع عند السؤال عن الأداة المناسبة.
-          يعتمد الاختيار على المهمة التي تريد تنفيذها والميزات التي تحتاج إليها.
-        </p>
-
-        <p>
-          إذا كنت تريد معرفة الفروقات بشكل أكثر تفصيلًا، اقرأ مقالنا:
-        </p>
-
-        <p>
-          <a href="claude-vs-chatgpt.html" class="read-more">
-            Claude AI vs ChatGPT: ما الفرق بينهما؟ ←
-          </a>
-        </p>
-
-        <p>
+          للمقارنة بين أدوات الكتابة المختلفة، يمكنك الرجوع إلى:
           <a href="ai-writing-tools.html" class="read-more">
-            ما أفضل أداة ذكاء اصطناعي لكتابة المحتوى ←
+            ما أفضل أداة ذكاء اصطناعي لكتابة المحتوى؟ ←
           </a>
         </p>
 
-        <p>
-          <a href="best-ai-tools.html" class="read-more">
-            أفضل 10 أدوات ذكاء اصطناعي 2026 ←
-          </a>
-        </p>
-
-        <h3>الخلاصة</h3>
+        <h3 id="claude-files">استخدام Claude في تحليل الملفات</h3>
 
         <p>
-          Claude هو مساعد ذكاء اصطناعي طورته Anthropic ويمكن استخدامه
-          في الكتابة وتحليل المعلومات والبرمجة والتعامل مع الملفات
-          والعديد من المهام الأخرى.
+          إذا كانت ميزة رفع الملفات متاحة في واجهتك، يمكنك إرفاق مستند
+          مناسب وطلب تلخيصه أو استخراج النقاط الرئيسية أو الإجابة عن أسئلة
+          تتعلق بمحتواه.
+        </p>
+
+        <p>من أمثلة الاستخدام:</p>
+
+        <ul>
+          <li>تلخيص تقرير طويل في نقاط محددة.</li>
+          <li>استخراج المصطلحات المهمة من مستند.</li>
+          <li>مقارنة المعلومات بين أقسام ملف.</li>
+          <li>تحويل ملاحظات غير مرتبة إلى ملخص منظم.</li>
+        </ul>
+
+        <p>
+          تأكد من أن نوع الملف وحجمه مدعومان في حسابك، وراجع الإجابات
+          بالرجوع إلى المستند الأصلي. ولا ترفع ملفات تحتوي على معلومات
+          شخصية أو سرية دون حاجة واضحة.
+        </p>
+
+        <h3 id="claude-coding">Claude AI في البرمجة</h3>
+
+        <p>
+          يمكن استخدام Claude لشرح الأكواد، واقتراح تعديلات، وكتابة أمثلة
+          برمجية، والمساعدة في اكتشاف الأخطاء. وتظل مراجعة الكود واختباره
+          ضرورية، لأن الاقتراحات قد تحتوي على أخطاء أو لا تناسب مشروعك.
         </p>
 
         <p>
-          وإذا كنت مهتمًا بأدوات الذكاء الاصطناعي، فمن المفيد تجربة أكثر
-          من أداة والتعرف على نقاط القوة والاستخدامات المختلفة لكل واحدة،
-          بدلًا من الاعتماد على أداة واحدة فقط.
+          إذا كنت تعمل على موقع HTML وCSS، يمكنك إرسال الجزء الذي يسبب
+          المشكلة مع توضيح النتيجة المطلوبة والمتصفح أو رسالة الخطأ.
+          هذا أفضل من إرسال طلب عام مثل «أصلح الموقع».
         </p>
 
-      </div>
+        <p>
+          لدى Anthropic أيضًا منتج اسمه
+          <a href="https://code.claude.com/" target="_blank" rel="noopener noreferrer">Claude Code</a>
+          مخصص لسير عمل البرمجة، ويساعد على العمل مع الأكواد والمشروعات
+          البرمجية من خلال بيئة العمل المدعومة.
+        </p>
 
-      <p>
-        <a href="ai-danger.html" class="read-more">
-          أهم المخاطر التي يجب أن تعرفها عن الذكاء الاصطناعي ←
-        </a>
-      </p>
+        <!-- ينتهي الجزء الأول هنا. أكمل بالجزء الثاني دون حذف ما سبق. -->
+        
+<h3 id="claude-tools">ما الفرق بين Claude Chat وClaude Code وCowork وAPI؟</h3>
 
-      <a class="back-home" href="index.html">
-        ← العودة إلى الصفحة الرئيسية
-      </a>
+<p>
+تقدم Anthropic أكثر من طريقة لاستخدام Claude، وكل طريقة مصممة لغرض مختلف. اختيار الأداة المناسبة يعتمد على طبيعة المهمة التي تريد تنفيذها.
+</p>
 
-    </article>
+<div class="table-container">
+<table class="claude-table">
+<thead>
+<tr>
+<th>الأداة</th>
+<th>الاستخدام الأساسي</th>
+<th>مثال عملي</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Claude Chat</strong></td>
+<td>المحادثة والكتابة والتعلم وتحليل الملفات.</td>
+<td>تلخيص محاضرة أو كتابة مقال عربي.</td>
+</tr>
+<tr>
+<td><strong>Claude Code</strong></td>
+<td>مساعدة المطورين في فهم الأكواد وتعديل المشاريع البرمجية والعمل عليها.</td>
+<td>إصلاح خطأ في موقع HTML أو إضافة ميزة جديدة.</td>
+</tr>
+<tr>
+<td><strong>Claude Cowork</strong></td>
+<td>المساعدة في تنفيذ مهام عمل متعددة الخطوات والتعامل مع الملفات، حسب الإتاحة والصلاحيات.</td>
+<td>تنظيم مجموعة ملفات أو إعداد تقرير من مستندات متعددة.</td>
+</tr>
+<tr>
+<td><strong>Claude API</strong></td>
+<td>دمج نماذج Claude داخل المواقع والتطبيقات والأنظمة البرمجية.</td>
+<td>إنشاء مساعد ذكي داخل موقع إلكتروني.</td>
+</tr>
+</tbody>
+</table>
+</div>
 
-  </main>
+<p>
+<strong>مثال للتوضيح:</strong> إذا أردت كتابة مقال، يمكنك استخدام Claude Chat. وإذا كنت تطور موقعًا وتريد المساعدة في تعديل ملفاته، فقد يناسبك Claude Code. أما إذا أردت إضافة Claude إلى موقعك ليجيب عن أسئلة الزوار، فيمكنك استخدام API.
+</p>
 
-  <footer>
-    <p>© 2026 AI بالعربي</p>
-  </footer>
+<p>
+لاحظ أن استخدام API قد يتطلب دفع رسوم حسب الاستهلاك وإعدادات الحساب، بينما تختلف حدود الاستخدام والميزات المتاحة في الأدوات الأخرى حسب الخطة والتحديثات.
+</p>
 
-  <script src="script.js?v=7"></script>
+<p>
+للمعلومات الرسمية:
+<a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">Claude Chat</a> |
+<a href="https://code.claude.com/" target="_blank" rel="noopener noreferrer">Claude Code</a> |
+<a href="https://www.anthropic.com/" target="_blank" rel="noopener noreferrer">موقع Anthropic</a> |
+<a href="https://docs.claude.com/" target="_blank" rel="noopener noreferrer">توثيق Claude</a>
+</p>
 
+<h2 id="claude-free">هل Claude AI مجاني؟</h2>
+
+<p>
+نعم، توفر Claude خطة مجانية، لكن استخدامها يخضع لحدود قد تختلف وفقًا للضغط على الخدمة وطول المحادثات والميزات المتاحة. توجد أيضًا خطط مدفوعة توفر حدود استخدام أو إمكانات إضافية وفقًا لشروط كل خطة.
+</p>
+
+<p>
+إذا كنت مبتدئًا، يمكنك البدء من الموقع الرسمي وتجربة المهام التي تحتاج إليها قبل التفكير في الاشتراك. أما إذا كنت تحتاج إلى استخدام مكثف أو ميزات محددة، فتحقق من تفاصيل الخطط الحالية قبل الدفع.
+</p>
+
+<p>
+يمكنك الاطلاع على التفاصيل من
+<a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">موقع Claude الرسمي</a>
+و
+<a href="https://support.claude.com/" target="_blank" rel="noopener noreferrer">مركز مساعدة Claude</a>.
+</p>
+
+<h2 id="claude-students">كيف يمكن للطلاب استخدام Claude AI؟</h2>
+
+<p>
+يمكن أن يكون Claude مساعدًا مفيدًا للطلاب عند استخدامه لفهم المعلومات وتنظيمها، وليس مجرد الحصول على إجابات جاهزة. إليك بعض الاستخدامات العملية:
+</p>
+
+<ul>
+<li><strong>شرح المحاضرات:</strong> اطلب شرح مفهوم صعب بلغة بسيطة مع أمثلة.</li>
+<li><strong>تلخيص المذكرات:</strong> أرفق ملفًا مدعومًا واطلب تلخيص أهم النقاط.</li>
+<li><strong>إنشاء أسئلة للمراجعة:</strong> اطلب أسئلة اختيار من متعدد أو أسئلة قصيرة على موضوع معين.</li>
+<li><strong>تعلم اللغات:</strong> استخدمه لفهم القواعد وتصحيح الجمل وشرح المفردات.</li>
+<li><strong>المساعدة في البرمجة:</strong> اطلب تفسير الكود وشرح سبب ظهور خطأ معين.</li>
+</ul>
+
+<p>
+مثال على Prompt يمكن استخدامه:
+</p>
+
+<blockquote>
+اشرح لي هذا الدرس باللغة العربية وكأنني أدرسه لأول مرة. قسّم الشرح إلى عناوين قصيرة، واستخدم أمثلة بسيطة، ثم أنشئ 5 أسئلة للمراجعة مع الإجابات في نهاية الشرح.
+</blockquote>
+
+<p>
+من الأفضل مراجعة المعلومات المهمة مع الكتاب أو المحاضرة الأصلية؛ لأن أدوات الذكاء الاصطناعي قد تخطئ أو تقدم معلومات غير دقيقة أحيانًا.
+</p>
+
+<h2 id="claude-chatgpt">ما الفرق بين Claude وChatGPT؟</h2>
+
+<p>
+Claude وChatGPT مساعدان للذكاء الاصطناعي يمكن استخدامهما في الكتابة والتعلم والبرمجة وتحليل المعلومات. لكن التجربة والميزات وحدود الاستخدام تختلف باختلاف النموذج والخطة والتحديثات.
+</p>
+
+<ul>
+<li><strong>الكتابة:</strong> يمكنك تجربة الأداتين ومقارنة جودة الأسلوب العربي ومدى التزام كل منهما بتعليماتك.</li>
+<li><strong>البرمجة:</strong> اختبرهما على جزء من مشروعك، وقارن جودة التعديلات ووضوح الشرح.</li>
+<li><strong>تحليل الملفات:</strong> تحقق من أنواع الملفات المدعومة وحدودها في كل خدمة.</li>
+<li><strong>التكلفة:</strong> قارن الخطط الحالية وحدود الاستخدام قبل الاشتراك؛ فلا توجد خطة واحدة هي الأفضل للجميع.</li>
+</ul>
+
+<p>
+لا توجد أداة تتفوق في جميع المهام بصورة ثابتة. الأفضل أن تختار بناءً على احتياجك الفعلي، وأن تختبر الأدوات على أمثلة من عملك.
+</p>
+
+<p>
+اقرأ أيضًا:
+<a href="claude-vs-chatgpt.html">مقارنة Claude وChatGPT بالتفصيل</a>.
+</p>
+
+<h2 id="claude-faq">الأسئلة الشائعة عن Claude AI</h2>
+
+<details>
+<summary>ما هو Claude AI باختصار؟</summary>
+<p>
+Claude هو مساعد ذكاء اصطناعي طورته شركة Anthropic، ويمكن استخدامه في المحادثة والكتابة والتعلم والبرمجة وتحليل المحتوى، بحسب الأداة والميزات المتاحة.
+</p>
+</details>
+
+<details>
+<summary>هل يدعم Claude اللغة العربية؟</summary>
+<p>
+نعم، يمكنه فهم العربية والرد بها والمساعدة في كتابة المحتوى العربي. وقد تختلف جودة النتائج حسب المهمة وطريقة صياغة التعليمات.
+</p>
+</details>
+
+<details>
+<summary>هل يمكن استخدام Claude دون دفع المال؟</summary>
+<p>
+تتوفر خطة مجانية، لكنها تخضع لحدود استخدام وميزات محددة. تحقق من الموقع الرسمي لمعرفة الشروط الحالية.
+</p>
+</details>
+
+<details>
+<summary>هل يستطيع Claude كتابة الأكواد البرمجية؟</summary>
+<p>
+نعم، يمكنه إنشاء الأكواد وشرحها والمساعدة في اكتشاف الأخطاء. ومع ذلك، يجب اختبار الكود ومراجعته قبل استخدامه في مشروع حقيقي.
+</p>
+</details>
+
+<details>
+<summary>ما الفرق بين Claude Chat وClaude Code؟</summary>
+<p>
+Claude Chat مخصص للمحادثة والمهام العامة، بينما Claude Code مصمم لمساعدة المطورين في العمل على الأكواد والمشاريع البرمجية.
+</p>
+</details>
+
+<details>
+<summary>هل يمكن دمج Claude داخل موقع إلكتروني؟</summary>
+<p>
+يمكن دمجه باستخدام Claude API، لكن ذلك يحتاج إلى إعداد تقني، وقد يتطلب دفع رسوم حسب الاستخدام. يجب حفظ مفتاح API على الخادم وعدم وضعه في كود الواجهة الأمامية المنشور للعامة.
+</p>
+</details>
+
+<h2>الخلاصة</h2>
+
+<p>
+يُعد Claude AI من الأدوات التي يمكنك تجربتها في الكتابة والتعلم والبرمجة وتحليل الملفات. ابدأ بالمهام البسيطة، واكتب تعليمات واضحة، وراجع النتائج قبل الاعتماد عليها. وإذا كنت تريد اختيار الأداة الأنسب لك، فقارنها ببدائلها بناءً على احتياجك والميزات والتكلفة الحالية.
+</p>
+
+<p>
+إذا كنت تريد تحسين نتائجك مع أدوات الذكاء الاصطناعي، يمكنك قراءة
+<a href="prompt-guide.html">دليل كتابة Prompt احترافي</a>
+أو الاطلاع على
+<a href="ai-writing-tools.html">مقارنة أدوات الذكاء الاصطناعي لكتابة المحتوى</a>.
+</p>
+
+</div>
+
+<p class="article-note">
+للتعرف على مخاطر الذكاء الاصطناعي وكيفية استخدامه بوعي، اقرأ أيضًا
+<a href="ai-danger.html">مقال مخاطر الذكاء الاصطناعي</a>.
+</p>
+
+<div class="back-home">
+<a href="index.html">العودة إلى الصفحة الرئيسية</a>
+</div>
+
+</article>
+</main>
+
+<footer>
+<p>© 2026 AI بالعربي — الذكاء الاصطناعي والتقنية باللغة العربية</p>
+</footer>
+
+<script src="script.js?v=7"></script>
 </body>
-  </html>
+</html>
