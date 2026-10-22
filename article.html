@@ -423,116 +423,7 @@
         </a>
       </p>
 
-   <section id="comments-section" dir="rtl" style="max-width:900px;margin:30px auto;padding:20px;background:#fff;border-radius:12px;color:#222;">
-  <h2>💬 التعليقات</h2>
-  <p>شاركنا رأيك. الاسم اختياري، والتعليق يظهر بعد المراجعة.</p>
-
-  <form id="comment-form">
-    <label for="comment-author">الاسم (اختياري)</label>
-    <input id="comment-author" maxlength="40" placeholder="اكتب اسمك"
-      style="display:block;width:100%;box-sizing:border-box;padding:12px;margin:8px 0 16px;">
-
-    <label for="comment-content">تعليقك</label>
-    <textarea id="comment-content" maxlength="2000" required
-      placeholder="اكتب تعليقك هنا..."
-      style="display:block;width:100%;box-sizing:border-box;padding:12px;margin:8px 0 16px;min-height:120px;"></textarea>
-
-    <button type="submit" id="comment-submit" style="padding:12px 20px;cursor:pointer;">
-      إرسال التعليق
-    </button>
-    <p id="comment-status" role="status"></p>
-  </form>
-
-  <hr>
-  <h3>التعليقات المنشورة</h3>
-  <div id="comments-list">جارٍ تحميل التعليقات...</div>
-</section>
-
-<script>
-(() => {
-  const API = "https://ai-arabic-comments.khelmy627.workers.dev";
-  const path = location.pathname.split("/").pop();
-  const article = path.replace(/\.html$/i, "");
-
-  const form = document.getElementById("comment-form");
-  const status = document.getElementById("comment-status");
-  const list = document.getElementById("comments-list");
-  const submit = document.getElementById("comment-submit");
-
-  function showComments(comments) {
-    list.replaceChildren();
-
-    if (!comments.length) {
-      list.textContent = "لا توجد تعليقات منشورة حتى الآن.";
-      return;
-    }
-
-    comments.forEach(comment => {
-      const box = document.createElement("article");
-      box.style.cssText = "padding:12px 0;border-bottom:1px solid #ddd;";
-
-      const name = document.createElement("strong");
-      name.textContent = comment.author || "زائر";
-
-      const content = document.createElement("p");
-      content.style.whiteSpace = "pre-wrap";
-      content.textContent = comment.content;
-
-      const date = document.createElement("small");
-      date.textContent = comment.created_at || "";
-
-      box.append(name, content, date);
-      list.append(box);
-    });
-  }
-
-  async function loadComments() {
-    try {
-      const res = await fetch(
-        API + "/comments?article=" + encodeURIComponent(article)
-      );
-      if (!res.ok) throw new Error();
-      const data = await res.json();
-      showComments(data.comments || []);
-    } catch {
-      list.textContent = "تعذر تحميل التعليقات حاليًا.";
-    }
-  }
-
-  form.addEventListener("submit", async event => {
-    event.preventDefault();
-    submit.disabled = true;
-    status.textContent = "جارٍ إرسال تعليقك...";
-
-    try {
-      const res = await fetch(API + "/comments", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          article,
-          author: document.getElementById("comment-author").value,
-          content: document.getElementById("comment-content").value
-        })
-      });
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "حدث خطأ");
-
-      status.textContent = data.message;
-      form.reset();
-    } catch (error) {
-      status.textContent =
-        error.message === "Failed to fetch"
-          ? "تعذر الاتصال بخدمة التعليقات. حاول مرة أخرى."
-          : (error.message || "حدث خطأ أثناء الإرسال.");
-    } finally {
-      submit.disabled = false;
-    }
-  });
-
-  loadComments();
-})();
-</script>
+   
 
       <a class="back-home" href="index.html">
         ← العودة إلى الصفحة الرئيسية
@@ -550,5 +441,7 @@
   </footer>
 
   <script src="script.js?v=7"></script>
+<script src="/comments.js" defer></script>
+  
 </body>
 </html>
