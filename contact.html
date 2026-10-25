@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اتصل بنا | AI بالعربي</title>
+  <meta name="description" content="تواصل مع فريق AI بالعربي للاستفسارات والاقتراحات وتصحيح المعلومات المتعلقة بمقالات الذكاء الاصطناعي والتقنية.">
+  <link rel="canonical" href="https://aibelarabic.github.io/contact.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header>
+  <h1><a href="index.html">AI بالعربي</a></h1>
+  <p>الذكاء الاصطناعي والتقنية باللغة العربية</p>
+</header>
+
+<nav>
+  <a href="index.html">الرئيسية</a>
+  <a href="articles.html">المقالات</a>
+  <a href="contact.html">اتصل بنا</a>
+  <button id="darkModeToggle" type="button">🌙 الوضع الداكن</button>
+</nav>
+
+<main class="article">
+  <h1>اتصل بنا</h1>
+
+  <p>
+    يسعدنا استقبال استفساراتكم واقتراحاتكم حول موقع AI بالعربي
+    ومقالات الذكاء الاصطناعي والتقنية.
+  </p>
+
+  <h2>كيف يمكنك التواصل معنا؟</h2>
+
+  <p>
+    يمكنك التواصل معنا عبر البريد الإلكتروني التالي:
+  </p>
+
+  <p>
+    <strong>aibelarabic1026@gmail.com:</strong>
+    <span>mr2046798@gmail.com</span>
+  </p>
+
+  <p>
+    يمكنك مراسلتنا بخصوص:
+  </p>
+
+  <ul>
+    <li>الاستفسارات المتعلقة بالمقالات والأدوات.</li>
+    <li>اقتراح موضوعات جديدة للموقع.</li>
+    <li>الإبلاغ عن الأخطاء أو المعلومات التي تحتاج إلى تصحيح.</li>
+    <li>الاستفسارات المتعلقة بالموقع والمحتوى.</li>
+  </ul>
+
+  <p>
+    نحاول مراجعة الرسائل والرد عليها في أقرب وقت ممكن.
+  </p>
+</main>
+
+<footer>
+  <p>
+    <a href="privacy.html">سياسة الخصوصية</a> |
+    <a href="contact.html">اتصل بنا</a>
+  </p>
+  <p>جميع الحقوق محفوظة © AI بالعربي</p>
+</footer>
+
+<script>
+const toggle = document.getElementById("darkModeToggle");
+
+if (localStorage.getItem("darkMode") === "enabled") {
+  document.body.classList.add("dark-mode");
+}
+
+if (toggle) {
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    localStorage.setItem(
+      "darkMode",
+      document.body.classList.contains("dark-mode") ? "enabled" : "disabled"
+    );
+  });
+}
+</script>
+
+</body>
+</html>
