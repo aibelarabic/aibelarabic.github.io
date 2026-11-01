@@ -539,28 +539,36 @@
 </footer>
 
 <script>
-  const darkModeToggle = document.getElementById("darkModeToggle");
-  const DARK_MODE_KEY = "darkMode";
+  const darkModeToggle =
+    document.getElementById("darkModeToggle");
 
-  function applyDarkMode(isDark) {
-    document.body.classList.toggle("dark-mode", isDark);
+  // استعادة الوضع المحفوظ
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
 
     if (darkModeToggle) {
-      darkModeToggle.textContent = isDark ? "☀️" : "🌙";
+      darkModeToggle.textContent = "☀️ الوضع الفاتح";
+    }
+  } else {
+    document.body.classList.remove("dark-mode");
+
+    if (darkModeToggle) {
+      darkModeToggle.textContent = "🌙 الوضع الداكن";
     }
   }
 
-  applyDarkMode(localStorage.getItem(DARK_MODE_KEY) === "true");
-
+  // تغيير الوضع
   if (darkModeToggle) {
-    darkModeToggle.addEventListener("click", function () {
-      const isDark =
-        document.body.classList.contains("dark-mode");
+    darkModeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
 
-      const newMode = !isDark;
-
-      localStorage.setItem(DARK_MODE_KEY, String(newMode));
-      applyDarkMode(newMode);
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+        darkModeToggle.textContent = "☀️ الوضع الفاتح";
+      } else {
+        localStorage.setItem("darkMode", "disabled");
+        darkModeToggle.textContent = "🌙 الوضع الداكن";
+      }
     });
   }
 </script>
