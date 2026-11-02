@@ -1,1 +1,563 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>كيفية استخدام ChatGPT في المذاكرة؟ دليل الطلاب 2026 | AI بالعربي</title>
+
+<meta name="description" content="تعرف على كيفية استخدام ChatGPT في المذاكرة، وشرح الدروس وتلخيص المحاضرات وإنشاء امتحانات تدريبية، مع Prompts جاهزة وشرح Study Mode.">
+
+<meta name="keywords" content="استخدام ChatGPT في المذاكرة, ChatGPT للطلاب, ChatGPT للمذاكرة, الذكاء الاصطناعي في الدراسة, Study Mode">
+<meta name="author" content="AI بالعربي">
+<meta name="robots" content="index,follow">
+
+<link rel="canonical" href="https://aibelarabic.github.io/chatgpt-study-guide.html">
+<link rel="icon" type="image/png" href="image/Icon.png">
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:site_name" content="AI بالعربي">
+<meta property="og:title" content="كيفية استخدام ChatGPT في المذاكرة؟ دليل الطلاب 2026">
+<meta property="og:description" content="دليل عملي لاستخدام ChatGPT في الدراسة، مع Prompts جاهزة وشرح وضع الدراسة Study Mode.">
+<meta property="og:url" content="https://aibelarabic.github.io/chatgpt-study-guide.html">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="كيفية استخدام ChatGPT في المذاكرة؟">
+<meta name="twitter:description" content="تعلم استخدام ChatGPT في المذاكرة وشرح الدروس وتلخيص المحاضرات.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "كيفية استخدام ChatGPT في المذاكرة؟ دليل الطلاب 2026",
+  "description": "دليل عملي لاستخدام ChatGPT في الدراسة، وشرح الدروس وتلخيص المحاضرات وإنشاء امتحانات تدريبية.",
+  "author": {
+    "@type": "Organization",
+    "name": "AI بالعربي"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AI بالعربي",
+    "url": "https://aibelarabic.github.io/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://aibelarabic.github.io/chatgpt-study-guide.html"
+  },
+  "inLanguage": "ar",
+  "datePublished": "2026-11-02",
+  "dateModified": "2026-11-02"
+}
+</script>
+
+<style>
+.article-content {
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+.article-content h2 {
+  margin-top: 35px;
+  margin-bottom: 15px;
+  color: #2563eb;
+}
+
+.article-content h3 {
+  margin-top: 25px;
+}
+
+.article-content p {
+  margin-bottom: 16px;
+}
+
+.article-content ul,
+.article-content ol {
+  padding-right: 25px;
+  margin-bottom: 20px;
+}
+
+.article-content li {
+  margin-bottom: 8px;
+}
+
+.article-content a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.article-content a:hover {
+  text-decoration: underline;
+}
+
+.article-content .prompt-box {
+  background: #f1f5f9;
+  border-right: 4px solid #2563eb;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  direction: rtl;
+}
+
+.article-content .note-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.article-content .toc {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.article-content .toc ul {
+  margin-bottom: 0;
+}
+
+.article-content .table-wrap {
+  overflow-x: auto;
+}
+
+.article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.article-content th,
+.article-content td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: right;
+}
+
+.article-content th {
+  background: #f1f5f9;
+}
+
+body.dark-mode .article-content .prompt-box,
+body.dark-mode .article-content .toc,
+body.dark-mode .article-content th {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+body.dark-mode .article-content .note-box {
+  background: #172554;
+  border-color: #1e40af;
+  color: #e5e7eb;
+}
+
+body.dark-mode .article-content table,
+body.dark-mode .article-content td,
+body.dark-mode .article-content th {
+  border-color: #374151;
+}
+
+body.dark-mode .article-content h2 {
+  color: #60a5fa;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <h1>AI بالعربي</h1>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="articles.html">المقالات</a>
+      <a href="word-counter.html">عداد الكلمات</a>
+      <button id="darkModeToggle">🌙 الوضع الداكن</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+<article class="article-content">
+
+<h1>كيفية استخدام ChatGPT في المذاكرة؟ دليل الطلاب 2026</h1>
+
+<p><strong>آخر تحديث: نوفمبر 2026</strong></p>
+
+<p>
+هل تريد استخدام الذكاء الاصطناعي في المذاكرة بطريقة تساعدك على فهم الدروس وتوفير الوقت؟
+أصبح ChatGPT من الأدوات التي يمكن للطلاب الاستفادة منها في شرح الموضوعات الصعبة،
+وتلخيص الملاحظات، ومراجعة المعلومات، والاستعداد للامتحانات.
+</p>
+
+<p>
+في هذا الدليل من <strong>AI بالعربي</strong>، سنتعرف على كيفية استخدام ChatGPT في الدراسة،
+وأفضل الطرق للاستفادة منه، وأمثلة على Prompts جاهزة يمكنك استخدامها،
+بالإضافة إلى شرح وضع الدراسة Study Mode.
+</p>
+
+<div class="toc">
+<h3>📑 فهرس المقال</h3>
+<ul>
+<li><a href="#what">ما هو ChatGPT وكيف يساعد في المذاكرة؟</a></li>
+<li><a href="#how">كيفية استخدام ChatGPT في المذاكرة</a></li>
+<li><a href="#uses">أفضل 10 استخدامات لـ ChatGPT للطلاب</a></li>
+<li><a href="#prompts">Prompts جاهزة للمذاكرة</a></li>
+<li><a href="#study-mode">ما هو وضع الدراسة Study Mode؟</a></li>
+<li><a href="#advantages">مميزات وعيوب ChatGPT في الدراسة</a></li>
+<li><a href="#mistakes">أخطاء يجب تجنبها</a></li>
+<li><a href="#faq">الأسئلة الشائعة</a></li>
+</ul>
+</div>
+
+<h2 id="what">ما هو ChatGPT وكيف يساعد في المذاكرة؟</h2>
+
+<p>
+ChatGPT هو مساعد ذكاء اصطناعي يمكنه فهم الأسئلة المكتوبة باللغة الطبيعية
+وتقديم إجابات وشروحات تساعدك على التعلم.
+</p>
+
+<p>يمكن للطلاب استخدام ChatGPT في:</p>
+
+<ul>
+<li>شرح المفاهيم والمصطلحات الصعبة بطريقة مبسطة.</li>
+<li>تلخيص المحاضرات والملاحظات الدراسية.</li>
+<li>إنشاء أسئلة تدريبية للمراجعة.</li>
+<li>شرح خطوات حل المسائل.</li>
+<li>تنظيم جدول للمذاكرة.</li>
+<li>مراجعة المعلومات والاستعداد للامتحانات.</li>
+</ul>
+
+<p>
+لكن من المهم استخدامه كوسيلة مساعدة على التعلم،
+وليس بديلًا عن الدراسة أو فهم المادة بنفسك.
+</p>
+
+<h2 id="how">كيفية استخدام ChatGPT في المذاكرة؟</h2>
+
+<p>يمكنك البدء باستخدام ChatGPT من خلال الموقع الرسمي:</p>
+
+<p>
+<a href="https://chatgpt.com/" target="_blank" rel="noopener">
+افتح ChatGPT
+</a>
+</p>
+
+<p>
+بعد فتح المحادثة، اكتب السؤال أو الموضوع الذي تريد فهمه،
+وحاول تحديد مستواك الدراسي وطريقة الشرح التي تناسبك.
+</p>
+
+<p>على سبيل المثال، بدلًا من كتابة:</p>
+
+<div class="prompt-box">
+اشرح لي الكيمياء.
+</div>
+
+<p>يمكنك كتابة:</p>
+
+<div class="prompt-box">
+أنا طالب في المرحلة الثانوية وأدرس الكيمياء.
+اشرح لي مفهوم الروابط الكيميائية بطريقة بسيطة،
+مع أمثلة من الحياة اليومية، ثم اختبر فهمي بثلاثة أسئلة.
+</div>
+
+<p>
+كلما كان طلبك واضحًا ومحددًا، كانت الإجابة غالبًا أكثر فائدة.
+</p>
+
+<h2 id="uses">أفضل 10 استخدامات لـ ChatGPT للطلاب</h2>
+
+<h3>1. شرح الدروس الصعبة</h3>
+<p>
+إذا واجهت مفهومًا لا تفهمه في المحاضرة، يمكنك طلب شرحه بطريقة أبسط
+أو باستخدام أمثلة واقعية.
+</p>
+
+<h3>2. تلخيص المحاضرات</h3>
+<p>
+يمكنك إرسال نص المحاضرة وطلب تلخيص أهم الأفكار والنقاط التي تحتاج إلى مراجعتها.
+</p>
+
+<h3>3. إنشاء أسئلة للمراجعة</h3>
+<p>
+اطلب من ChatGPT إنشاء أسئلة اختيار من متعدد أو أسئلة قصيرة
+تساعدك على اختبار فهمك.
+</p>
+
+<h3>4. فهم خطوات حل المسائل</h3>
+<p>
+بدلًا من طلب الإجابة النهائية فقط، اطلب شرح خطوات الحل بالتدريج.
+</p>
+
+<h3>5. تعلم المصطلحات العلمية</h3>
+<p>
+يمكنك طلب تعريف المصطلحات العلمية، مع أمثلة أو مقارنات تساعدك على تذكرها.
+</p>
+
+<h3>6. تنظيم جدول المذاكرة</h3>
+<p>
+يمكنك مشاركة المواد التي تدرسها والوقت المتاح لك،
+ثم طلب جدول مراجعة واقعي.
+</p>
+
+<h3>7. تحويل الملاحظات إلى بطاقات تعليمية</h3>
+<p>
+اطلب تحويل المعلومات إلى سؤال وإجابة،
+لتستخدمها في مراجعة المفاهيم.
+</p>
+
+<h3>8. مراجعة الأخطاء</h3>
+<p>
+إذا أجبت عن سؤال، يمكنك إرسال إجابتك وطلب تحديد الأخطاء
+وشرح سببها.
+</p>
+
+<h3>9. الاستعداد للامتحانات</h3>
+<p>
+يمكنك طلب اختبار تدريبي في موضوع معين،
+مع تصحيح إجاباتك وشرح النقاط التي تحتاج إلى مراجعة.
+</p>
+
+<h3>10. تعلم موضوع جديد من الصفر</h3>
+<p>
+يمكنك طلب خطة تعلم تدريجية تبدأ بالأساسيات
+ثم تنتقل إلى المفاهيم الأكثر تقدمًا.
+</p>
+
+<h2 id="prompts">Prompts جاهزة للمذاكرة باستخدام ChatGPT</h2>
+
+<p>يمكنك نسخ الأوامر التالية واستخدامها مباشرة.</p>
+
+<h3>Prompt لشرح درس صعب</h3>
+
+<div class="prompt-box">
+اشرح لي موضوع [اسم الموضوع] كأنني أتعلمه لأول مرة.
+استخدم لغة بسيطة وأمثلة واقعية،
+ثم اسألني سؤالًا للتأكد من فهمي.
+</div>
+
+<h3>Prompt لتلخيص محاضرة</h3>
+
+<div class="prompt-box">
+لخص النص التالي بطريقة منظمة،
+واستخرج أهم الأفكار والتعريفات والمصطلحات،
+ثم أنشئ 5 أسئلة للمراجعة بناءً عليه:
+
+[ضع نص المحاضرة هنا]
+</div>
+
+<h3>Prompt لإنشاء امتحان تدريبي</h3>
+
+<div class="prompt-box">
+أنشئ لي امتحانًا تدريبيًا عن [اسم الموضوع]
+يتكون من 10 أسئلة متنوعة.
+اسألني سؤالًا واحدًا في كل مرة،
+وانتظر إجابتي قبل الانتقال للسؤال التالي.
+</div>
+
+<h3>Prompt لفهم مسألة</h3>
+
+<div class="prompt-box">
+ساعدني على فهم طريقة حل هذه المسألة خطوة بخطوة.
+لا تعطيني الإجابة النهائية مباشرة،
+بل وضح الفكرة وراء كل خطوة،
+ثم أعطني مسألة مشابهة لأحلها بنفسي.
+</div>
+
+<h3>Prompt لجدول المذاكرة</h3>
+
+<div class="prompt-box">
+ساعدني على تنظيم جدول مذاكرة لمدة [عدد الأيام] أيام.
+المواد التي أدرسها هي [المواد]،
+والوقت المتاح يوميًا [عدد الساعات].
+اجعل الجدول واقعيًا ويتضمن مراجعة واختبارات قصيرة.
+</div>
+
+<h2 id="study-mode">ما هو وضع الدراسة Study Mode في ChatGPT؟</h2>
+
+<p>
+وضع الدراسة (Study Mode) هو تجربة تعليمية داخل ChatGPT
+تساعدك على فهم الموضوعات بدلًا من الحصول على إجابة سريعة فقط.
+</p>
+
+<p>
+يمكنه طرح أسئلة عليك، وتقديم تلميحات،
+وشرح الأفكار خطوة بخطوة، والتحقق من فهمك أثناء التعلم.
+</p>
+
+<h3>ماذا يمكنك أن تفعل باستخدام Study Mode؟</h3>
+
+<ul>
+<li>تعلم مفهوم جديد من البداية.</li>
+<li>حل المسائل بالتدريج.</li>
+<li>الاستعداد للاختبارات.</li>
+<li>مراجعة المحاضرات والملاحظات.</li>
+<li>إنشاء أسئلة تدريبية وبطاقات تعليمية.</li>
+<li>فهم سبب صحة الإجابة أو خطئها.</li>
+</ul>
+
+<h3>كيفية تشغيل Study Mode</h3>
+
+<ol>
+<li>افتح محادثة في ChatGPT.</li>
+<li>اضغط على علامة (+) بجانب مربع الكتابة.</li>
+<li>ابحث عن خيار Study أو الدراسة.</li>
+<li>اختر وضع الدراسة، ثم اكتب الموضوع الذي تريد تعلمه.</li>
+</ol>
+
+<p>
+قد تختلف أسماء الخيارات أو أماكنها حسب إصدار التطبيق.
+</p>
+
+<p>
+يمكنك أيضًا تجربة:
+<a href="https://chatgpt.com/studymode" target="_blank" rel="noopener">
+وضع الدراسة في ChatGPT
+</a>.
+</p>
+
+<p>
+للمزيد من التفاصيل، راجع
+<a href="https://help.openai.com/ar/articles/11780217-using-study-mode-in-chatgpt"
+target="_blank" rel="noopener">
+الدليل الرسمي لوضع الدراسة
+</a>.
+</p>
+
+<h2 id="advantages">هل ChatGPT مناسب للمذاكرة؟</h2>
+
+<p>
+يمكن أن يكون ChatGPT مفيدًا جدًا في الدراسة إذا استخدمته بالطريقة الصحيحة.
+</p>
+
+<h3>مميزات استخدام ChatGPT في الدراسة</h3>
+<ul>
+<li>يساعدك على فهم الموضوعات المعقدة.</li>
+<li>يوفر طرقًا مختلفة لشرح نفس الفكرة.</li>
+<li>يساعدك على إنشاء اختبارات تدريبية.</li>
+<li>يمكنك استخدامه في أي وقت للمراجعة.</li>
+<li>يتيح لك تخصيص الشرح حسب مستواك.</li>
+</ul>
+
+<h3>عيوب استخدام ChatGPT في المذاكرة</h3>
+<ul>
+<li>قد يقدم معلومات غير دقيقة أو إجابات خاطئة.</li>
+<li>قد لا يفهم سياق بعض الأسئلة بشكل صحيح.</li>
+<li>الاعتماد عليه في الإجابات دون فهم قد يضعف عملية التعلم.</li>
+<li>قد تكون بعض الشروحات غير متوافقة تمامًا مع منهجك الدراسي.</li>
+</ul>
+
+<h2 id="mistakes">أخطاء يجب تجنبها عند استخدام ChatGPT للطلاب</h2>
+
+<h3>الاعتماد على الإجابات دون مراجعتها</h3>
+<p>
+قد يخطئ ChatGPT في بعض المعلومات،
+لذلك راجع المعلومات المهمة باستخدام الكتاب أو مصادر موثوقة.
+</p>
+
+<h3>طلب الحل النهائي فقط</h3>
+<p>
+إذا كنت تريد التعلم، فمن الأفضل أن تطلب شرح خطوات الحل،
+ثم تحاول تطبيقها بنفسك.
+</p>
+
+<h3>استخدامه بدلًا من الدراسة</h3>
+<p>
+ChatGPT أداة مساعدة، وليس بديلًا عن المذاكرة أو التدريب المستمر.
+</p>
+
+<h3>عدم تحديد المطلوب</h3>
+<p>
+الأسئلة العامة قد تؤدي إلى إجابات غير مناسبة لاحتياجاتك.
+حاول تحديد المادة والمستوى الدراسي وطريقة الشرح.
+</p>
+
+<h2 id="faq">الأسئلة الشائعة حول استخدام ChatGPT في المذاكرة</h2>
+
+<h3>هل ChatGPT مجاني للمذاكرة؟</h3>
+<p>
+يمكن استخدام ChatGPT مجانًا في الدراسة،
+لكن بعض النماذج والميزات قد تكون محدودة
+أو متاحة ضمن خطط مدفوعة.
+</p>
+
+<h3>هل يمكن استخدام ChatGPT في تلخيص المحاضرات؟</h3>
+<p>
+نعم، يمكنك إرسال نص المحاضرة أو رفع ملف أو صورة
+عندما تكون ميزة رفع الملفات متاحة،
+ثم طلب تلخيص المعلومات أو استخراج أهم النقاط.
+</p>
+
+<h3>هل يمكن لـ ChatGPT إنشاء امتحانات تدريبية؟</h3>
+<p>
+نعم، يمكنك طلب امتحانات تدريبية وأسئلة اختيار من متعدد
+وأسئلة قصيرة، ثم الإجابة عنها وطلب تصحيحها.
+</p>
+
+<h3>هل ChatGPT أفضل من المذاكرة التقليدية؟</h3>
+<p>
+لا يمكن اعتباره بديلًا عن المذاكرة التقليدية.
+الأفضل استخدامه لتوضيح المعلومات ومراجعتها،
+مع الاعتماد على الكتب والمحاضرات والتدريب الشخصي.
+</p>
+
+<h3>ما أفضل طريقة لاستخدام ChatGPT في الدراسة؟</h3>
+<p>
+أفضل طريقة هي استخدامه كمدرس مساعد:
+اطلب شرحًا، ثم حاول الإجابة عن أسئلة،
+وراجع أخطاءك، وتأكد من المعلومات المهمة من مصادر موثوقة.
+</p>
+
+<h2>الخلاصة</h2>
+
+<p>
+يمكن أن يساعدك ChatGPT في المذاكرة من خلال شرح الدروس
+وتلخيص المحاضرات وإنشاء الأسئلة التدريبية وتنظيم وقت الدراسة.
+</p>
+
+<p>
+وإذا كنت تريد تجربة تعليمية أكثر تفاعلية،
+يمكنك استخدام وضع الدراسة Study Mode
+الذي يركز على الشرح خطوة بخطوة والتحقق من فهمك.
+</p>
+
+<p>
+المهم أن تستخدم الذكاء الاصطناعي لفهم المعلومات
+وتطوير مهاراتك، وليس للحصول على إجابات جاهزة دون تعلم.
+</p>
+
+<h2>مقالات قد تهمك</h2>
+
+<ul>
+<li><a href="article.html">ما هو ChatGPT؟ دليل المبتدئين</a></li>
+<li><a href="Gemini.html">ما هو Google Gemini؟</a></li>
+<li><a href="Claude.html">تعلم Claude AI بالعربي للمبتدئين</a></li>
+<li><a href="claude-vs-chatgpt.html">الفرق بين Claude وChatGPT</a></li>
+<li><a href="best-ai-tools.html">أفضل أدوات الذكاء الاصطناعي</a></li>
+<li><a href="prompt-guide.html">دليل كتابة Prompts احترافية</a></li>
+</ul>
+
+</article>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>
+      <a href="privacy.html">سياسة الخصوصية</a> |
+      <a href="contact.html">اتصل بنا</a>
+    </p>
+    <p>© 2026 AI بالعربي – جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<script src="script.js?v=7"></script>
+<script src="comments.js" defer></script>
+
+</body>
+                                                           </html>
