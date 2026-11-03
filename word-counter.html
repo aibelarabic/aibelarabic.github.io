@@ -479,6 +479,16 @@
   function updateCounter() {
     const text = textArea.value;
     const trimmed = text.trim();
+    // تسجيل استخدام عداد الكلمات في Google Analytics
+if (trimmed.length > 0 && !window.wordCounterTracked) {
+  if (typeof gtag === "function") {
+    gtag("event", "word_counter_used", {
+      tool_name: "Word Counter"
+    });
+
+    window.wordCounterTracked = true;
+  }
+  }
 
     const words = trimmed
       ? trimmed.split(/\s+/u).filter(Boolean)
