@@ -193,6 +193,12 @@ if (
 
       const percentage =
         Math.round(aiScore * 100);
+      // تسجيل استخدام كاشف الصور في Google Analytics
+if (typeof gtag === "function") {
+  gtag("event", "image_detector_used", {
+    tool_name: "AI Image Detector"
+  });
+}
 
 
       detectorStatus.textContent =
