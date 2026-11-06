@@ -1012,3 +1012,177 @@ body.dark-mode .search-result p {
         margin-bottom: 19px;
     }
 }
+
+/* =================================
+   تحسين قراءة الصفحة الرئيسية
+================================= */
+
+/* النصوص العامة */
+#home {
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* عناوين الأقسام */
+#home > section > h2 {
+    font-size: 25px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+/* وصف الأقسام */
+#home > section > p {
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+}
+
+/* بطاقات المقالات */
+.home-card {
+    overflow: hidden;
+    margin-bottom: 28px;
+    border-radius: 12px;
+}
+
+/* محتوى البطاقة */
+.home-card-content {
+    padding: 20px;
+}
+
+/* تصنيف المقال */
+.home-card .category {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* تاريخ المقال */
+.home-card .article-date {
+    font-size: 13px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* عنوان المقال */
+.home-card h3 {
+    font-size: 19px;
+    line-height: 1.7;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+/* وصف المقال */
+.home-card p {
+    font-size: 15px;
+    line-height: 1.9;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+/* رابط قراءة المقال */
+.home-card .read-more {
+    font-size: 15px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* الصور */
+.home-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* البحث */
+.site-search {
+    margin: 25px auto;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.search-box input {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* كاشف الصور */
+#detector > p {
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.detector-note {
+    font-size: 14px;
+    line-height: 1.9;
+    margin-top: 20px;
+}
+
+/* قسم عن الموقع */
+#about p {
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+/* =================================
+   تحسين الموبايل
+================================= */
+
+@media (max-width: 600px) {
+
+    #home {
+        font-size: 15px;
+    }
+
+    #home > section > h2 {
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    #home > section > p {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+
+    .home-card {
+        margin-bottom: 22px;
+        border-radius: 10px;
+    }
+
+    .home-card-content {
+        padding: 16px;
+    }
+
+    .home-card h3 {
+        font-size: 17px;
+        line-height: 1.75;
+        margin-bottom: 10px;
+    }
+
+    .home-card p {
+        font-size: 14px;
+        line-height: 1.9;
+        margin-bottom: 15px;
+    }
+
+    .home-card .read-more {
+        font-size: 14px;
+    }
+
+    .home-card .category,
+    .home-card .article-date {
+        font-size: 12px;
+    }
+
+    #about p {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    .site-search {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+}
