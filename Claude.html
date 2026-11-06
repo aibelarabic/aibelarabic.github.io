@@ -207,6 +207,64 @@
         color: #dbeafe;
       }
     }
+    /* تحسين تنسيق وراحة قراءة المقال */
+.article-content {
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 100%;
+}
+
+.article-content p {
+    margin-top: 0;
+    margin-bottom: 22px;
+    line-height: 1.9;
+}
+
+.article-content h3 {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-top: 38px;
+    margin-bottom: 18px;
+}
+
+.article-content h4 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+.article-content ul,
+.article-content ol {
+    padding-right: 25px;
+    margin-top: 10px;
+    margin-bottom: 24px;
+    line-height: 2;
+}
+
+.article-content li {
+    margin-bottom: 8px;
+}
+
+/* ضبط القراءة على الموبايل */
+@media (max-width: 600px) {
+    .article-content {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    .article-content h3 {
+        font-size: 20px;
+    }
+
+    .article-content h4 {
+        font-size: 17px;
+    }
+
+    .article-content p {
+        margin-bottom: 19px;
+    }
+}
   </style>
 </head>
 
