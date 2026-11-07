@@ -1,46 +1,42 @@
-
+HTML
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>مقالات الذكاء الاصطناعي والتقنية | AI بالعربي</title>
 
   <link rel="icon" type="image/png" href="image/Icon.png">
-
-  <meta
-    name="description"
-    content="مقالات وشروحات مبسطة عن الذكاء الاصطناعي، ChatGPT، Claude وأحدث التقنيات باللغة العربية."
-  >
-
-  <meta
-    name="keywords"
-    content="مقالات الذكاء الاصطناعي, ChatGPT, Claude, AI, التقنية"
-  >
-
-  <meta name="author" content="AI بالعربي">
-
-  <meta name="robots" content="index, follow">
-
-  <link
-    rel="canonical"
-    href="https://aibelarabic.github.io/articles.html"
-  >
-
-  <link
-    rel="icon"
-    type="image/png"
-    href="image/Icon.png"
-  
-
   <link rel="stylesheet" href="style.css">
 
-  <!-- تنسيق المقال المميز -->
+  <meta name="description"
+    content="مقالات وشروحات مبسطة عن الذكاء الاصطناعي، ChatGPT، Claude وأحدث التقنيات باللغة العربية.">
+
+  <meta name="keywords"
+    content="مقالات الذكاء الاصطناعي, ChatGPT, Claude, AI, التقنية">
+
+  <meta name="author" content="AI بالعربي">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical"
+    href="https://aibelarabic.github.io/articles.html">
+
+  <!-- تصميم بطاقات المقالات -->
   <style>
+    /* العناوين */
+    main > section > h2 {
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+
+    main > section > p {
+      line-height: 1.9;
+      color: #4b5563;
+      margin-bottom: 28px;
+    }
+
     .featured-section {
       margin-bottom: 35px;
     }
@@ -60,14 +56,133 @@
       border-radius: 5px;
     }
 
-    .featured-card {
-      border: 2px solid #8b5cf6;
-      position: relative;
+    .latest-heading {
+      margin-top: 30px;
+      margin-bottom: 22px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #8b5cf6;
+    }
+
+    /* شبكة المقالات */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    /* البطاقة */
+    .articles-grid .home-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      height: 100%;
       overflow: hidden;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .articles-grid .home-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+    }
+
+    /* الصور */
+    .articles-grid .home-card > img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #f1f5f9;
+    }
+
+    /* محتوى البطاقة */
+    .articles-grid .home-card-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 18px;
+    }
+
+    /* التصنيف */
+    .articles-grid .category {
+      display: inline-block;
+      align-self: flex-start;
+      margin-bottom: 9px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      background: #eff6ff;
+      color: #2563eb;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* التاريخ */
+    .articles-grid .article-date {
+      display: block;
+      margin-bottom: 8px;
+      color: #6b7280;
+      font-size: 12px;
+    }
+
+    /* العنوان */
+    .articles-grid .home-card h3 {
+      margin: 4px 0 10px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #111827;
+    }
+
+    /* الوصف */
+    .articles-grid .home-card p {
+      margin: 0 0 18px;
+      color: #4b5563;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    /* رابط المقال */
+    .articles-grid .read-more {
+      margin-top: auto;
+      align-self: flex-start;
+      color: #2563eb;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .articles-grid .read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* البطاقة المميزة */
+    .featured-section .articles-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .featured-card {
+      display: grid !important;
+      grid-template-columns: 1.1fr 1fr;
+      border: 2px solid #8b5cf6 !important;
+    }
+
+    .featured-card > img {
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+    }
+
+    .featured-card .home-card-content {
+      justify-content: center;
+      padding: 24px;
     }
 
     .featured-badge {
       display: inline-block;
+      align-self: flex-start;
       background: #8b5cf6;
       color: #fff;
       padding: 6px 13px;
@@ -77,11 +192,69 @@
       margin-bottom: 10px;
     }
 
-    .latest-heading {
-      margin-top: 30px;
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid #8b5cf6;
+    /* الوضع الداكن */
+    body.dark-mode .articles-grid .home-card {
+      background: #1f2937;
+      border-color: #374151;
+    }
+
+    body.dark-mode .articles-grid .home-card h3 {
+      color: #f9fafb;
+    }
+
+    body.dark-mode .articles-grid .home-card p,
+    body.dark-mode .articles-grid .article-date {
+      color: #d1d5db;
+    }
+
+    body.dark-mode .articles-grid .category {
+      background: #1e3a5f;
+      color: #bfdbfe;
+    }
+
+    body.dark-mode main > section > p {
+      color: #d1d5db;
+    }
+
+    /* الموبايل */
+    @media (max-width: 650px) {
+      .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .articles-grid .home-card-content {
+        padding: 16px;
+      }
+
+      .articles-grid .home-card h3 {
+        font-size: 17px;
+      }
+
+      .featured-card {
+        display: flex !important;
+        flex-direction: column;
+      }
+
+      .featured-card > img {
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+      }
+
+      .featured-card .home-card-content {
+        padding: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .articles-grid .home-card {
+        transition: none;
+      }
+
+      .articles-grid .home-card:hover {
+        transform: none;
+      }
     }
   </style>
 
@@ -91,12 +264,11 @@
   <script>
     window.dataLayer = window.dataLayer || [];
 
-    function gtag(){
+    function gtag() {
       dataLayer.push(arguments);
     }
 
     gtag('js', new Date());
-
     gtag('config', 'G-SYXLTRRN4Q');
   </script>
 
@@ -105,51 +277,32 @@
 <body>
 
   <!-- Header -->
-
   <header>
-
     <h1>
-      <a href="https://aibelarabic.github.io/">
-        AI بالعربي
-      </a>
+      <a href="https://aibelarabic.github.io/">AI بالعربي</a>
     </h1>
 
-    <p>
-      الذكاء الاصطناعي والتقنية باللغة العربية
-    </p>
-
+    <p>الذكاء الاصطناعي والتقنية باللغة العربية</p>
   </header>
 
   <!-- Navigation -->
-
   <nav>
-
-    <a href="https://aibelarabic.github.io/">
-      الرئيسية
-    </a>
-
-    <a href="articles.html">
-      المقالات
-    </a>
-
-    <a href="index.html#detector">
-      كاشف الصور
-    </a>
+    <a href="https://aibelarabic.github.io/">الرئيسية</a>
+    <a href="articles.html">المقالات</a>
+    <a href="index.html#detector">كاشف الصور</a>
     <a href="pdf-tools.html">أدوات PDF</a>
-
-    <a href="index.html#about">
-      عن الموقع
-    </a>
+    <a href="index.html#about">عن الموقع</a>
 
     <button id="darkModeToggle" type="button">
       🌙 الوضع الداكن
     </button>
-
   </nav>
 
+  <!-- البحث -->
   <section class="site-search">
     <div class="search-box">
       <span class="search-icon">⌕</span>
+
       <input
         type="search"
         id="siteSearch"
@@ -166,9 +319,7 @@
 
     <section>
 
-      <h2>
-        مقالات AI بالعربي
-      </h2>
+      <h2>مقالات AI بالعربي</h2>
 
       <p>
         شروحات ومقالات مبسطة عن الذكاء الاصطناعي
@@ -176,7 +327,6 @@
       </p>
 
       <!-- المقال المميز -->
-
       <section class="featured-section">
 
         <h2 class="featured-heading">
@@ -214,151 +364,212 @@
                 وما الذي يميزه كمساعد للذكاء الاصطناعي.
               </p>
 
-              <a
-                href="Claude.html"
-                class="read-more"
-              >
+              <a href="Claude.html" class="read-more">
                 اقرأ المقال ←
               </a>
 
             </div>
-
           </article>
 
         </div>
-
       </section>
 
       <!-- أحدث المقالات -->
-
       <h2 class="latest-heading">
         أحدث المقالات
       </h2>
 
-
       <div class="articles-grid">
 
-<article class="home-card" data-keywords="كيفية استخدام ChatGPT في المذاكرة ChatGPT للطلاب المذاكرة الدراسة الذكاء الاصطناعي Study Mode شرح الدروس تلخيص المحاضرات">
+        <!-- ChatGPT Study Guide -->
+        <article class="home-card"
+          data-keywords="كيفية استخدام ChatGPT في المذاكرة ChatGPT للطلاب المذاكرة الدراسة الذكاء الاصطناعي Study Mode شرح الدروس تلخيص المحاضرات">
 
-  <img src="image/chatgpt-study-guide.png"
-       alt="كيفية استخدام ChatGPT في المذاكرة للطلاب"
-       loading="lazy"
-       width="800"
-       height="450">
-
-  <div class="home-card-content">
-    <span class="category">دليل تعليمي</span>
-
-    <h3>كيفية استخدام ChatGPT في المذاكرة؟ دليل الطلاب 2026</h3>
-
-    <p>تعرف على أفضل طرق استخدام ChatGPT في الدراسة، وشرح الدروس وتلخيص المحاضرات وإنشاء امتحانات تدريبية، مع Prompts جاهزة وشرح Study Mode.</p>
-
-    <a href="chatgpt-study-guide.html" class="read-more">اقرأ المقال ←</a>
-
-</article>
-        
-
-        <article class="home-card" data-keywords="أفضل 10 أدوات ذكاء اصطناعي أدوات AI ChatGPT Gemini Claude Grok Perplexity Canva NotebookLM ElevenLabs Runway GitHub Copilot">
-
-          <img src="image/best-ai-tools.jpg"
-               alt="أفضل 10 أدوات ذكاء اصطناعي في 2026"
-               loading="lazy"
-               width="800"
-               height="450">
+          <img
+            src="image/chatgpt-study-guide.png"
+            alt="كيفية استخدام ChatGPT في المذاكرة للطلاب"
+            loading="lazy"
+            width="800"
+            height="450"
+          >
 
           <div class="home-card-content">
+
+            <span class="category">دليل تعليمي</span>
+
+            <h3>كيفية استخدام ChatGPT في المذاكرة؟ دليل الطلاب 2026</h3>
+
+            <p>
+              تعرف على أفضل طرق استخدام ChatGPT في الدراسة،
+              وشرح الدروس وتلخيص المحاضرات وإنشاء امتحانات تدريبية،
+              مع Prompts جاهزة وشرح Study Mode.
+            </p>
+
+            <a href="chatgpt-study-guide.html" class="read-more">
+              اقرأ المقال ←
+            </a>
+
+          </div>
+        </article>
+
+        <!-- Best AI Tools -->
+        <article class="home-card"
+          data-keywords="أفضل 10 أدوات ذكاء اصطناعي أدوات AI ChatGPT Gemini Claude Grok Perplexity Canva NotebookLM ElevenLabs Runway GitHub Copilot">
+
+          <img
+            src="image/best-ai-tools.jpg"
+            alt="أفضل 10 أدوات ذكاء اصطناعي في 2026"
+            loading="lazy"
+            width="800"
+            height="450"
+          >
+
+          <div class="home-card-content">
+
             <span class="category">دليل شامل</span>
 
             <h3>أفضل 10 أدوات ذكاء اصطناعي في 2026</h3>
 
-            <p>دليل لأهم أدوات الذكاء الاصطناعي للكتابة والبحث والدراسة والتصميم والصوت والفيديو والبرمجة، مع توضيح الخيارات المجانية.</p>
+            <p>
+              دليل لأهم أدوات الذكاء الاصطناعي للكتابة والبحث
+              والدراسة والتصميم والصوت والفيديو والبرمجة،
+              مع توضيح الخيارات المجانية.
+            </p>
 
-            <a href="best-ai-tools.html" class="read-more">اقرأ المقال ←</a>
+            <a href="best-ai-tools.html" class="read-more">
+              اقرأ المقال ←
+            </a>
+
           </div>
-
         </article>
 
-        <article class="home-card" data-keywords="Grok جروك xAI إيلون ماسك الذكاء الاصطناعي البحث في الويب توليد الصور والفيديو الكتابة البرمجة">
+        <!-- Grok -->
+        <article class="home-card"
+          data-keywords="Grok جروك xAI إيلون ماسك الذكاء الاصطناعي البحث في الويب توليد الصور والفيديو الكتابة البرمجة">
 
-          <img src="image/grok.jpg"
-               alt="Grok مساعد الذكاء الاصطناعي من xAI"
-               loading="lazy"
-               width="800"
-               height="450">
+          <img
+            src="image/grok.jpg"
+            alt="Grok مساعد الذكاء الاصطناعي من xAI"
+            loading="lazy"
+            width="800"
+            height="450"
+          >
 
           <div class="home-card-content">
+
             <span class="category">أدوات الذكاء الاصطناعي</span>
 
             <h3>ما هو Grok؟ دليل الذكاء الاصطناعي من إيلون ماسك</h3>
 
-            <p>تعرّف على Grok ومميزاته في البحث والكتابة وتوليد الصور والفيديو، واكتشف الفرق بين الباقات المجانية والمدفوعة.</p>
+            <p>
+              تعرّف على Grok ومميزاته في البحث والكتابة
+              وتوليد الصور والفيديو، واكتشف الفرق بين
+              الباقات المجانية والمدفوعة.
+            </p>
 
-            <a href="Grok.html" class="read-more">اقرأ المقال ←</a>
+            <a href="Grok.html" class="read-more">
+              اقرأ المقال ←
+            </a>
+
           </div>
-
         </article>
 
-        <article class="home-card" data-keywords="Canva AI Canva كانفا كانفا اي اي الذكاء الاصطناعي في كانفا تصميم الصور تصميم بالذكاء الاصطناعي تصميم منشورات العروض التقديمية">
+        <!-- Canva AI -->
+        <article class="home-card"
+          data-keywords="Canva AI Canva كانفا كانفا اي اي الذكاء الاصطناعي في كانفا تصميم الصور تصميم بالذكاء الاصطناعي تصميم منشورات العروض التقديمية">
 
-          <img src="image/canva-ai.jpg"
-               alt="Canva AI وأدوات التصميم بالذكاء الاصطناعي"
-               loading="lazy"
-               width="800"
-               height="450">
+          <img
+            src="image/canva-ai.jpg"
+            alt="Canva AI وأدوات التصميم بالذكاء الاصطناعي"
+            loading="lazy"
+            width="800"
+            height="450"
+          >
 
           <div class="home-card-content">
+
             <span class="category">أدوات الذكاء الاصطناعي</span>
 
             <h3>ما هو Canva AI؟ دليلك لإنشاء التصميمات بالذكاء الاصطناعي</h3>
 
-            <p>اكتشف أدوات Canva AI ومميزاتها، وكيف تستخدمها لإنشاء الصور والمنشورات والعروض التقديمية بسهولة.</p>
+            <p>
+              اكتشف أدوات Canva AI ومميزاتها، وكيف تستخدمها
+              لإنشاء الصور والمنشورات والعروض التقديمية بسهولة.
+            </p>
 
-            <a href="canva-ai.html" class="read-more">اقرأ المقال ←</a>
+            <a href="canva-ai.html" class="read-more">
+              اقرأ المقال ←
+            </a>
+
           </div>
-
         </article>
 
-        <article class="home-card" data-keywords="Gemini Notebook Gemini Notebooks جيميني نوت بوك NotebookLM نوت بوك إل إم جوجل جيميني تنظيم المصادر الدراسة البحث الذكاء الاصطناعي">
+        <!-- Gemini Notebook -->
+        <article class="home-card"
+          data-keywords="Gemini Notebook Gemini Notebooks جيميني نوت بوك NotebookLM نوت بوك إل إم جوجل جيميني تنظيم المصادر الدراسة البحث الذكاء الاصطناعي">
 
-          <img src="image/gemini-notebook.jpg"
-               alt="Gemini Notebook وتنظيم المصادر باستخدام الذكاء الاصطناعي"
-               loading="lazy"
-               width="800"
-               height="450">
+          <img
+            src="image/gemini-notebook.jpg"
+            alt="Gemini Notebook وتنظيم المصادر باستخدام الذكاء الاصطناعي"
+            loading="lazy"
+            width="800"
+            height="450"
+          >
 
           <div class="home-card-content">
+
             <span class="category">أدوات الذكاء الاصطناعي</span>
-            <h3>ما هو Gemini Notebook؟ دليلك الكامل لأداة جوجل وعلاقتها بـ Gemini</h3>
-            <p>تعرف على فكرة دفاتر جيميني، واستخداماتها في الدراسة والبحث، وعلاقتها بأدوات Google للذكاء الاصطناعي.</p>
-            <a href="Gemini-Notebook.html" class="read-more">اقرأ المقال ←</a>
-          </div>
 
+            <h3>
+              ما هو Gemini Notebook؟ دليلك الكامل لأداة جوجل وعلاقتها بـ Gemini
+            </h3>
+
+            <p>
+              تعرف على فكرة دفاتر جيميني، واستخداماتها في الدراسة
+              والبحث، وعلاقتها بأدوات Google للذكاء الاصطناعي.
+            </p>
+
+            <a href="Gemini-Notebook.html" class="read-more">
+              اقرأ المقال ←
+            </a>
+
+          </div>
         </article>
 
-        <article class="home-card" data-keywords="Microsoft Copilot ai مايكروسوفت كوبايلوت كوبايلوت مساعد الذكاء الاصطناعي بحث كتابة تلخيص Word Excel PowerPoint">
+        <!-- Microsoft Copilot -->
+        <article class="home-card"
+          data-keywords="Microsoft Copilot ai مايكروسوفت كوبايلوت كوبايلوت مساعد الذكاء الاصطناعي بحث كتابة تلخيص Word Excel PowerPoint">
 
-          <img src="image/copilot.jpg"
-               alt="Microsoft Copilot مساعد مايكروسوفت للذكاء الاصطناعي"
-               loading="lazy"
-               width="800"
-               height="450">
+          <img
+            src="image/copilot.jpg"
+            alt="Microsoft Copilot مساعد مايكروسوفت للذكاء الاصطناعي"
+            loading="lazy"
+            width="800"
+            height="450"
+          >
 
           <div class="home-card-content">
+
             <span class="category">أدوات الذكاء الاصطناعي</span>
 
             <h3>ما هو Microsoft Copilot؟ دليل المبتدئين</h3>
 
             <p>
-              تعرف على مساعد مايكروسوفت للذكاء الاصطناعي، وأهم استخداماته،
-              والفرق بين النسخة المجانية والمميزات المدفوعة.
+              تعرف على مساعد مايكروسوفت للذكاء الاصطناعي،
+              وأهم استخداماته، والفرق بين النسخة المجانية
+              والمميزات المدفوعة.
             </p>
 
-            <a href="Microsoft-Copilot.html" class="read-more">اقرأ المقال ←</a>
-          </div>
+            <a href="Microsoft-Copilot.html" class="read-more">
+              اقرأ المقال ←
+            </a>
 
+          </div>
         </article>
 
-        <article class="home-card" data-keywords="ميدجورني Midjourney توليد الصور إنشاء الصور بالذكاء الاصطناعي مولد صور AI برومبت الصور">
+        <!-- Midjourney -->
+        <article class="home-card"
+          data-keywords="ميدجورني Midjourney توليد الصور إنشاء الصور بالذكاء الاصطناعي مولد صور AI برومبت الصور">
 
           <img
             src="image/Midjourney.jpg"
@@ -368,21 +579,28 @@
           >
 
           <div class="home-card-content">
+
             <span class="category">أدوات الذكاء الاصطناعي</span>
             <span class="article-date">9 أكتوبر 2026</span>
 
-            <h3>ما هو Midjourney؟ دليل المبتدئين لإنشاء الصور بالذكاء الاصطناعي</h3>
+            <h3>
+              ما هو Midjourney؟ دليل المبتدئين لإنشاء الصور بالذكاء الاصطناعي
+            </h3>
 
             <p>
               تعرف على Midjourney وطريقة استخدامه خطوة بخطوة،
-              مع أمثلة Prompts جاهزة ونصائح لتحسين الصور وأسعار الاشتراك.
+              مع أمثلة Prompts جاهزة ونصائح لتحسين الصور
+              وأسعار الاشتراك.
             </p>
 
-            <a href="Midjourney.html" class="read-more">اقرأ المقال ←</a>
-          </div>
+            <a href="Midjourney.html" class="read-more">
+              اقرأ المقال ←
+            </a>
 
+          </div>
         </article>
 
+        <!-- AI Writing Tools -->
         <article class="home-card">
 
           <img
@@ -394,13 +612,8 @@
 
           <div class="home-card-content">
 
-            <span class="category">
-              مقارنة
-            </span>
-
-            <span class="article-date">
-              8 أكتوبر 2026
-            </span>
+            <span class="category">مقارنة</span>
+            <span class="article-date">8 أكتوبر 2026</span>
 
             <h3>
               ما أفضل أداة ذكاء اصطناعي لكتابة المحتوى؟ مقارنة شاملة
@@ -408,16 +621,18 @@
 
             <p>
               مقارنة شاملة بين ChatGPT وClaude وGemini وWriteSonic
-              وJasper وRytr، لمعرفة مميزات كل أداة وأفضل استخداماتها
-              وأيها يناسب احتياجاتك.
+              وJasper وRytr، لمعرفة مميزات كل أداة وأفضل
+              استخداماتها وأيها يناسب احتياجاتك.
             </p>
 
-            <a href="ai-writing-tools.html" class="read-more">اقرأ المقال ←</a>
+            <a href="ai-writing-tools.html" class="read-more">
+              اقرأ المقال ←
+            </a>
 
           </div>
-
         </article>
 
+        <!-- Jasper -->
         <article class="home-card">
 
           <img
@@ -429,13 +644,8 @@
 
           <div class="home-card-content">
 
-            <span class="category">
-              أدوات الذكاء الاصطناعي
-            </span>
-
-            <span class="article-date">
-              8 أكتوبر 2026
-            </span>
+            <span class="category">أدوات الذكاء الاصطناعي</span>
+            <span class="article-date">8 أكتوبر 2026</span>
 
             <h3>
               ما هو Jasper؟ دليلك لاستخدام أداة الذكاء الاصطناعي للتسويق وكتابة المحتوى
@@ -447,12 +657,14 @@
               مثل Brand Voice وMarketing Agents، وهل يستحق سعره؟
             </p>
 
-            <a href="jasper.html" class="read-more">اقرأ المقال ←</a>
+            <a href="jasper.html" class="read-more">
+              اقرأ المقال ←
+            </a>
 
           </div>
-
         </article>
 
+        <!-- Rytr -->
         <article class="home-card">
 
           <img
@@ -464,13 +676,8 @@
 
           <div class="home-card-content">
 
-            <span class="category">
-              أدوات الذكاء الاصطناعي
-            </span>
-
-            <span class="article-date">
-              8 أكتوبر 2026
-            </span>
+            <span class="category">أدوات الذكاء الاصطناعي</span>
+            <span class="article-date">8 أكتوبر 2026</span>
 
             <h3>
               ما هو Rytr؟ دليلك لاستخدام أداة الذكاء الاصطناعي لكتابة المحتوى
@@ -482,12 +689,14 @@
               عن ChatGPT وأدوات الكتابة الأخرى.
             </p>
 
-            <a href="rytr.html" class="read-more">اقرأ المقال ←</a>
+            <a href="rytr.html" class="read-more">
+              اقرأ المقال ←
+            </a>
 
           </div>
-
         </article>
 
+        <!-- Writesonic -->
         <article class="home-card">
 
           <img
@@ -499,13 +708,8 @@
 
           <div class="home-card-content">
 
-            <span class="category">
-              أدوات الذكاء الاصطناعي
-            </span>
-
-            <span class="article-date">
-              25 أكتوبر 2026
-            </span>
+            <span class="category">أدوات الذكاء الاصطناعي</span>
+            <span class="article-date">25 أكتوبر 2026</span>
 
             <h3>
               ما هو Writesonic؟ شرح المميزات والعيوب وهل يستحق الاستخدام؟
@@ -513,16 +717,18 @@
 
             <p>
               تعرف على WriteSonic وكيف يساعدك في كتابة المقالات
-              وصناعة المحتوى وتحسين SEO، وما الذي يميزه عن أدوات
-              الذكاء الاصطناعي العامة.
+              وصناعة المحتوى وتحسين SEO، وما الذي يميزه عن
+              أدوات الذكاء الاصطناعي العامة.
             </p>
 
-            <a href="writesonic.html" class="read-more">اقرأ المقال ←</a>
+            <a href="writesonic.html" class="read-more">
+              اقرأ المقال ←
+            </a>
 
           </div>
-
         </article>
 
+        <!-- Prompt Guide -->
         <article class="home-card">
 
           <img
@@ -534,32 +740,25 @@
 
           <div class="home-card-content">
 
-            <span class="category">
-              الذكاء الاصطناعي
-            </span>
+            <span class="category">الذكاء الاصطناعي</span>
+            <span class="article-date">7 أكتوبر 2026</span>
 
-            <span class="article-date">
-              7 أكتوبر 2026
-            </span>
-
-            <h3>
-              كيفية كتابة Prompt احترافي؟ دليل عملي
-            </h3>
+            <h3>كيفية كتابة Prompt احترافي؟ دليل عملي</h3>
 
             <p>
               تعلّم كيفية كتابة Prompts واضحة واحترافية للحصول
-              على نتائج أفضل من أدوات الذكاء الاصطناعي، مع أمثلة
-              وقوالب جاهزة.
+              على نتائج أفضل من أدوات الذكاء الاصطناعي،
+              مع أمثلة وقوالب جاهزة.
             </p>
 
-            <a href="prompt-guide.html" class="read-more">اقرأ المقال ←</a>
+            <a href="prompt-guide.html" class="read-more">
+              اقرأ المقال ←
+            </a>
 
           </div>
-
         </article>
 
-        <!-- مقال Google Gemini -->
-
+        <!-- Gemini -->
         <article class="home-card">
 
           <img
@@ -571,9 +770,7 @@
 
           <div class="home-card-content">
 
-            <span class="category">
-              الذكاء الاصطناعي
-            </span>
+            <span class="category">الذكاء الاصطناعي</span>
 
             <h3>
               ما هو Google Gemini (جيميني)؟ المميزات والاستخدامات 2026
@@ -584,12 +781,14 @@
               وكيف يختلف عن ChatGPT وClaude، وهل يستحق التجربة؟
             </p>
 
-            <a href="Gemini.html" class="read-more">اقرأ المقال ←</a>
+            <a href="Gemini.html" class="read-more">
+              اقرأ المقال ←
+            </a>
 
           </div>
-
         </article>
 
+        <!-- AI Danger -->
         <article class="home-card">
 
           <img
@@ -599,32 +798,27 @@
             decoding="async"
           >
 
-          <!-- Article 1 -->
-
           <div class="home-card-content">
-
-            <span class="category">
-              الذكاء الاصطناعي
-            </span>
+<span class="category">الذكاء الاصطناعي</span>
 
             <h3>
-              سلبيات الذكاء الاصطناعي: ما هي خطورة الذكاء الاصطناعي ؟
+              سلبيات الذكاء الاصطناعي: ما هي خطورة الذكاء الاصطناعي؟
             </h3>
 
             <p>
-              تعرف على أهم مخاطر الذكاء الاصطناعي، مثل الخصوصية والتحيز
-              والمعلومات الخاطئة وتأثيره على الوظائف، وكيفية استخدامه
-              بشكل أكثر أمانًا ومسؤولية.
+              تعرف على أهم مخاطر الذكاء الاصطناعي، مثل الخصوصية
+              والتحيز والمعلومات الخاطئة وتأثيره على الوظائف،
+              وكيفية استخدامه بشكل أكثر أمانًا ومسؤولية.
             </p>
 
-            <a href="ai-danger.html" class="read-more">اقرأ المقال ←</a>
+            <a href="ai-danger.html" class="read-more">
+              اقرأ المقال ←
+            </a>
 
           </div>
-
         </article>
 
-        <!-- Article 2 -->
-
+        <!-- Claude vs ChatGPT -->
         <article class="home-card">
 
           <img
@@ -636,9 +830,7 @@
 
           <div class="home-card-content">
 
-            <span class="category">
-              الذكاء الاصطناعي
-            </span>
+            <span class="category">الذكاء الاصطناعي</span>
 
             <h3>
               Claude vs ChatGPT: ما الفرق بين كلود وشات جي بي تي؟
@@ -649,15 +841,16 @@
               والبرمجة وتحليل الملفات والاستخدامات المختلفة.
             </p>
 
-            <a href="claude-vs-chatgpt.html" class="read-more">اقرأ المقال ←</a>
+            <a href="claude-vs-chatgpt.html" class="read-more">
+              اقرأ المقال ←
+            </a>
 
           </div>
-
         </article>
 
-        <!-- Article 4 -->
-
-        <article class="home-card" data-keywords="chatgpt شات جي بي تي OpenAI الذكاء الاصطناعي">
+        <!-- ChatGPT -->
+        <article class="home-card"
+          data-keywords="chatgpt شات جي بي تي OpenAI الذكاء الاصطناعي">
 
           <img
             src="image/chatgpt.jpg"
@@ -670,9 +863,7 @@
 
           <div class="home-card-content">
 
-            <span class="category">
-              الذكاء الاصطناعي
-            </span>
+            <span class="category">الذكاء الاصطناعي</span>
 
             <h3>
               كيفية استخدام ChatGPT باللغة العربية للمبتدئين 2026
@@ -689,7 +880,6 @@
             </a>
 
           </div>
-
         </article>
 
       </div>
@@ -699,18 +889,20 @@
   </main>
 
   <!-- Footer -->
-
   <footer>
 
-    <p>
-      © 2026 AI بالعربي
-    </p>
+    <div class="footer-links">
+      <a href="articles.html">جميع المقالات</a>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="contact.html">اتصل بنا</a>
+    </div>
+
+    <p>© 2026 AI بالعربي - جميع الحقوق محفوظة</p>
 
   </footer>
 
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=8"></script>
 
 </body>
-
-      </html>
-  
+</html>
+            
