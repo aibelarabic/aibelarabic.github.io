@@ -1225,3 +1225,198 @@ footer p {
         font-size: 13px;
     }
 }
+
+/* ==========================================
+   AI بالعربي - تحسين الصفحة الرئيسية
+========================================== */
+
+/* المسافات العامة */
+#home {
+    line-height: 1.9;
+}
+
+/* الأقسام */
+#home > section {
+    margin-bottom: 30px;
+}
+
+/* عناوين الأقسام */
+#home > section > h2 {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+/* وصف الأقسام */
+#home > section > p {
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 0 0 22px;
+}
+
+/* بطاقات المقالات */
+#latest-articles .home-card {
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+/* الصور */
+#latest-articles .home-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* محتوى البطاقة */
+#latest-articles .home-card-content {
+    padding: 18px 20px 20px;
+}
+
+/* التصنيف */
+#latest-articles .category {
+    display: inline-block;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+/* تاريخ المقال */
+#latest-articles .article-date {
+    display: inline-block;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+/* عنوان المقال */
+#latest-articles .home-card h3 {
+    font-size: 19px;
+    line-height: 1.7;
+    margin: 5px 0 12px;
+}
+
+/* وصف المقال */
+#latest-articles .home-card p {
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 0 0 16px;
+}
+
+/* رابط المقال */
+#latest-articles .read-more {
+    font-size: 14px;
+}
+
+/* تحسين قسم البحث */
+.site-search {
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+/* كاشف الصور */
+#detector h2 {
+    line-height: 1.6;
+}
+
+#detector > p {
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.detector-note {
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* قسم عن الموقع */
+#about p {
+    font-size: 15px;
+    line-height: 2;
+    margin-bottom: 18px;
+}
+
+/* روابط الفوتر */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 15px;
+}
+
+.footer-links a {
+    font-size: 14px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   الموبايل
+========================================== */
+
+@media (max-width: 600px) {
+
+    #home > section > h2 {
+        font-size: 21px;
+    }
+
+    #home > section > p {
+        font-size: 14px;
+    }
+
+    #latest-articles .home-card {
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    #latest-articles .home-card-content {
+        padding: 15px 16px 17px;
+    }
+
+    #latest-articles .home-card h3 {
+        font-size: 17px;
+        line-height: 1.75;
+        margin-bottom: 10px;
+    }
+
+    #latest-articles .home-card p {
+        font-size: 14px;
+        line-height: 1.9;
+        margin-bottom: 14px;
+    }
+
+    #latest-articles .category,
+    #latest-articles .article-date {
+        font-size: 12px;
+    }
+
+    #latest-articles .read-more {
+        font-size: 13px;
+    }
+
+    #detector h2 {
+        font-size: 20px;
+    }
+
+    #detector > p {
+        font-size: 14px;
+    }
+
+    .site-search {
+        padding: 0 15px;
+        margin: 20px auto;
+    }
+
+    .footer-links {
+        gap: 14px;
+    }
+
+    .footer-links a {
+        font-size: 13px;
+    }
+}
