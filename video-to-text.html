@@ -154,7 +154,9 @@
   <p>© 2026 AI بالعربي - جميع الحقوق محفوظة</p>
 </footer>
 
-<script>
+
+const WORKER_URL = "https://video-to-text.YOUR-SUBDOMAIN.workers.dev";
+
 const audioFile = document.getElementById("audioFile");
 const convertButton = document.getElementById("convertButton");
 const statusText = document.getElementById("status");
@@ -175,9 +177,48 @@ audioFile.addEventListener("change", () => {
     : "اختر ملفًا صوتيًا للبدء.";
 });
 
-convertButton.addEventListener("click", () => {
-  statusText.textContent =
-    "خدمة التحويل لم يتم ربطها بعد. سنكمل إعدادها في الخطوة التالية.";
+convertButton.addEventListener("click", async () => {
+  const file = audioFile.files[0];
+
+  if (!file) return;
+
+  const formData = new FormData();
+  formData.append("audio", file);
+  formData.append(
+    "language",
+    document.getElementById("language").value
+  );
+
+  convertButton.disabled = true;
+  statusText.textContent = "جاري تحويل الصوت... انتظر قليلًا.";
+
+  try {
+    const response = await fetch(WORKER_URL, {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "تعذر تحويل الملف");
+    }
+
+    result.value = data.text || "";
+
+    copyButton.disabled = !result.value;
+    downloadButton.disabled = !result.value;
+
+    statusText.textContent =
+      "تم التحويل بنجاح! المتبقي اليوم: " +
+      Math.floor(data.remaining / 60) +
+      " دقيقة.";
+
+  } catch (error) {
+    statusText.textContent = error.message;
+  } finally {
+    convertButton.disabled = false;
+  }
 });
 
 copyButton.addEventListener("click", async () => {
@@ -199,6 +240,7 @@ downloadButton.addEventListener("click", () => {
 
   URL.revokeObjectURL(url);
 });
+
 </script>
 
 </body>
