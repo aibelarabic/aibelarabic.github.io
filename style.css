@@ -156,6 +156,10 @@ footer {
   font-size: 20px;
   font-weight: bold;
 }
+.article-content .intro {
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
 
 .tip-box {
   background: #f5f7fa;
