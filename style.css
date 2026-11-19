@@ -1645,3 +1645,19 @@ body.dark-mode .articles-grid .category {
         font-size: 28px;
     }
 }
+body {
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Reem Kufi', sans-serif;
+    font-weight: 700;
+}
+
+.site-brand .brand-ai {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.site-brand .brand-ar {
+    font-family: 'Reem Kufi', sans-serif;
+}
