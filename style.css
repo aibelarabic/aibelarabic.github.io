@@ -1604,3 +1604,44 @@ body.dark-mode .articles-grid .category {
     transform: none;
   }
       }
+
+.site-brand {
+    margin: 0 0 8px;
+}
+
+.site-brand a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.brand-ai {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px;
+    font-weight: 900;
+    color: #d9ad62;
+    letter-spacing: -2px;
+}
+
+.brand-ar {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.site-header p {
+    margin: 0;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .brand-ai {
+        font-size: 31px;
+    }
+
+    .brand-ar {
+        font-size: 28px;
+    }
+}
