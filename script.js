@@ -556,3 +556,47 @@ if (searchInput && searchResults) {
   );
 
           }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT
+    );
+
+    const nodes = [];
+
+    while (walker.nextNode()) {
+        const node = walker.currentNode;
+        const parent = node.parentElement;
+
+        if (
+            parent &&
+            !parent.closest(
+                'script, style, code, pre, textarea, input, .en-text'
+            ) &&
+            /[A-Za-z]/.test(node.textContent)
+        ) {
+            nodes.push(node);
+        }
+    }
+
+    nodes.forEach(node => {
+        const fragment = document.createDocumentFragment();
+        const parts = node.textContent.split(
+            /([A-Za-z][A-Za-z0-9+.#'-]*)/g
+        );
+
+        parts.forEach(part => {
+            if (/^[A-Za-z][A-Za-z0-9+.#'-]*$/.test(part)) {
+                const span = document.createElement("span");
+                span.className = "en-text";
+                span.textContent = part;
+                fragment.appendChild(span);
+            } else {
+                fragment.appendChild(document.createTextNode(part));
+            }
+        });
+
+        node.parentNode.replaceChild(fragment, node);
+    });
+});
