@@ -15,23 +15,59 @@
 </head>
 <body>
 
+
 <header class="site-header">
+  <div class="header-inner">
+
     <h1 class="site-brand">
-        <a href="https://aibelarabic.github.io/">
-            <span class="brand-ai">AI</span>
-            <span class="brand-ar">بالعربي</span>
-        </a>
+      <a href="https://aibelarabic.github.io/">
+        <span class="brand-ai">AI</span>
+        <span class="brand-ar">بالعربي</span>
+      </a>
     </h1>
 
     <p>الذكاء الاصطناعي والتقنية باللغة العربية</p>
+
+  </div>
 </header>
 
-<nav>
-  <a href="https://aibelarabic.github.io/">الرئيسية</a>
-  <a href="articles.html">المقالات</a>
-  <a href="contact.html">اتصل بنا</a>
-  <button id="darkModeToggle" type="button">🌙 الوضع الداكن</button>
+<nav class="site-nav" id="mainNav">
+
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-label="فتح القائمة"
+    aria-expanded="false"
+    aria-controls="navLinks">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="nav-links" id="navLinks">
+
+    <a href="https://aibelarabic.github.io/">الرئيسية</a>
+
+    <a href="articles.html">المقالات</a>
+
+    <a href="#detector">كاشف الصور</a>
+
+    <a href="pdf-tools.html">أدوات PDF</a>
+
+    <a href="word-counter.html">عداد الكلمات</a>
+    <a href="contact.html">اتصل بنا</a>
+
+    <a href="#about">عن الموقع</a>
+
+    <button id="darkModeToggle" type="button">
+      🌙 الوضع الداكن
+    </button>
+
+  </div>
+
 </nav>
+  
 
 <main class="article">
   <h1>اتصل بنا</h1>
