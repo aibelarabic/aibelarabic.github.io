@@ -600,3 +600,55 @@ document.addEventListener("DOMContentLoaded", function () {
         node.parentNode.replaceChild(fragment, node);
     });
 });
+
+
+// =========================
+// MOBILE NAVIGATION MENU
+// =========================
+
+function initMobileNavigation() {
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  if (!menuToggle || !navLinks) return;
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("active");
+
+    menuToggle.classList.toggle("active", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "إغلاق القائمة" : "فتح القائمة"
+    );
+  });
+
+  // Close menu after clicking a navigation link
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      menuToggle.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "فتح القائمة");
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", event => {
+    if (
+      !navLinks.contains(event.target) &&
+      !menuToggle.contains(event.target)
+    ) {
+      navLinks.classList.remove("active");
+      menuToggle.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "فتح القائمة");
+    }
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initMobileNavigation);
+} else {
+  initMobileNavigation();
+}
