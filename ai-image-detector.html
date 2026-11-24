@@ -1,1 +1,283 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-adsense-account" content="ca-pub-9335116022580740">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>كاشف الصور بالذكاء الاصطناعي | AI Image Detector - AI بالعربي</title>
+
+  <meta name="description" content="استخدم كاشف الصور بالذكاء الاصطناعي من AI بالعربي لمعرفة احتمالية كون الصورة مولدة بواسطة أدوات الذكاء الاصطناعي. أداة مجانية وسهلة الاستخدام.">
+
+  <meta name="keywords" content="كاشف الصور بالذكاء الاصطناعي, AI Image Detector, كشف الصور AI, اكتشاف الصور المولدة بالذكاء الاصطناعي">
+
+  <meta name="author" content="AI بالعربي">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://aibelarabic.github.io/ai-image-detector.html">
+
+  <link rel="icon" type="image/png" href="image/Icon.png">
+
+  <link rel="stylesheet" href="style.css">
+
+  <meta name="msvalidate.01" content="E579E0350EC568A0184D20F2778CAB41">
+
+  <meta property="og:site_name" content="AI بالعربي">
+  <meta property="og:title" content="كاشف الصور بالذكاء الاصطناعي | AI بالعربي">
+  <meta property="og:description" content="اكتشف احتمالية كون الصور مولدة بالذكاء الاصطناعي باستخدام أداة AI Image Detector المجانية.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aibelarabic.github.io/ai-image-detector.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Montserrat:wght@700;800;900&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYXLTRRN4Q"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-SYXLTRRN4Q');
+  </script>
+
+</head>
+
+<body>
+
+  <!-- Header -->
+
+  <header class="site-header">
+
+    <div class="header-inner">
+
+      <h1 class="site-brand">
+
+        <a href="https://aibelarabic.github.io/">
+
+          <span class="brand-ai">AI</span>
+          <span class="brand-ar">بالعربي</span>
+
+        </a>
+
+      </h1>
+
+      <p>الذكاء الاصطناعي والتقنية باللغة العربية</p>
+
+    </div>
+
+  </header>
+
+
+  <!-- Navigation -->
+
+  <nav class="site-nav" id="mainNav">
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="فتح القائمة"
+      aria-expanded="false"
+      aria-controls="navLinks">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+
+    <div class="nav-links" id="navLinks">
+
+      <a href="https://aibelarabic.github.io/">الرئيسية</a>
+
+      <a href="articles.html">المقالات</a>
+
+      <a href="ai-image-detector.html">كاشف الصور</a>
+
+      <a href="pdf-tools.html">أدوات PDF</a>
+
+      <a href="word-counter.html">عداد الكلمات</a>
+
+      <a href="index.html#about">عن الموقع</a>
+
+      <button id="darkModeToggle" type="button">
+        🌙 الوضع الداكن
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <!-- Search -->
+
+  <section class="site-search">
+
+    <div class="search-box">
+
+      <span class="search-icon">⌕</span>
+
+      <input
+        type="search"
+        id="siteSearch"
+        placeholder="ابحث في AI بالعربي..."
+        autocomplete="off"
+        aria-label="البحث في الموقع">
+
+    </div>
+
+    <div id="searchResults" class="search-results"></div>
+
+  </section>
+
+
+  <main>
+
+    <section id="detector">
+
+      <h2>كاشف الصور بالذكاء الاصطناعي | AI Image Detector</h2>
+
+      <p>
+        ارفع صورة لمعرفة احتمالية كونها مولدة بالذكاء الاصطناعي.
+      </p>
+
+
+      <div class="ai-detector">
+
+        <!-- Drag & Drop Area -->
+
+        <div id="dropZone" class="drop-zone">
+
+          <div class="upload-icon">🖼️</div>
+
+          <h3>Drop your image here</h3>
+
+          <p>أو اسحب الصورة هنا</p>
+
+          <span>JPG, PNG, WEBP</span>
+
+          <button type="button" id="browseButton">
+            Browse Image
+          </button>
+
+          <input
+            type="file"
+            id="imageInput"
+            accept="image/*"
+            hidden>
+
+        </div>
+
+
+        <!-- Image Preview -->
+
+        <div id="imagePreview" class="image-preview"></div>
+
+
+        <!-- Analyze -->
+
+        <button id="analyzeButton">
+          تحليل الصورة
+        </button>
+
+        <p id="detectorStatus"></p>
+
+
+        <!-- Result -->
+
+        <div id="detectorResult"></div>
+
+
+        <!-- Reset -->
+
+        <button
+          id="resetDetector"
+          class="reset-button"
+          style="display:none;">
+
+          تحليل صورة أخرى
+
+        </button>
+
+      </div>
+
+
+      <p class="detector-note">
+
+        ⚠️ النتيجة تقديرية وليست دليلًا قاطعًا على أن الصورة مولدة بالذكاء الاصطناعي.
+
+      </p>
+
+    </section>
+
+
+    <!-- About Detector -->
+
+    <section class="detector-info">
+
+      <h2>ما هو كاشف الصور بالذكاء الاصطناعي؟</h2>
+
+      <p>
+        كاشف الصور بالذكاء الاصطناعي هو أداة تساعد على تقدير
+        احتمالية إنشاء الصورة باستخدام تقنيات الذكاء الاصطناعي
+        مثل مولدات الصور الحديثة.
+      </p>
+
+      <h2>كيفية استخدام كاشف الصور؟</h2>
+
+      <p>
+        اختر الصورة التي تريد تحليلها من جهازك، ثم اضغط على
+        زر تحليل الصورة وانتظر ظهور النتيجة.
+      </p>
+
+      <h2>هل نتائج كاشف الصور دقيقة دائمًا؟</h2>
+
+      <p>
+        لا. نتائج أدوات اكتشاف الصور المولدة بالذكاء الاصطناعي
+        تقديرية، وقد تحدث أخطاء في التعرف على الصور.
+        لذلك لا ينبغي الاعتماد على النتيجة باعتبارها دليلًا قاطعًا.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer>
+
+    <div class="footer-links">
+
+      <a href="privacy.html">سياسة الخصوصية</a>
+
+      <a href="contact.html">اتصل بنا</a>
+
+      <a href="articles.html">جميع المقالات</a>
+
+    </div>
+
+    <p>© 2026 AI بالعربي - جميع الحقوق محفوظة</p>
+
+  </footer>
+
+
+  <!-- Scripts -->
+
+  <script src="script.js?v=8"></script>
+
+</body>
+
+    </html>
+    
