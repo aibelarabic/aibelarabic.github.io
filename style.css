@@ -2107,3 +2107,43 @@ body.dark-mode .menu-toggle span {
   }
 
     }
+
+
+/* AI TOOLS - DARK MODE */
+
+body.dark-mode #ai-tools {
+  background: #1f2937;
+}
+
+body.dark-mode #ai-tools h2 {
+  color: #f9fafb;
+}
+
+body.dark-mode #ai-tools > p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .tool-card {
+  background: #111827;
+  border-color: #374151;
+}
+
+body.dark-mode .tool-card-content h3 {
+  color: #f9fafb;
+}
+
+body.dark-mode .tool-card-content p {
+  color: #cbd5e1;
+}
+
+body.dark-mode .tool-card-content span {
+  color: #38bdf8;
+}
+
+body.dark-mode .coming-soon .tool-card-content span {
+  color: #94a3b8;
+}
+
+body.dark-mode .tool-card img {
+  background: #374151;
+}
