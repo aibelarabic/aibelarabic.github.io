@@ -2064,26 +2064,46 @@ body.dark-mode .menu-toggle span {
   color: #94a3b8;
 }
 
-/* Mobile */
+
+/* Mobile: 2 Cards Per Row */
 
 @media (max-width: 600px) {
 
   #ai-tools {
-    padding: 18px;
+    padding: 15px;
     margin: 25px 0;
   }
 
   #ai-tools h2 {
-    font-size: 21px;
+    font-size: 20px;
   }
 
   .tools-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
   .tool-card img {
-    height: 180px;
+    width: 100%;
+    height: 115px;
+    object-fit: cover;
   }
 
+  .tool-card-content {
+    padding: 10px;
   }
+
+  .tool-card-content h3 {
+    font-size: 15px;
+  }
+
+  .tool-card-content p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .tool-card-content span {
+    font-size: 12px;
+  }
+
+    }
