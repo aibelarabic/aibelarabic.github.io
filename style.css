@@ -1543,30 +1543,69 @@ footer p {
   align-self: flex-start;
 }
 
+/* الوضع الداكن */
+
+body.dark-mode .articles-grid .home-card {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+body.dark-mode .articles-grid .home-card h3 {
+  color: #f9fafb;
+}
+
+body.dark-mode .articles-grid .home-card p,
+body.dark-mode .articles-grid .article-date {
+  color: #d1d5db;
+}
+
+body.dark-mode .articles-grid .category {
+  background: #1e3a5f;
+  color: #bfdbfe;
+}
+
 /* الموبايل */
+
 @media (max-width: 650px) {
-  .featured-section .articles-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 10px;
+  .articles-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
-  .featured-section .featured-card .home-card-content {
-    padding: 9px !important;
-    gap: 7px;
+  .articles-grid .home-card-content {
+    padding: 16px;
   }
 
-  .featured-section .featured-card h3 {
-    font-size: 13px;
+  .articles-grid .home-card h3 {
+    font-size: 17px;
   }
 
-  .featured-section .featured-card p {
-    font-size: 11px;
+  .featured-card {
+    display: flex !important;
+    flex-direction: column;
   }
 
-  .featured-section .featured-card .read-more {
-    font-size: 11px;
+  .featured-card > img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
   }
+
+  .featured-card .home-card-content {
+    padding: 18px;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .articles-grid .home-card {
+    transition: none;
+  }
+
+  .articles-grid .home-card:hover {
+    transform: none;
+  }
+}
+
 
 .site-brand {
     margin: 0 0 8px;
