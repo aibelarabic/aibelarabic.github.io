@@ -1565,11 +1565,16 @@ body.dark-mode .articles-grid .category {
 }
 
 /* الموبايل */
-
 @media (max-width: 650px) {
+
   .articles-grid {
     grid-template-columns: 1fr;
     gap: 18px;
+  }
+
+  /* استثناء المقالات المميزة */
+  .featured-section .articles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
   .articles-grid .home-card-content {
@@ -1595,16 +1600,6 @@ body.dark-mode .articles-grid .category {
     padding: 18px;
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .articles-grid .home-card {
-    transition: none;
-  }
-
-  .articles-grid .home-card:hover {
-    transform: none;
-  }
-      }
 
 .site-brand {
     margin: 0 0 8px;
