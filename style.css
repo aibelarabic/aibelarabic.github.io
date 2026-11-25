@@ -1515,78 +1515,108 @@ footer p {
   text-decoration: underline;
 }
 
-/* المقالات المميزة */
+
+/* المقالات المميزة - نفس تصميم أحدث المقالات بحجم أصغر */
+
 .featured-section .articles-grid {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px;
+  gap: 14px;
+  align-items: stretch;
 }
 
 .featured-section .featured-card {
-  position: relative;
   display: flex !important;
   flex-direction: column !important;
-  aspect-ratio: 1 / 1;
   min-width: 0;
   overflow: hidden;
   border: 2px solid #8b5cf6 !important;
-  border-radius: 16px;
+  border-radius: 14px;
 }
 
+/* الصورة */
 .featured-section .featured-card > img {
   width: 100%;
-  height: 35% !important;
+  height: auto !important;
   min-height: 0 !important;
-  object-fit: contain;
-  padding: 6px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  padding: 10px;
+  border-radius: 14px;
 }
 
+/* محتوى البطاقة */
 .featured-section .featured-card .home-card-content {
-  display: flex !important;
-  flex: 1;
-  min-height: 0;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 5px;
-  padding: 5px 10px !important;
+  gap: 9px;
+  padding: 12px !important;
+  flex: 1;
 }
 
-.featured-section .featured-card .category,
-.featured-section .featured-card .article-date,
-.featured-section .featured-card p {
-  display: none !important;
-}
-
+/* شارة المقال المميز */
 .featured-section .featured-badge {
-  font-size: 10px;
-  padding: 3px 6px;
+  font-size: 11px;
+  padding: 5px 8px;
 }
 
+/* التصنيف والتاريخ */
+.featured-section .featured-card .category,
+.featured-section .featured-card .article-date {
+  font-size: 11px;
+}
+
+/* العنوان */
 .featured-section .featured-card h3 {
-  display: -webkit-box !important;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  font-size: 13px !important;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.6;
   margin: 0;
 }
 
-.featured-section .featured-card .read-more {
-  display: inline-block !important;
+/* الوصف */
+.featured-section .featured-card p {
   font-size: 12px;
-  margin-top: auto;
-  padding: 4px 8px;
-  position: relative;
-  z-index: 2;
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin: 0;
 }
 
+/* رابط المقال */
+.featured-section .featured-card .read-more {
+  font-size: 12px;
+  margin-top: auto;
+}
+
+/* الموبايل */
 @media (max-width: 650px) {
   .featured-section .articles-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px;
+  }
+
+  .featured-section .featured-card .home-card-content {
+    padding: 9px !important;
+    gap: 7px;
+  }
+
+  .featured-section .featured-card h3 {
+    font-size: 13px;
+  }
+
+  .featured-section .featured-card p {
+    font-size: 11px;
+  }
+
+  .featured-section .featured-card .read-more {
+    font-size: 11px;
   }
   }
+
 .site-brand {
     margin: 0 0 8px;
 }
